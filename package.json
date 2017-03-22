@@ -118,7 +118,7 @@
     "collectCoverageFrom": [
       "src/**/*.{ts,js,jsx}",
       "!src/**/*.test.{ts,js,jsx}",
-      "!src/main.{ts,js,jsx}",
+      "!src/index.{ts,js,jsx}",
       "!src/server.{ts,js,jsx}",
       "!src/controllers/index.{ts,js,jsx}",
       "!src/api/index.{ts,js,jsx}"
