@@ -5,5 +5,186 @@
   "main": "src/index.js",
   "repository": "git@github.com:shellthor/microservice-boilerplate.git",
   "author": "shellthor <jeff.detmer@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "private": true,
+  "engines": {
+    "node": "^6.10.0",
+    "npm": "^3.10.8"
+  },
+  "scripts-info": {
+    "info": "Lists available scripts",
+    "build": "Build and clean up existing build, copy source into dist",
+    "clean": "Clean up existing test, build, and coverage output",
+    "commit": "Run git commit wizard",
+    "dist:start": "Build and clean up existing build, copy source into dist and run codebase in dist using 'dev' NODE_ENV, pipe stdout to bunyan",
+    "docker:build": "Build docker image",
+    "docker:ssh": "Run docker bash",
+    "docker:start": "Run docker container",
+    "docker:stop": "Stop and delete docker container",
+    "lint": "Run lint against everything",
+    "pm2:start": "Build and clean up existing build, copy source into dist and run codebase through PM2",
+    "pm2:status": "Display PM2 process status",
+    "pm2:stop": "Stop and delete the PM2 process",
+    "release": "Generates changelog from commit messages and automatically bumps application version",
+    "start": "Run application using the 'dev' NODE_ENV, pipe stdout to bunyan",
+    "test": "Clean up existing test spec build, build test spec, execute jest test runner, and generate coverage",
+    "test:watch": "Watch codebase, trigger jest test runner when source code changes"
+  },
+  "scripts": {
+    "prebuild": "npm run build:clean",
+    "build": "babel src -d dist --source-maps",
+    "build:clean": "rimraf ./dist",
+    "clean": "npm cache clean && rimraf node_modules doc coverage dist",
+    "precommit": "npm run lint:staged",
+    "commit": "git-cz",
+    "debug": "cross-env NODE_ENV=local nodemon src/main --exec babel-node --inspect=5858 | bunyan",
+    "dist:start": "npm run dist:start:local",
+    "diststart:dev": "npm run build && cross-env NODE_ENV=local node dist/main.js",
+    "docker:bash": "docker exec -t -i rest-service-boilerplate bash",
+    "docker:build": "docker build -t rest-service-boilerplate .",
+    "docker:ssh": "npm run docker:bash",
+    "docker:start": "docker run --name rest-service-boilerplate -p 10000:10000 -e cross-env NODE_ENV=production -d rest-service-boilerplate",
+    "docker:stop": "docker stop rest-service-boilerplate && docker rm rest-service-boilerplate",
+    "info": "npm-scripts-info",
+    "lint": "npm run lint:es",
+    "lint:es": "npm run lint:eslint -- . ",
+    "lint:eslint": "eslint --ignore-path .gitignore --ignore-pattern internals/scripts --format=node_modules/eslint-formatter-pretty",
+    "lint:staged": "lint-staged",
+    "pm2:start": "npm run build && cross-env NODE_ENV=local pm2 start dist/main.js --name rest-service-boilerplate",
+    "pm2:status": "pm2 status",
+    "pm2:stop": "pm2 stop rest-service-boilerplate && pm2 delete rest-service-boilerplate",
+    "release": "standard-version",
+    "start": "npm run start:dev",
+    "start:dev": "cross-env NODE_ENV=local nodemon src/main --exec babel-node | bunyan",
+    "pretest": "npm run test:clean && npm run lint",
+    "test": "cross-env NODE_ENV=test jest --coverage",
+    "test:clean": "rimraf ./coverage",
+    "test:watch": "cross-env NODE_ENV=test jest --watchAll"
+  },
+  "lint-staged": {
+    "*.@(js)": [
+      "eslint --ignore-pattern internals/scripts --fix",
+      "git add"
+    ]
+  },
+  "eslintConfig": {
+    "parser": "babel-eslint",
+    "extends": [
+      "eslint-config-airbnb-base",
+      "plugin:jest/recommended"
+    ],
+    "env": {
+      "node": true,
+      "es6": true,
+      "jest": true,
+      "jest/globals": true
+    },
+    "parserOptions": {
+      "ecmaVersion": 7,
+      "sourceType": "module"
+    },
+    "plugins": [
+      "jest"
+    ],
+    "rules": {
+      "arrow-parens": [
+        "error",
+        "always"
+      ],
+      "arrow-body-style": [
+        2,
+        "as-needed"
+      ],
+      "comma-dangle": [
+        2,
+        "always-multiline"
+      ]
+    }
+  },
+  "babel": {
+    "presets": [
+      "latest",
+      "stage-0"
+    ],
+    "env": {
+      "test": {
+        "plugins": [
+          "dynamic-import-node"
+        ]
+      }
+    }
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.{ts,js,jsx}",
+      "!src/**/*.test.{ts,js,jsx}",
+      "!src/main.{ts,js,jsx}",
+      "!src/server.{ts,js,jsx}",
+      "!src/controllers/index.{ts,js,jsx}",
+      "!src/api/index.{ts,js,jsx}"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "statements": 98,
+        "branches": 98,
+        "functions": 98,
+        "lines": 98
+      }
+    },
+    "moduleDirectories": [
+      "node_modules",
+      "app"
+    ],
+    "testRegex": "tests/.*\\.test\\.js$",
+    "testEnvironment": "node"
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  },
+  "dependencies": {
+    "axios": "^0.15.3",
+    "babel-polyfill": "^6.23.0",
+    "bluebird": "^3.4.6",
+    "bunyan": "^1.8.5",
+    "confidence": "^3.0.2",
+    "cross-env": "^3.1.4",
+    "glob-require-dir": "^1.0.3",
+    "joi": "^10.0.1",
+    "jsonwebtoken": "^7.3.0",
+    "restify": "^4.3.0",
+    "sqlite3": "^3.1.8",
+    "sworm": "^3.3.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.23.0",
+    "babel-core": "^6.23.1",
+    "babel-eslint": "^7.2.0",
+    "babel-jest": "^19.0.0",
+    "babel-plugin-dynamic-import-node": "^1.0.1",
+    "babel-preset-es2015": "^6.18.0",
+    "babel-preset-latest": "^6.22.0",
+    "babel-preset-stage-0": "^6.22.0",
+    "babel-preset-stage-2": "^6.18.0",
+    "babel-register": "^6.18.0",
+    "commitizen": "^2.9.6",
+    "cz-conventional-changelog": "^2.0.0",
+    "eslint": "^3.18.0",
+    "eslint-config-airbnb-base": "^11.1.0",
+    "eslint-formatter-pretty": "^1.1.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jest": "^19.0.1",
+    "husky": "^0.13.1",
+    "jest-cli": "^19.0.2",
+    "lint-staged": "^3.3.1",
+    "nodemon": "^1.11.0",
+    "npm-scripts-info": "^0.3.6",
+    "pm2": "^2.1.6",
+    "pre-commit": "^1.2.2",
+    "rimraf": "^2.6.1",
+    "shelljs": "^0.7.6",
+    "standard-version": "^4.0.0",
+    "supertest": "^3.0.0"
+  }
 }
