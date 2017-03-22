@@ -1,0 +1,9 @@
+{
+  "name": "microservice-boilerplate",
+  "version": "0.0.0",
+  "description": "restify microservice boilerplate",
+  "main": "src/index.js",
+  "repository": "git@github.com:shellthor/microservice-boilerplate.git",
+  "author": "shellthor <jeff.detmer@gmail.com>",
+  "license": "MIT"
+}
