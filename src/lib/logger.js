@@ -4,7 +4,7 @@ import pkg from '../../package.json';
 
 const streams = [];
 streams.push({
-  level: (Config.get('/logLevel')),
+  level: Config.get('/logLevel'),
   stream: process.stdout,
 });
 

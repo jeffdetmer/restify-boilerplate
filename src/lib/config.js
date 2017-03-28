@@ -37,14 +37,14 @@ internals.config = {
     $default: {
       driver: 'sqlite',
       uri: ':memory:',
+      username: '',
+      password: '',
     },
   },
 };
 
 internals.store = new Confidence.Store(internals.config);
 
-exports.get = (key) =>
-  internals.store.get(key, internals.criteria);
+exports.get = (key) => internals.store.get(key, internals.criteria);
 
-exports.meta = (key) =>
-  internals.store.meta(key, internals.criteria);
+exports.meta = (key) => internals.store.meta(key, internals.criteria);
