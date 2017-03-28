@@ -38,9 +38,9 @@
     "precommit": "npm run lint:staged",
     "commit": "git-cz",
     "coveralls": "cat ./coverage/lcov.info | coveralls",
-    "debug": "cross-env NODE_ENV=local nodemon src/main --exec babel-node --inspect=5858 | bunyan",
+    "debug": "cross-env NODE_ENV=local nodemon src/index --exec babel-node --inspect=5858 | bunyan",
     "dist:start": "npm run dist:start:local",
-    "diststart:dev": "npm run build && cross-env NODE_ENV=local node dist/main.js",
+    "diststart:dev": "npm run build && cross-env NODE_ENV=local node dist/index.js",
     "docker:bash": "docker exec -t -i microservice-boilerplate bash",
     "docker:build": "docker build -t microservice-boilerplate .",
     "docker:ssh": "npm run docker:bash",
@@ -51,12 +51,13 @@
     "lint:es": "npm run lint:eslint -- . ",
     "lint:eslint": "eslint --ignore-path .gitignore --ignore-pattern internals/scripts --format=node_modules/eslint-formatter-pretty",
     "lint:staged": "lint-staged",
-    "pm2:start": "npm run build && cross-env NODE_ENV=local pm2 start dist/main.js --name microservice-boilerplate",
+    "pm2:start": "npm run build && cross-env NODE_ENV=local pm2 start dist/index.js --name microservice-boilerplate",
     "pm2:status": "pm2 status",
     "pm2:stop": "pm2 stop microservice-boilerplate && pm2 delete microservice-boilerplate",
+    "prettier": "prettier --trailing-comma es5 --single-quote --write 'src/**/*.js'",
     "release": "standard-version",
     "start": "npm run start:dev",
-    "start:dev": "cross-env NODE_ENV=local nodemon src/main --exec babel-node | bunyan",
+    "start:dev": "cross-env NODE_ENV=local nodemon src/index --exec babel-node | bunyan",
     "pretest": "npm run test:clean && npm run lint",
     "test": "cross-env NODE_ENV=test jest --coverage",
     "test:clean": "rimraf ./coverage",
@@ -64,6 +65,7 @@
   },
   "lint-staged": {
     "*.@(js)": [
+      "prettier --trailing-comma es5 --single-quote --write",
       "eslint --ignore-pattern internals/scripts --fix",
       "git add"
     ]
@@ -136,7 +138,7 @@
       "node_modules",
       "app"
     ],
-    "testRegex": "tests/.*\\.test\\.js$",
+    "testRegex": "src/.*\\.test\\.js$",
     "testEnvironment": "node"
   },
   "config": {
@@ -149,14 +151,13 @@
     "babel-polyfill": "^6.23.0",
     "bluebird": "^3.4.6",
     "bunyan": "^1.8.5",
+    "cassandra-driver": "^3.2.0",
     "confidence": "^3.0.2",
     "cross-env": "^3.1.4",
     "glob-require-dir": "^1.0.3",
     "joi": "^10.0.1",
     "jsonwebtoken": "^7.3.0",
-    "restify": "^4.3.0",
-    "sqlite3": "^3.1.8",
-    "sworm": "^3.3.0"
+    "restify": "^4.3.0"
   },
   "devDependencies": {
     "babel-cli": "^6.23.0",
@@ -184,6 +185,7 @@
     "npm-scripts-info": "^0.3.6",
     "pm2": "^2.1.6",
     "pre-commit": "^1.2.2",
+    "prettier": "^0.22.0",
     "rimraf": "^2.6.1",
     "shelljs": "^0.7.6",
     "standard-version": "^4.0.0",

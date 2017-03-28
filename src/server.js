@@ -26,11 +26,13 @@ server.use(restify.requestLogger());
 
 if (process.env.NODE_ENV === 'prod') {
   // Allow 10 requests/second by IP, and burst to 25
-  server.use(restify.throttle({
-    burst: 25,
-    rate: 10,
-    ip: true,
-  }));
+  server.use(
+    restify.throttle({
+      burst: 25,
+      rate: 10,
+      ip: true,
+    })
+  );
 }
 
 const headers = 'X-Requested-With, Cookie, Set-Cookie, Accept, Access-Control-Allow-Credentials, Origin, Content-Type, Request-Id , X-Api-Version, X-Request-Id, X-TimezoneOffset, Authorization';
@@ -45,10 +47,13 @@ server.opts('.*', (req, res, next) => {
     res.header('Allow', requestMethod);
     res.header('Access-Control-Allow-Methods', requestMethod);
     if (req.log) {
-      req.log.info({
-        url: req.url,
-        method: req.headers['access-control-request-method'],
-      }, 'Preflight');
+      req.log.info(
+        {
+          url: req.url,
+          method: req.headers['access-control-request-method'],
+        },
+        'Preflight'
+      );
     }
     res.send(204);
     return next();
@@ -80,16 +85,19 @@ server.get('/ping', ping.get);
 server.get('/echo/:name', echo.get);
 server.post('/echo', echo.post);
 
-server.on('after', restify.auditLogger({
-  log: logger.child({
-    component: 'audit',
-  }),
-}));
+server.on(
+  'after',
+  restify.auditLogger({
+    log: logger.child({
+      component: 'audit',
+    }),
+  })
+);
 
 server.on('uncaughtException', (req, res, route, e) => {
   logger.error(e);
   res.send(new restify.InternalError(e, e.message || 'unexpected error'));
-  return (true);
+  return true;
 });
 
 export default server;

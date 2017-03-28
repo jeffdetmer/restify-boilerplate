@@ -1,13 +1,14 @@
-import sworm from 'sworm';  // https://github.com/featurist/sworm
+import cassandra from 'cassandra-driver';
 import Config from './config';
 
-const config = {
-  driver: Config.get('/database/driver'),
-  config: {
-    filename: Config.get('/database/uri'),
-  },
-};
+const authProvider = new cassandra.auth.PlainTextAuthProvider(
+  Config.get('/database/user'),
+  Config.get('/database/password')
+);
+const client = new cassandra.Client({
+  contactPoints: ['127.0.0.1'],
+  keyspace: 'mydatabase',
+  authProvider,
+});
 
-const db = sworm.db(config);
-
-export default db;
+export default client;
