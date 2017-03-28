@@ -31,12 +31,10 @@ internals.config = {
   database: {
     $filter: 'env',
     production: {
-      driver: 'sqlite',
-      uri: ':memory:',
+      username: '',
+      password: '',
     },
     $default: {
-      driver: 'sqlite',
-      uri: ':memory:',
       username: '',
       password: '',
     },
