@@ -128,7 +128,9 @@
       "src/**/*.{ts,js,jsx}",
       "!src/**/*.test.{ts,js,jsx}",
       "!src/index.{ts,js,jsx}",
-      "!src/server.{ts,js,jsx}"
+      "!src/server.{ts,js,jsx}",
+      "!src/lib/database.{ts,js,jsx}",
+      "!src/lib/tests/database.test.{ts,js,jsx}"
     ],
     "coverageThreshold": {
       "global": {
@@ -155,11 +157,11 @@
     "babel-polyfill": "^6.23.0",
     "bluebird": "^3.4.6",
     "bunyan": "^1.8.5",
-    "cassandra-driver": "^3.2.0",
     "confidence": "^3.0.2",
     "cross-env": "^3.1.4",
     "joi": "^10.3.1",
     "jsonwebtoken": "^7.3.0",
+    "oracledb": "^1.13.1",
     "restify": "^4.3.0"
   },
   "devDependencies": {

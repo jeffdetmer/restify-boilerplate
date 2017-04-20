@@ -3,25 +3,25 @@ import logger from './lib/logger';
 import Config from './lib/config';
 import server from './server';
 
-process.on('uncaughtException', (err) => {
+process.on('uncaughtException', async (err) => {
   logger.error(`Caught exception: \n${err.stack}` || JSON.stringify(err));
   logger.error('Exiting...');
-  database.shutdown();
+  await database.shutdown();
   process.exit(1);
 });
 
 ['SIGTERM', 'SIGINT'].forEach((sig) => {
-  process.on(sig, () => {
+  process.on(sig, async () => {
     logger.info(`${sig} received`);
     logger.info('Exiting...');
-    database.shutdown();
+    await database.shutdown();
     process.exit(1);
   });
 });
 
-process.on('exit', () => {
+process.on('exit', async () => {
   logger.info('Shutting down');
-  database.shutdown();
+  await database.shutdown();
   process.exit(1);
 });
 
