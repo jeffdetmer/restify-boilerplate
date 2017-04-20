@@ -5,9 +5,7 @@
 Used as a starting point for all NodeJS micro-services.
 
 [![Build Status](https://travis-ci.org/shellthor/microservice-boilerplate.svg?branch=master)](https://travis-ci.org/shellthor/microservice-boilerplate)
-
 [![codecov](https://codecov.io/gh/shellthor/microservice-boilerplate/branch/master/graph/badge.svg)](https://codecov.io/gh/shellthor/microservice-boilerplate)
-
 [![Dependency Status](https://dependencyci.com/github/shellthor/microservice-boilerplate/badge)](https://dependencyci.com/github/shellthor/microservice-boilerplate)
 
 ## Table of Contents
