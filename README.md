@@ -102,9 +102,9 @@ MIT � Jeff Detmer
 [coverage]: https://codecov.io/github/shellthor/microservice-boilerplate
 [dependencyci-badge]: https://dependencyci.com/github/shellthor/microservice-boilerplate/badge?style=flat-square
 [dependencyci]: https://dependencyci.com/github/shellthor/microservice-boilerplate
-[version-badge]: https://img.shields.io/npm/v/glamorous.svg?style=flat-square
+[version-badge]: https://img.shields.io/github/tag/shellthor/microservice-boilerplate.svg?style=flat-square
 [package]: https://github.com/shellthor/microservice-boilerplate
-[license-badge]: https://img.shields.io/github/license/shellthor/microservice-boilerpalte.svg?style=flat-square
+[license-badge]: https://img.shields.io/github/license/mashape/apistatus.svg?style=flat-square
 [license]: https://github.com/shellthor/microservice-boilerplate/blob/master/LICENSE.md
 [prs-badge]: https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square
 [prs]: http://makeapullrequest.com
