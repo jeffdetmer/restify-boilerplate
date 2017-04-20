@@ -24,17 +24,17 @@ module.exports = {
   deploy: {
     production: {
       user: 'node',
-      host: '212.83.163.1',
+      host: '',
       ref: 'origin/master',
-      repo: 'git@github.com:repo.git',
+      repo: 'git@github.com:shellthor/microservice-boilerplate.git',
       path: '/var/www/production',
       'post-deploy': 'yarn install && pm2 startOrRestart ecosystem.config.js --env production',
     },
     dev: {
       user: 'node',
-      host: '212.83.163.1',
+      host: '',
       ref: 'origin/master',
-      repo: 'git@github.com:repo.git',
+      repo: 'git@github.com:shellthor/microservice-boilerplate.git',
       path: '/var/www/development',
       'post-deploy': 'yarn install && pm2 startOrRestart ecosystem.config.js --env dev',
       env: {
