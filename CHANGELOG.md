@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.2.0"></a>
+# [0.2.0](https://github.com/shellthor/microservice-boilerplate/compare/v0.1.1...v0.2.0) (2017-04-20)
+
+
+### Bug Fixes
+
+* **config:** clean up database config ([4a73001](https://github.com/shellthor/microservice-boilerplate/commit/4a73001))
+
+
+### Features
+
+* add cassandra and prettier ([0b8ce14](https://github.com/shellthor/microservice-boilerplate/commit/0b8ce14))
+* **database:** replace cassandra with oracle (#1) ([49b8bf9](https://github.com/shellthor/microservice-boilerplate/commit/49b8bf9))
+
+
+
 <a name="0.1.1"></a>
 ## [0.1.1](https://github.com/shellthor/microservice-boilerplate/compare/v0.1.0...v0.1.1) (2017-03-22)
 
