@@ -1,12 +1,20 @@
 # MicroService Boilerplate
 
+[![Build Status][build-badge]][build]
+[![Code Coverage][coverage-badge]][coverage]
+[![Dependencies][dependencyci-badge]][dependencyci]
+[![version][version-badge]][package]
+[![MIT License][license-badge]][LICENSE]
+
+[![PRs Welcome][prs-badge]][prs]
+[![Code of Conduct][coc-badge]][coc]
+
+[![Watch on GitHub][github-watch-badge]][github-watch]
+[![Star on GitHub][github-star-badge]][github-star]
+
 > A restify boilerplate for micro-services
 
 Used as a starting point for all NodeJS micro-services.
-
-[![Build Status](https://travis-ci.org/shellthor/microservice-boilerplate.svg?branch=master)](https://travis-ci.org/shellthor/microservice-boilerplate)
-[![codecov](https://codecov.io/gh/shellthor/microservice-boilerplate/branch/master/graph/badge.svg)](https://codecov.io/gh/shellthor/microservice-boilerplate)
-[![Dependency Status](https://dependencyci.com/github/shellthor/microservice-boilerplate/badge)](https://dependencyci.com/github/shellthor/microservice-boilerplate)
 
 ## Table of Contents
 
@@ -86,4 +94,25 @@ PRs accepted.
 
 ## License
 
-MIT © Jeff Detmer
+MIT ï¿½ Jeff Detmer
+
+[build-badge]: https://img.shields.io/travis/shellthor/microservice-boilerplate.svg?style=flat-square
+[build]: https://travis-ci.org/shellthor/microservice-boilerplate.svg
+[coverage-badge]: https://img.shields.io/codecov/c/github/shellthor/microservice-boilerplate.svg?style=flat-square
+[coverage]: https://codecov.io/github/shellthor/microservice-boilerplate
+[dependencyci-badge]: https://dependencyci.com/github/shellthor/microservice-boilerplate/badge?style=flat-square
+[dependencyci]: https://dependencyci.com/github/shellthor/microservice-boilerplate
+[version-badge]: https://img.shields.io/npm/v/glamorous.svg?style=flat-square
+[package]: https://github.com/shellthor/microservice-boilerplate
+[license-badge]: https://img.shields.io/github/license/shellthor/microservice-boilerpalte.svg?style=flat-square
+[license]: https://github.com/shellthor/microservice-boilerplate/blob/master/LICENSE.md
+[prs-badge]: https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square
+[prs]: http://makeapullrequest.com
+[coc-badge]: https://img.shields.io/badge/code%20of-conduct-ff69b4.svg?style=flat-square
+[coc]: https://github.com/shellthor/microservice-boileplate/blob/master/CODE_OF_CONDUCT.md
+[github-watch-badge]: https://img.shields.io/github/watchers/shellthor/microservice-boilerplate.svg?style=social
+[github-watch]: https://github.com/shellthor/microservice-boilerplate/watchers
+[github-star-badge]: https://img.shields.io/github/stars/shellthor/microservice-boilerplate.svg?style=social
+[github-star]: https://github.com/shellthor/microservice-boilerplate/stargazers
+[emojis]: https://github.com/kentcdodds/all-contributors#emoji-key
+[all-contributors]: https://github.com/kentcdodds/all-contributors
