@@ -106,8 +106,14 @@
   },
   "babel": {
     "presets": [
-      "latest",
-      "stage-0"
+      [
+        "env",
+        {
+          "targets": {
+            "node": "current"
+          }
+        }
+      ]
     ],
     "env": {
       "test": {
@@ -122,9 +128,7 @@
       "src/**/*.{ts,js,jsx}",
       "!src/**/*.test.{ts,js,jsx}",
       "!src/index.{ts,js,jsx}",
-      "!src/server.{ts,js,jsx}",
-      "!src/controllers/index.{ts,js,jsx}",
-      "!src/api/index.{ts,js,jsx}"
+      "!src/server.{ts,js,jsx}"
     ],
     "coverageThreshold": {
       "global": {
@@ -154,7 +158,6 @@
     "cassandra-driver": "^3.2.0",
     "confidence": "^3.0.2",
     "cross-env": "^3.1.4",
-    "glob-require-dir": "^1.0.3",
     "joi": "^10.3.1",
     "jsonwebtoken": "^7.3.0",
     "restify": "^4.3.0"
@@ -165,10 +168,7 @@
     "babel-eslint": "^7.2.1",
     "babel-jest": "^19.0.0",
     "babel-plugin-dynamic-import-node": "^1.0.1",
-    "babel-preset-es2015": "^6.18.0",
-    "babel-preset-latest": "^6.22.0",
-    "babel-preset-stage-0": "^6.22.0",
-    "babel-preset-stage-2": "^6.18.0",
+    "babel-preset-env": "^1.4.0",
     "babel-register": "^6.18.0",
     "commitizen": "^2.9.6",
     "coveralls": "^2.12.0",
@@ -188,7 +188,6 @@
     "prettier": "^0.22.0",
     "rimraf": "^2.6.1",
     "shelljs": "^0.7.6",
-    "standard-version": "^4.0.0",
-    "supertest": "^3.0.0"
+    "standard-version": "^4.0.0"
   }
 }
