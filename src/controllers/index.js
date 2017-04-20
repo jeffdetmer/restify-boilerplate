@@ -1,7 +1,5 @@
-import direx from 'glob-require-dir';
+import echo from './echo';
+import ping from './ping';
+import version from './version';
 
-const esModules = direx({
-  esModules: true,
-});
-
-module.exports = esModules;
+export default { echo, ping, version };
