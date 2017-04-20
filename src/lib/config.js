@@ -30,13 +30,29 @@ internals.config = {
   },
   database: {
     $filter: 'env',
-    production: {
+    dev: {
       username: '',
       password: '',
+      uri: '',
+      connectionClass: '',
+      pool: {
+        max: '',
+        min: '',
+        increment: '',
+        timeout: '',
+      },
     },
     $default: {
-      username: '',
-      password: '',
+      username: process.env.ORACLE_USER,
+      password: process.env.ORACLE_PASSWORD,
+      uri: process.env.ORACLE_URI,
+      connectionClass: process.env.ORACLE_CONNECTION_CLASS,
+      pool: {
+        max: process.env.ORACLE_POOL_MAX,
+        min: process.env.ORACLE_POOL_MIN,
+        increment: process.env.ORACLE_POOL_INCREMENT,
+        timeout: process.env.ORACLE_POOL_TIMEOUT,
+      },
     },
   },
 };
