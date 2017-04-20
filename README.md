@@ -8,6 +8,7 @@ Used as a starting point for all NodeJS micro-services.
 
 [![codecov](https://codecov.io/gh/shellthor/microservice-boilerplate/branch/master/graph/badge.svg)](https://codecov.io/gh/shellthor/microservice-boilerplate)
 
+[![Dependency Status](https://dependencyci.com/github/shellthor/microservice-boilerplate/badge)](https://dependencyci.com/github/shellthor/microservice-boilerplate)
 
 ## Table of Contents
 
