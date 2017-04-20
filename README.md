@@ -100,7 +100,7 @@ MIT � Jeff Detmer
 [build]: https://travis-ci.org/shellthor/microservice-boilerplate.svg
 [coverage-badge]: https://img.shields.io/codecov/c/github/shellthor/microservice-boilerplate.svg?style=flat-square
 [coverage]: https://codecov.io/github/shellthor/microservice-boilerplate
-[dependencyci-badge]: https://dependencyci.com/github/shellthor/microservice-boilerplate/badge?style=flat-square
+[dependencyci-badge]: https://dependencyci.com/github/shellthor/microservice-boilerplate/badge
 [dependencyci]: https://dependencyci.com/github/shellthor/microservice-boilerplate
 [version-badge]: https://img.shields.io/github/tag/shellthor/microservice-boilerplate.svg?style=flat-square
 [package]: https://github.com/shellthor/microservice-boilerplate
