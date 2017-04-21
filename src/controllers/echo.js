@@ -9,4 +9,4 @@ function post(req, res, next) {
   return next();
 }
 
-export { get, post };
+export default { get, post };
