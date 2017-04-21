@@ -1,0 +1,22 @@
+{
+  "projectName": "microservice-boilerplate",
+  "projectOwner": "shellthor",
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": true,
+  "contributors": [
+    {
+      "login": "shellthor",
+      "name": "Jeff Detmer",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/649578?v=3",
+      "profile": "http://www.jeffdetmer.com",
+      "contributions": [
+        "code",
+        "doc",
+        "test"
+      ]
+    }
+  ]
+}

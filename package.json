@@ -37,6 +37,8 @@
     "clean": "npm cache clean && rimraf node_modules doc coverage dist",
     "precommit": "npm run lint:staged",
     "commit": "git-cz",
+    "contributor:add": "all-contributors add",
+    "contributor:generate": "all-contributors generate",
     "debug": "cross-env NODE_ENV=local nodemon src/index --exec babel-node --inspect=5858 | bunyan",
     "dist:start": "npm run dist:start:local",
     "diststart:dev": "npm run build && cross-env NODE_ENV=local node dist/index.js",
@@ -165,6 +167,7 @@
     "restify": "^4.3.0"
   },
   "devDependencies": {
+    "all-contributors-cli": "^4.3.0",
     "babel-cli": "^6.23.0",
     "babel-core": "^6.23.1",
     "babel-eslint": "^7.2.1",
