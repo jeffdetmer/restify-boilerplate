@@ -1,5 +1,5 @@
 # MicroService Boilerplate
-[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors)
+
 
 [![Build Status][build-badge]][build]
 [![Code Coverage][coverage-badge]][coverage]
@@ -7,6 +7,7 @@
 [![version][version-badge]][package]
 [![MIT License][license-badge]][LICENSE]
 
+[![All Contributors][contributors]](#contributors)
 [![PRs Welcome][prs-badge]][prs]
 [![Code of Conduct][coc-badge]][coc]
 
@@ -118,9 +119,10 @@ MIT � Jeff Detmer
 [prs]: http://makeapullrequest.com
 [coc-badge]: https://img.shields.io/badge/code%20of-conduct-ff69b4.svg?style=flat-square
 [coc]: https://github.com/shellthor/microservice-boileplate/blob/master/CODE_OF_CONDUCT.md
-[github-watch-badge]: https://img.shields.io/github/watchers/shellthor/microservice-boilerplate.svg?style=social
+[github-watch-badge]: https://img.shields.io/github/watchers/shellthor/microservice-boilerplate.svg?style=flat-square
 [github-watch]: https://github.com/shellthor/microservice-boilerplate/watchers
-[github-star-badge]: https://img.shields.io/github/stars/shellthor/microservice-boilerplate.svg?style=social
+[github-star-badge]: https://img.shields.io/github/stars/shellthor/microservice-boilerplate.svg?style=flat-square
 [github-star]: https://github.com/shellthor/microservice-boilerplate/stargazers
 [emojis]: https://github.com/kentcdodds/all-contributors#emoji-key
 [all-contributors]: https://github.com/kentcdodds/all-contributors
+[contributors]: https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square
