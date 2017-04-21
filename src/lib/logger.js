@@ -1,5 +1,5 @@
 import bunyan from 'bunyan';
-import Config from '../lib/config';
+import Config from './config';
 import pkg from '../../package.json';
 
 const streams = [];

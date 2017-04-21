@@ -1,4 +1,4 @@
-import { get, post } from '../echo';
+import echo from '../echo';
 
 const req = {};
 const res = {};
@@ -15,7 +15,7 @@ describe('ECHO route', () => {
     it('returns what was sent', () => {
       req.params.name = 'this is a test';
 
-      get(req, res, next);
+      echo.get(req, res, next);
 
       expect(res.send.mock.calls.length).toBe(1);
       expect(res.send).toBeCalledWith('this is a test');
@@ -29,7 +29,7 @@ describe('ECHO route', () => {
       res.setHeader = jest.fn();
       req.contentType = jest.fn().mockReturnValue('this is a test');
 
-      post(req, res, next);
+      echo.post(req, res, next);
 
       expect(res.send.mock.calls.length).toBe(1);
       expect(res.setHeader).toBeCalledWith('Content-Type', 'this is a test');

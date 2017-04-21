@@ -19,19 +19,6 @@
       ],
       "port": 5858,
       "protocol": "inspector"
-    },
-    {
-      "type": "node",
-      "request": "launch",
-      "name": "Launch Program",
-      "program": "${workspaceRoot}\\start:dev"
-    },
-    {
-      "type": "node",
-      "request": "attach",
-      "name": "Attach to Process",
-      "address": "localhost",
-      "port": 5858
     }
   ]
 }
