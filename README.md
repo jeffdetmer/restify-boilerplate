@@ -103,7 +103,7 @@ This project follows the [all-contributors][all-contributors] specification. Con
 
 ## License
 
-MIT � Jeff Detmer
+MIT &copy; Jeff Detmer
 
 [build-badge]: https://img.shields.io/travis/shellthor/microservice-boilerplate.svg?style=flat-square
 [build]: https://travis-ci.org/shellthor/microservice-boilerplate.svg
