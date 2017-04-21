@@ -10,6 +10,9 @@ import pkg from '../package.json';
 const server = restify.createServer({
   name: pkg.name,
   version: '1.0.0',
+  log: logger.child({
+    component: 'server',
+  }),
 });
 
 // Ensure we don't drop data on uploads
@@ -35,42 +38,6 @@ if (process.env.NODE_ENV === 'prod') {
   );
 }
 
-const headers = 'X-Requested-With, Cookie, Set-Cookie, Accept, Access-Control-Allow-Credentials, Origin, Content-Type, Request-Id , X-Api-Version, X-Request-Id, X-TimezoneOffset, Authorization';
-server.opts('.*', (req, res, next) => {
-  let requestMethod;
-  if (req.headers.origin && req.headers['access-control-request-method']) {
-    res.header('Access-Control-Allow-Origin', req.headers.origin);
-    res.header('Access-Control-Allow-Credentials', 'true');
-    res.header('Access-Control-Allow-Headers', headers);
-    res.header('Access-Control-Expose-Headers', 'Set-Cookie');
-    requestMethod = req.headers['access-control-request-method'];
-    res.header('Allow', requestMethod);
-    res.header('Access-Control-Allow-Methods', requestMethod);
-    if (req.log) {
-      req.log.info(
-        {
-          url: req.url,
-          method: req.headers['access-control-request-method'],
-        },
-        'Preflight'
-      );
-    }
-    res.send(204);
-    return next();
-  }
-  res.send(404);
-  return next();
-});
-server.use((req, res, next) => {
-  if (req.headers.origin) {
-    res.header('Access-Control-Allow-Origin', req.headers.origin);
-  }
-  res.header('Access-Control-Allow-Credentials', 'true');
-  res.header('Access-Control-Allow-Headers', headers);
-  res.header('Access-Control-Expose-Headers', 'Set-Cookie');
-  return next();
-});
-
 // Use the common stuff you probably want
 server.use(restify.acceptParser(server.acceptable));
 server.use(restify.dateParser());
@@ -78,6 +45,7 @@ server.use(restify.authorizationParser());
 server.use(restify.queryParser());
 server.use(restify.gzipResponse());
 server.use(restify.bodyParser());
+server.use(restify.CORS());
 
 // Some standard handlers
 server.get('/version', version.get);
