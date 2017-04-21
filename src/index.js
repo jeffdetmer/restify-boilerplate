@@ -25,18 +25,18 @@ process.on('exit', async () => {
   process.exit(1);
 });
 
-database
-  .connect()
-  .then(() => {
-    server.listen(Config.get('/port/api'), () => {
-      logger.info(`Server is listening on port ${Config.get('/port/api')}`);
-    });
-  })
-  .catch((err) => {
+const startServer = async () => {
+  try {
+    await database.connect();
+    await server.listen(Config.get('/port/api'));
+    logger.info(`Server is listening on port ${Config.get('/port/api')}`);
+  } catch (err) {
     logger.error(err);
     logger.info('Shutting down');
-    database.shutdown();
     process.exit(1);
-  });
+  }
+};
+
+startServer();
 
 export default server;
