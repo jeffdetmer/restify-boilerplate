@@ -95,7 +95,7 @@ This project uses [Confidence](https://www.npmjs.com/package/confidence) for env
 Thanks goes to these wonderful people ([emoji key][emojis]):
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
-| [<img src="https://avatars2.githubusercontent.com/u/649578?v=3" width="100px;"/><br /><sub>Jeff Detmer</sub>](http://www.jeffdetmer.com)<br />[💻](https://github.com/shellthor/microservice-boilerplate/commits?author=shellthor "Code") [📖](https://github.com/shellthor/microservice-boilerplate/commits?author=shellthor "Documentation") [⚠️](https://github.com/shellthor/microservice-boilerplate/commits?author=shellthor "Tests") |
+| [<img src="https://avatars2.githubusercontent.com/u/649578?v=3" width="100px;"/><br /><sub>Jeff Detmer</sub>](http://www.jeffdetmer.com)<br />[💻](https://github.com/shellthor/microservice-boilerplate/commits?author=shellthor "Code") [📖](https://github.com/shellthor/microservice-boilerplate/commits?author=shellthor "Documentation") [⚠️](https://github.com/shellthor/microservice-boilerplate/commits?author=shellthor "Tests") [📢](#talk-shellthor "Talks") |
 | :---: |
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
