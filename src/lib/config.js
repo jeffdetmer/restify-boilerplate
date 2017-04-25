@@ -56,17 +56,6 @@ internals.config = {
         },
       },
     },
-    firebase: {
-      $filter: 'env',
-      local: {
-        serviceAccountKey: '',
-        url: '',
-      },
-      $default: {
-        serviceAccountKey: process.env.FIREBASE_SERVICE_ACCOUNT_KEY,
-        url: process.env.FIREBASE_URL,
-      },
-    },
   },
 };
 
