@@ -4,7 +4,7 @@
   "description": "restify microservice boilerplate",
   "main": "src/index.js",
   "repository": "git@github.com:shellthor/microservice-boilerplate.git",
-  "author": "shellthor <jeff.detmer@gmail.com>",
+  "author": "Jeff Detmer <jeff.detmer@gmail.com>",
   "license": "MIT",
   "private": true,
   "engines": {
@@ -135,8 +135,7 @@
       "!src/index.{ts,js,jsx}",
       "!src/server.{ts,js,jsx}",
       "!src/lib/database.{ts,js,jsx}",
-      "!src/lib/oracle.{ts,js,jsx}",
-      "!src/lib/firebase.{ts,js,jsx}"
+      "!src/lib/oracle.{ts,js,jsx}"
     ],
     "coverageThreshold": {
       "global": {
@@ -164,7 +163,6 @@
     "bluebird": "^3.5.0",
     "bunyan": "^1.8.9",
     "confidence": "^3.0.2",
-    "firebase-admin": "^4.2.1",
     "cross-env": "^4.0.0",
     "joi": "^10.4.1",
     "jsonwebtoken": "^7.3.0",
