@@ -1,4 +1,4 @@
-import services from '../index';
+import * as services from '../index';
 
 describe('Controllers', () => {
   it('returns a list of apis', () => {

@@ -29,29 +29,42 @@ internals.config = {
     $default: 'debug',
   },
   database: {
-    $filter: 'env',
-    dev: {
-      username: '',
-      password: '',
-      uri: '',
-      connectionClass: '',
-      pool: {
-        max: '',
-        min: '',
-        increment: '',
-        timeout: '',
+    oracle: {
+      $filter: 'env',
+      local: {
+        username: '',
+        password: '',
+        uri: '',
+        connectionClass: '',
+        pool: {
+          max: '',
+          min: '',
+          increment: '',
+          timeout: '',
+        },
+      },
+      $default: {
+        username: process.env.ORACLE_USER,
+        password: process.env.ORACLE_PASSWORD,
+        uri: process.env.ORACLE_URI,
+        connectionClass: process.env.ORACLE_CONNECTION_CLASS,
+        pool: {
+          max: process.env.ORACLE_POOL_MAX,
+          min: process.env.ORACLE_POOL_MIN,
+          increment: process.env.ORACLE_POOL_INCREMENT,
+          timeout: process.env.ORACLE_POOL_TIMEOUT,
+        },
       },
     },
-    $default: {
-      username: process.env.ORACLE_USER,
-      password: process.env.ORACLE_PASSWORD,
-      uri: process.env.ORACLE_URI,
-      connectionClass: process.env.ORACLE_CONNECTION_CLASS,
-      pool: {
-        max: process.env.ORACLE_POOL_MAX,
-        min: process.env.ORACLE_POOL_MIN,
-        increment: process.env.ORACLE_POOL_INCREMENT,
-        timeout: process.env.ORACLE_POOL_TIMEOUT,
+    firebase: {
+      $filter: 'env',
+      local: {
+        serviceAccountKey: '',
+        url: '',
+      },
+      $default: {
+        serviceAccountKey: process.env.FIREBASE_SERVICE_ACCOUNT_KEY,
+        url: process.env.FIREBASE_URL,
       },
     },
   },

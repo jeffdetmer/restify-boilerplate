@@ -2,35 +2,57 @@ import oracledb from 'oracledb';
 import Config from './config';
 import logger from './logger';
 
-let connection;
+let pool;
 
 oracledb.autoCommit = true;
 
 const config = {
-  user: Config.get('/database/username'),
-  password: Config.get('/database/password'),
-  connectionString: Config.get('/database/uri'),
-  poolMax: Config.get('/database/pool/max'),
-  poolMin: Config.get('/database/pool/min'),
-  poolIncrement: Config.get('/database/pool/increment'),
-  poolTimeout: Config.get('/database/pool/timeout'),
-  connectionClass: Config.get('/database/connectionClass'),
+  user: Config.get('/database/oracle/username'),
+  password: Config.get('/database/oracle/password'),
+  connectionString: Config.get('/database/oracle/uri'),
+  poolMax: Config.get('/database/oracle/pool/max'),
+  poolMin: Config.get('/database/oracle/pool/min'),
+  poolIncrement: Config.get('/database/oracle/pool/increment'),
+  poolTimeout: Config.get('/database/oracle/pool/timeout'),
+  connectionClass: Config.get('/database/oracle/connectionClass'),
 };
 
 async function connect() {
   try {
-    connection = await oracledb.getConnection(config);
+    pool = await oracledb.createPool(config);
   } catch (err) {
     logger.error(err);
   }
 }
 
-function getConnection() {
-  return connection;
+async function getConnection() {
+  let conn;
+  try {
+    conn = await pool.getConnection();
+  } catch (err) {
+    logger.error(err);
+  }
+  return conn;
 }
 
 function shutdown() {
-  return connection.close();
+  return pool.close();
 }
 
-export default { connect, getConnection, shutdown };
+async function execute(query) {
+  let connection;
+  let result;
+  try {
+    connection = await this.getConnection();
+    result = await connection.execute(query, [], {
+      outFormat: oracledb.OBJECT,
+      resultSet: true,
+    });
+    await connection.release();
+  } catch (err) {
+    logger.error(err);
+  }
+  return result;
+}
+
+export default { connect, getConnection, shutdown, execute };
