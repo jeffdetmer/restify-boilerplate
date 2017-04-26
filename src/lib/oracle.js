@@ -9,7 +9,7 @@ oracledb.autoCommit = true;
 const config = {
   user: Config.get('/database/oracle/username'),
   password: Config.get('/database/oracle/password'),
-  connectionString: Config.get('/database/oracle/uri'),
+  connectString: Config.get('/database/oracle/connectionString'),
   poolMax: Config.get('/database/oracle/pool/max'),
   poolMin: Config.get('/database/oracle/pool/min'),
   poolIncrement: Config.get('/database/oracle/pool/increment'),

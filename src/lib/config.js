@@ -13,8 +13,7 @@ internals.config = {
     api: {
       $filter: 'env',
       test: 9000,
-      production: process.env.PORT,
-      $default: 8000,
+      $default: process.env.PORT,
     },
   },
   baseUrl: {
@@ -34,25 +33,25 @@ internals.config = {
       local: {
         username: '',
         password: '',
-        uri: '',
+        connectionString: '', // host:port/servicename
         connectionClass: '',
         pool: {
-          max: '',
-          min: '',
-          increment: '',
-          timeout: '',
+          max: 50,
+          min: 5,
+          increment: 1,
+          timeout: 10,
         },
       },
       $default: {
         username: process.env.ORACLE_USER,
         password: process.env.ORACLE_PASSWORD,
-        uri: process.env.ORACLE_URI,
+        connectionString: process.env.ORACLE_URI,
         connectionClass: process.env.ORACLE_CONNECTION_CLASS,
         pool: {
-          max: process.env.ORACLE_POOL_MAX,
-          min: process.env.ORACLE_POOL_MIN,
-          increment: process.env.ORACLE_POOL_INCREMENT,
-          timeout: process.env.ORACLE_POOL_TIMEOUT,
+          max: Number(process.env.ORACLE_POOL_MAX),
+          min: Number(process.env.ORACLE_POOL_MIN),
+          increment: Number(process.env.ORACLE_POOL_INCREMENT),
+          timeout: Number(process.env.ORACLE_POOL_TIMEOUT),
         },
       },
     },

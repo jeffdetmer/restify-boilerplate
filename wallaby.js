@@ -1,14 +1,7 @@
 import Pkg from './package.json';
 
 module.exports = (wallaby) => ({
-  files: [
-    {
-      pattern: 'node_modules/babel-polyfill/dist/polyfill.js',
-      instrument: false,
-    },
-    'src/**/*.js',
-    '!src/**/*.test.js',
-  ],
+  files: ['src/**/*.js', '!src/**/*.test.js'],
   tests: ['src/**/*.test.js'],
   env: {
     type: 'node',

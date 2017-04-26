@@ -4,15 +4,34 @@ module.exports = {
    * http://pm2.keymetrics.io/docs/usage/application-declaration/
    */
   apps: [
-    // First application
     {
-      name: 'API',
-      script: 'src/index.js',
+      name: 'microservice-boilerplate',
+      script: './dist/index.js',
       env: {
-        NODE_ENV: 'dev',
+        NODE_ENV: 'local',
+        LD_LIBRARY_PATH: '/usr/local/lib64:$LD_LIBRARY_PATH',
+        PORT: 10000,
+        ORACLE_USER: '',
+        ORACLE_PASSWORD: '',
+        ORACLE_URI: '', // host:port/servicename
+        ORACLE_CONNECTION_CLASS: '',
+        ORACLE_POOL_MAX: 10,
+        ORACLE_POOL_MIN: 1,
+        ORACLE_POOL_INCREMENT: 1,
+        ORACLE_POOL_TIMEOUT: 10,
       },
       env_production: {
         NODE_ENV: 'production',
+        LD_LIBRARY_PATH: '/usr/local/lib64:$LD_LIBRARY_PATH',
+        PORT: 10000,
+        ORACLE_USER: '',
+        ORACLE_PASSWORD: '',
+        ORACLE_URI: '', // host:port/servicename
+        ORACLE_CONNECTION_CLASS: '',
+        ORACLE_POOL_MAX: 50,
+        ORACLE_POOL_MIN: 1,
+        ORACLE_POOL_INCREMENT: 1,
+        ORACLE_POOL_TIMEOUT: 10,
       },
     },
   ],
