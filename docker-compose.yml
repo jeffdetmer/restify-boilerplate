@@ -1,0 +1,7 @@
+web:
+  build: .
+  command: node dist/index.js
+  links:
+    - db
+db:
+  image: mongo:3.5.6

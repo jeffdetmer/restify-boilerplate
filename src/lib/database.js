@@ -1,3 +1,3 @@
-import oracle from './oracle';
+import Mongoose from 'mongoose';
 
-export default oracle;
+export default Mongoose;

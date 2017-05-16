@@ -1,3 +1,8 @@
 {
-  "vsicons.presets.angular": false
+  "vsicons.presets.angular": false,
+  "eslint.enable": true,
+  "eslint.options": {
+    "ignore-pattern": "internals/scripts",
+    "ignore-path": ".gitignore"
+  }
 }

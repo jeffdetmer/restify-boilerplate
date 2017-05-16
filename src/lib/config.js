@@ -12,6 +12,7 @@ internals.config = {
   port: {
     api: {
       $filter: 'env',
+      local: 8000,
       test: 9000,
       $default: process.env.PORT,
     },

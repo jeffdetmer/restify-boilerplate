@@ -11,25 +11,6 @@
     "node": "^6.10.2",
     "npm": "^3.10.8"
   },
-  "scripts-info": {
-    "info": "Lists available scripts",
-    "build": "Build and clean up existing build, copy source into dist",
-    "clean": "Clean up existing test, build, and coverage output",
-    "commit": "Run git commit wizard",
-    "dist:start": "Build and clean up existing build, copy source into dist and run codebase in dist using 'dev' NODE_ENV, pipe stdout to bunyan",
-    "docker:build": "Build docker image",
-    "docker:ssh": "Run docker bash",
-    "docker:start": "Run docker container",
-    "docker:stop": "Stop and delete docker container",
-    "lint": "Run lint against everything",
-    "pm2:start": "Build and clean up existing build, copy source into dist and run codebase through PM2",
-    "pm2:status": "Display PM2 process status",
-    "pm2:stop": "Stop and delete the PM2 process",
-    "release": "Generates changelog from commit messages and automatically bumps application version",
-    "start": "Run application using the 'dev' NODE_ENV, pipe stdout to bunyan",
-    "test": "Clean up existing test spec build, build test spec, execute jest test runner, and generate coverage",
-    "test:watch": "Watch codebase, trigger jest test runner when source code changes"
-  },
   "scripts": {
     "prebuild": "yarn run build:clean",
     "build": "babel src -d dist --source-maps",
@@ -39,7 +20,7 @@
     "commit": "git-cz",
     "contributor:add": "all-contributors add",
     "contributor:generate": "all-contributors generate",
-    "debug": "cross-env NODE_ENV=local nodemon src/index --exec babel-node --inspect=5858 | bunyan",
+    "debug": "cross-env NODE_ENV=local babel-node src/index --inspect=5858 | bunyan",
     "docker:bash": "docker exec -t -i microservice-boilerplate bash",
     "docker:build": "docker build -t microservice-boilerplate .",
     "docker:ssh": "yarn run docker:bash",
@@ -76,8 +57,8 @@
   "eslintConfig": {
     "parser": "babel-eslint",
     "extends": [
-      "eslint-config-airbnb-base",
-      "plugin:jest/recommended"
+      "plugin:jest/recommended",
+      "airbnb-base"
     ],
     "env": {
       "node": true,
@@ -116,7 +97,8 @@
             "node": "current"
           }
         }
-      ]
+      ],
+      "stage-0"
     ],
     "env": {
       "test": {
@@ -137,10 +119,10 @@
     ],
     "coverageThreshold": {
       "global": {
-        "statements": 98,
-        "branches": 98,
-        "functions": 98,
-        "lines": 98
+        "statements": 75,
+        "branches": 75,
+        "functions": 75,
+        "lines": 75
       }
     },
     "moduleDirectories": [
@@ -160,38 +142,43 @@
     "bluebird": "^3.5.0",
     "bunyan": "^1.8.9",
     "confidence": "^3.0.2",
-    "cross-env": "^4.0.0",
-    "joi": "^10.4.1",
-    "jsonwebtoken": "^7.3.0",
-    "oracledb": "^1.13.1",
-    "restify": "^4.3.0"
+    "cross-env": "^5.0.0",
+    "joi": "^10.4.2",
+    "jsonwebtoken": "^7.4.0",
+    "lodash": "^4.17.4",
+    "mongoose": "^4.9.9",
+    "mysql": "^2.13.0",
+    "restify": "^4.3.0",
+    "slug": "^0.9.1",
+    "sworm": "^3.6.0"
   },
   "devDependencies": {
     "all-contributors-cli": "^4.3.0",
+    "axios-mock-adapter": "^1.8.1",
     "babel-cli": "^6.24.0",
     "babel-core": "^6.24.0",
     "babel-eslint": "^7.2.3",
-    "babel-jest": "^19.0.0",
-    "babel-plugin-dynamic-import-node": "^1.0.1",
+    "babel-jest": "^20.0.1",
+    "babel-plugin-dynamic-import-node": "^1.0.2",
     "babel-preset-env": "^1.4.0",
+    "babel-preset-stage-0": "^6.24.1",
     "babel-register": "^6.24.0",
     "chalk": "^1.1.3",
-    "codecov": "^2.1.0",
+    "codecov": "^2.2.0",
     "commitizen": "^2.9.6",
     "cz-conventional-changelog": "^2.0.0",
     "eslint": "^3.19.0",
-    "eslint-config-airbnb-base": "^11.1.2",
+    "eslint-config-airbnb-base": "^11.1.3",
     "eslint-formatter-pretty": "^1.1.0",
     "eslint-plugin-import": "^2.2.0",
-    "eslint-plugin-jest": "^19.0.1",
+    "eslint-plugin-jest": "^20.0.1",
     "husky": "^0.13.3",
-    "jest-cli": "^19.0.2",
-    "lint-staged": "^3.4.0",
+    "jest-cli": "^20.0.1",
+    "lint-staged": "^3.4.1",
     "nodemon": "^1.11.0",
-    "npm-scripts-info": "^0.3.6",
-    "pm2": "^2.4.3",
+    "pkg": "^3.0.4",
     "pre-commit": "^1.2.2",
-    "prettier": "^1.2.2",
+    "prettier": "^1.3.0",
     "rimraf": "^2.6.1",
     "shelljs": "^0.7.7",
     "standard-version": "^4.0.0",

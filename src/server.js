@@ -1,6 +1,6 @@
 import restify from 'restify';
 import logger from './lib/logger';
-import { version, ping, echo } from './controllers';
+import { version, ping, echo, api } from './controllers';
 import pkg from '../package.json';
 
 /**
@@ -40,18 +40,22 @@ if (process.env.NODE_ENV === 'prod') {
 
 // Use the common stuff you probably want
 server.use(restify.acceptParser(server.acceptable));
-server.use(restify.dateParser());
 server.use(restify.authorizationParser());
+server.use(restify.CORS());
+server.use(restify.dateParser());
 server.use(restify.queryParser());
 server.use(restify.gzipResponse());
 server.use(restify.bodyParser());
-server.use(restify.CORS());
+server.use(restify.requestLogger());
+server.use(restify.fullResponse());
 
 // Some standard handlers
 server.get('/version', version.get);
 server.get('/ping', ping.get);
 server.get('/echo/:name', echo.get);
 server.post('/echo', echo.post);
+server.get('/api', api.get);
+server.post('/api/:batch', api.post);
 
 server.on(
   'after',
