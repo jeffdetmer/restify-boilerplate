@@ -1,27 +1,28 @@
 import restify from 'restify';
 import { camelCase, mapKeys } from 'lodash';
 
-function handleDataIfArray(data) {
-  let arr = data;
-  if (arr.length === 1) {
-    arr = data.pop();
-    return mapKeys(arr, (val, key) => camelCase(key));
-  }
-  return arr.map((obj) => mapKeys(obj, (val, key) => camelCase(key)));
+function objectToCamelCase(data) {
+  return mapKeys(data, (val, key) => camelCase(key));
 }
 
-function handleDataIfObject(data) {
-  return mapKeys(data, (val, key) => camelCase(key));
+function handleDataIfArray(data) {
+  return data.map((obj) => objectToCamelCase(obj));
+}
+
+function handleDataIfString(data) {
+  return data;
 }
 
 function handleData(data) {
   if (Array.isArray(data)) {
     return handleDataIfArray(data);
+  } else if (typeof data === 'string') {
+    return handleDataIfString(data);
   }
-  return handleDataIfObject(data);
+  return objectToCamelCase(data);
 }
 
-function prepareResponse(data, status, message) {
+function prepareResponse(status, data, message = '') {
   const response = {
     status,
     message,
@@ -31,13 +32,13 @@ function prepareResponse(data, status, message) {
   return response;
 }
 
-function send200(res, data, next) {
-  res.send(prepareResponse(data, 200));
+function send200(res, next, data = {}) {
+  res.send(prepareResponse(200, data));
   return next();
 }
 
-function send201(res, data, next) {
-  res.send(201, prepareResponse(data, 201));
+function send201(res, next, data = {}) {
+  res.send(201, prepareResponse(201, data));
   return next();
 }
 
@@ -46,9 +47,9 @@ function send204(res, next) {
   return next();
 }
 
-function send400(res, next) {
-  res.send(400);
-  return next(new restify.BadRequestError());
+function send400(res, next, err = new restify.BadRequestError()) {
+  res.send(400, prepareResponse(400, {}, err.message || 'Invalid Request'));
+  return next(err);
 }
 
 function send404(res, next) {
@@ -56,10 +57,12 @@ function send404(res, next) {
   return next(new restify.NotFoundError());
 }
 
-function send500(res, err, next) {
-  res.send(500, prepareResponse(500, 'Internal Server Error'));
-  return next(new restify.InternalServerError());
+function send500(res, next, err = new restify.InternalServerError()) {
+  res.send(
+    500,
+    prepareResponse(500, {}, err.message || 'Internal Server Error')
+  );
+  return next(err);
 }
 
-
-export default { send200, send201, send204, send400, send404, send500 };
+export { send200, send201, send204, send400, send404, send500 };

@@ -7,13 +7,6 @@ const config = {
     user: Config.get('/database/mysql/username'),
     password: Config.get('/database/mysql/password'),
     connectString: Config.get('/database/mysql/connectionString'),
-    pool: true,
-    options: {
-      poolMax: Number(Config.get('/database/mysql/pool/max')),
-      poolMin: Number(Config.get('/database/mysql/pool/min')),
-      poolIncrement: Number(Config.get('/database/mysql/pool/increment')),
-      poolTimeout: Number(Config.get('/database/mysql/pool/timeout')),
-    },
   },
 };
 

@@ -1,3 +1,3 @@
-import Mongoose from 'mongoose';
+import sworm from './sworm';
 
-export default Mongoose;
+export default sworm;

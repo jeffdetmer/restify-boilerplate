@@ -1,5 +1,6 @@
 import restify from 'restify';
 import logger from './lib/logger';
+import Config from './lib/config';
 import { version, ping, echo, api } from './controllers';
 import pkg from '../package.json';
 
@@ -27,7 +28,7 @@ server.pre(restify.pre.userAgentConnection());
 // Set a per request bunyan logger (with requestid filled in)
 server.use(restify.requestLogger());
 
-if (process.env.NODE_ENV === 'prod') {
+if (Config.get('/throttle')) {
   // Allow 10 requests/second by IP, and burst to 25
   server.use(
     restify.throttle({
@@ -66,9 +67,9 @@ server.on(
   })
 );
 
-server.on('uncaughtException', (req, res, route, e) => {
-  logger.error(e);
-  res.send(new restify.InternalError(e, e.message || 'unexpected error'));
+server.on('uncaughtException', (req, res, route, err) => {
+  logger.error(err);
+  res.send(new restify.InternalError(err, err.message || 'unexpected error'));
   return true;
 });
 
