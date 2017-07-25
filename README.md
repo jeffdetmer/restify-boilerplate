@@ -1,11 +1,12 @@
 # MicroService Boilerplate
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/shellthor/microservice-boilerplate.svg)](https://greenkeeper.io/)
+
 
 
 [![Build Status][build-badge]][build]
 [![Code Coverage][coverage-badge]][coverage]
 [![Dependencies][dependencyci-badge]][dependencyci]
+[![Greenkeeper badge][greenkeeper-badge][greenkeeper]
 [![version][version-badge]][package]
 [![MIT License][license-badge]][LICENSE]
 
@@ -113,6 +114,8 @@ MIT &copy; Jeff Detmer
 [coverage]: https://codecov.io/github/shellthor/microservice-boilerplate
 [dependencyci-badge]: https://dependencyci.com/github/shellthor/microservice-boilerplate/badge
 [dependencyci]: https://dependencyci.com/github/shellthor/microservice-boilerplate
+[greenkeeper-badge]: https://badges.greenkeeper.io/shellthor/microservice-boilerplate.svg?style=flat-square
+[greenkeeper]: https://greenkeeper.io/
 [version-badge]: https://img.shields.io/github/tag/shellthor/microservice-boilerplate.svg?style=flat-square
 [package]: https://github.com/shellthor/microservice-boilerplate
 [license-badge]: https://img.shields.io/github/license/mashape/apistatus.svg?style=flat-square
