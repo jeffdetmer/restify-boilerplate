@@ -106,7 +106,7 @@ This project follows the [all-contributors][all-contributors] specification. Con
 MIT &copy; Jeff Detmer
 
 [build-badge]: https://img.shields.io/travis/shellthor/microservice-boilerplate.svg?style=flat-square
-[build]: https://travis-ci.org/shellthor/microservice-boilerplate.svg
+[build]: https://travis-ci.org/shellthor/microservice-boilerplate
 [coverage-badge]: https://img.shields.io/codecov/c/github/shellthor/microservice-boilerplate.svg?style=flat-square
 [coverage]: https://codecov.io/github/shellthor/microservice-boilerplate
 [dependencyci-badge]: https://dependencyci.com/github/shellthor/microservice-boilerplate/badge
