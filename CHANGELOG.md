@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.4.0"></a>
+# [0.4.0](https://github.com/shellthor/microservice-boilerplate/compare/v0.3.0...v0.4.0) (2017-07-25)
+
+
+### Features
+
+* update dependencies, replace confidence with dotenv, add example service ([ad4a7ab](https://github.com/shellthor/microservice-boilerplate/commit/ad4a7ab))
+* update rest-helper, sworm, and examples ([641ee57](https://github.com/shellthor/microservice-boilerplate/commit/641ee57))
+
+
+
 <a name="0.3.0"></a>
 # 0.3.0 (2017-04-26)
 
