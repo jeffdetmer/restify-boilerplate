@@ -3,7 +3,7 @@
 [![Build Status][build-badge]][build]
 [![Code Coverage][coverage-badge]][coverage]
 [![Dependencies][dependencyci-badge]][dependencyci]
-[![Greenkeeper badge][greenkeeper-badge][greenkeeper]
+[![Greenkeeper badge][greenkeeper-badge]][greenkeeper]
 [![version][version-badge]][package]
 [![MIT License][license-badge]][LICENSE]
 
