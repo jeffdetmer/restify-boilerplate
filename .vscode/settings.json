@@ -4,5 +4,7 @@
   "eslint.options": {
     "ignore-pattern": "internals/scripts",
     "ignore-path": ".gitignore"
-  }
+  },
+  "tslint.enable": false,
+  "tslint.jsEnable": false
 }

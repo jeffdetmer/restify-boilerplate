@@ -1,4 +1,5 @@
 import restify from 'restify';
+import corsMiddleware from 'restify-cors-middleware';
 import logger from './lib/logger';
 import Config from './lib/config';
 import { version, ping, echo, api } from './controllers';
@@ -10,11 +11,17 @@ import pkg from '../package.json';
 
 const server = restify.createServer({
   name: pkg.name,
-  version: '1.0.0',
+  version: pkg.version,
   log: logger.child({
     component: 'server',
   }),
 });
+
+const cors = corsMiddleware({
+  origins: ['*'],
+});
+
+server.pre(cors.preflight);
 
 // Ensure we don't drop data on uploads
 server.pre(restify.pre.pause());
@@ -26,9 +33,9 @@ server.pre(restify.pre.sanitizePath());
 server.pre(restify.pre.userAgentConnection());
 
 // Set a per request bunyan logger (with requestid filled in)
-server.use(restify.requestLogger());
+server.use(restify.plugins.requestLogger());
 
-if (Config.get('/throttle')) {
+if (Config.throttle) {
   // Allow 10 requests/second by IP, and burst to 25
   server.use(
     restify.throttle({
@@ -40,15 +47,14 @@ if (Config.get('/throttle')) {
 }
 
 // Use the common stuff you probably want
-server.use(restify.acceptParser(server.acceptable));
-server.use(restify.authorizationParser());
-server.use(restify.CORS());
-server.use(restify.dateParser());
-server.use(restify.queryParser());
-server.use(restify.gzipResponse());
-server.use(restify.bodyParser());
-server.use(restify.requestLogger());
-server.use(restify.fullResponse());
+server.use(restify.plugins.acceptParser(server.acceptable));
+server.use(restify.plugins.authorizationParser());
+server.use(cors.actual);
+server.use(restify.plugins.dateParser());
+server.use(restify.plugins.queryParser());
+server.use(restify.plugins.gzipResponse());
+server.use(restify.plugins.bodyParser());
+server.use(restify.plugins.fullResponse());
 
 // Some standard handlers
 server.get('/version', version.get);
@@ -60,10 +66,13 @@ server.post('/api/:batch', api.post);
 
 server.on(
   'after',
-  restify.auditLogger({
+  restify.plugins.auditLogger({
+    event: 'after',
     log: logger.child({
       component: 'audit',
     }),
+    server,
+    printLog: true,
   })
 );
 

@@ -1,4 +1,4 @@
-import restify from 'restify';
+import errors from 'restify-errors';
 import { camelCase, mapKeys } from 'lodash';
 
 function objectToCamelCase(data) {
@@ -47,22 +47,22 @@ function send204(res, next) {
   return next();
 }
 
-function send400(res, next, err = new restify.BadRequestError()) {
+function send400(res, next, err = new errors.BadRequestError()) {
   res.send(400, prepareResponse(400, {}, err.message || 'Invalid Request'));
   return next(err);
 }
 
 function send404(res, next) {
   res.send(404);
-  return next(new restify.NotFoundError());
+  return next(new errors.NotFoundError());
 }
 
-function send500(res, next, err = new restify.InternalServerError()) {
+function send500(res, next, err = new errors.InternalServerError()) {
   res.send(
     500,
     prepareResponse(500, {}, err.message || 'Internal Server Error')
   );
-  return next(err);
+  return next(new errors.InternalServerError(err.message));
 }
 
 export { send200, send201, send204, send400, send404, send500 };

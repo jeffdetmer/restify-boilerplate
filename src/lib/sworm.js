@@ -4,15 +4,14 @@ import Config from './config';
 const config = {
   driver: 'mysql',
   config: {
-    user: Config.get('/database/mysql/username'),
-    password: Config.get('/database/mysql/password'),
-    connectString: Config.get('/database/mysql/connectionString'),
+    user: Config.database.mysql.username,
+    password: Config.database.mysql.password,
+    connectString: Config.database.mysql.connectionString,
   },
 };
 
-const db = sworm.db(config);
-
 async function getConnection() {
+  const db = sworm.db(config);
   await db.connect();
   return db;
 }

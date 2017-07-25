@@ -23,8 +23,8 @@ process.on('exit', async () => {
 
 const startServer = async () => {
   try {
-    await server.listen(Config.get('/port/api'));
-    logger.info(`Server is listening on port ${Config.get('/port/api')}`);
+    await server.listen(Config.port);
+    logger.info(`Server is listening on port ${Config.port}`);
   } catch (err) {
     logger.error(err);
     logger.info('Shutting down');

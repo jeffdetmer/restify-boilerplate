@@ -4,7 +4,7 @@ import pkg from '../../package.json';
 
 const streams = [];
 streams.push({
-  level: Config.get('/logLevel'),
+  level: Config.logLevel,
   stream: process.stdout,
 });
 
@@ -16,7 +16,7 @@ const logger = bunyan.createLogger({
     res: bunyan.stdSerializers.res,
     err: bunyan.stdSerializers.err,
   },
-  env: Config.get('/env'),
+  env: Config.env,
   streams,
 });
 

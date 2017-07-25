@@ -1,4 +1,4 @@
-import restify from 'restify';
+import errors from 'restify-errors';
 import {
   send200,
   send201,
@@ -305,7 +305,7 @@ describe('rest-helper', () => {
     it('should call res.send with a 500 status and valid body when passed an error', () => {
       expect.assertions(4);
 
-      const err = new restify.InternalServerError('This is an error');
+      const err = new errors.InternalServerError('This is an error');
       const expected = {
         status: 500,
         message: 'This is an error',
@@ -318,7 +318,7 @@ describe('rest-helper', () => {
       expect(res.send).toBeCalledWith(500, expected);
       expect(next.mock.calls.length).toBe(1);
       expect(next).toBeCalledWith(
-        new restify.InternalServerError('This is an error')
+        new errors.InternalServerError('This is an error')
       );
     });
 
@@ -335,7 +335,7 @@ describe('rest-helper', () => {
       expect(res.send.mock.calls.length).toBe(1);
       expect(res.send).toBeCalledWith(500, expected);
       expect(next.mock.calls.length).toBe(1);
-      expect(next).toBeCalledWith(new restify.InternalServerError());
+      expect(next).toBeCalledWith(new errors.InternalServerError());
     });
   });
 });

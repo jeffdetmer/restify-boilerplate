@@ -1,4 +1,3 @@
-import database from './database';
-import rest from './rest';
+import person from './person';
 
-export { database, rest };
+export { person }; // eslint-disable-line
