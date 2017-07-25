@@ -1,5 +1,7 @@
 # MicroService Boilerplate
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/shellthor/microservice-boilerplate.svg)](https://greenkeeper.io/)
+
 
 [![Build Status][build-badge]][build]
 [![Code Coverage][coverage-badge]][coverage]
