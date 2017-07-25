@@ -1,8 +1,5 @@
 # MicroService Boilerplate
 
-
-
-
 [![Build Status][build-badge]][build]
 [![Code Coverage][coverage-badge]][coverage]
 [![Dependencies][dependencyci-badge]][dependencyci]
