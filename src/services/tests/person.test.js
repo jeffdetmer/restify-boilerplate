@@ -1,10 +1,15 @@
 import { person } from '../index';
 
 describe('person service', () => {
-  it('works', () => {
+  it('person::get works', async () => {
     const expected = 'hello';
 
-    const result = person.get(expected);
-    expect(result).toBe(expected);
+    await expect(person.get(expected)).resolves.toEqual(expected);
+  });
+
+  it('person::save works', async () => {
+    const expected = 'hello';
+
+    await expect(person.save(expected)).resolves.toEqual(expected);
   });
 });

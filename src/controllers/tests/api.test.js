@@ -1,4 +1,7 @@
 import api from '../api';
+import person from '../../services/person';
+
+jest.mock('../../services/person');
 
 const req = {};
 const res = {};
@@ -12,26 +15,27 @@ describe('api', () => {
   });
 
   describe('api::get', () => {
-    it('executes successfully', () => {
-      expect.assertions(3);
+    it('executes successfully', async () => {
+      expect.assertions(4);
 
       req.params.name = 'Jeff';
-      api.get(req, res, next);
-
+      await api.get(req, res, next);
+      expect(person.get.mock.calls.length).toBe(1);
       expect(res.send.mock.calls.length).toBe(1);
       expect(res.send).toBeCalledWith({
-        data: 'Jeff',
+        data: req.params.name,
         message: '',
         status: 200,
       });
       expect(next.mock.calls.length).toBe(1);
     });
 
-    it('returns an error', () => {
-      expect.assertions(3);
+    it('returns an error', async () => {
+      expect.assertions(4);
 
-      api.get(req, res, next);
+      await api.get(req, res, next);
 
+      expect(person.get.mock.calls.length).toBe(1);
       expect(res.send.mock.calls.length).toBe(1);
       expect(res.send).toBeCalledWith(500, {
         data: {},
@@ -43,8 +47,8 @@ describe('api', () => {
   });
 
   describe('api::post', () => {
-    it('accepts a valid person', () => {
-      expect.assertions(4);
+    it('accepts a valid person', async () => {
+      expect.assertions(5);
       req.body = {
         name: 'Jeff Detmer',
         age: 29,
@@ -53,8 +57,9 @@ describe('api', () => {
       res.setHeader = jest.fn();
       req.contentType = jest.fn().mockReturnValue('application/json');
 
-      api.post(req, res, next);
+      await api.post(req, res, next);
 
+      expect(person.save.mock.calls.length).toBe(1);
       expect(res.send.mock.calls.length).toBe(1);
       expect(res.setHeader).toBeCalledWith('Content-Type', 'application/json');
       expect(res.send).toBeCalledWith(201, {

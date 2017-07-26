@@ -9,7 +9,7 @@ async function get(req, res, next) {
     if (!('name' in req.params)) {
       throw new errors.InternalServerError();
     }
-    data = person.get(req.params.name);
+    data = await person.get(req.params.name);
     send200(res, next, data);
   } catch (err) {
     logger.error(err);
@@ -27,7 +27,7 @@ async function post(req, res, next) {
     if (!('name' in data)) {
       throw new errors.InvalidArgumentError('Invalid Person');
     }
-    result = data;
+    result = await person.save(data);
     send201(res, next, result);
   } catch (err) {
     logger.error(err);

@@ -1,5 +1,9 @@
-function get(data) {
+async function get(data) {
   return data;
 }
 
-export default { get };
+async function save(data) {
+  return data;
+}
+
+export default { get, save };
