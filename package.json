@@ -1,6 +1,6 @@
 {
   "name": "microservice-boilerplate",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "description": "restify microservice boilerplate",
   "main": "src/index.js",
   "repository": "git@github.com:shellthor/microservice-boilerplate.git",
@@ -51,7 +51,10 @@
   },
   "eslintConfig": {
     "parser": "babel-eslint",
-    "extends": ["plugin:jest/recommended", "airbnb-base"],
+    "extends": [
+      "plugin:jest/recommended",
+      "airbnb-base"
+    ],
     "env": {
       "node": true,
       "es6": true,
@@ -62,11 +65,22 @@
       "ecmaVersion": 7,
       "sourceType": "module"
     },
-    "plugins": ["jest"],
+    "plugins": [
+      "jest"
+    ],
     "rules": {
-      "arrow-parens": ["error", "always"],
-      "arrow-body-style": [2, "as-needed"],
-      "comma-dangle": [2, "always-multiline"]
+      "arrow-parens": [
+        "error",
+        "always"
+      ],
+      "arrow-body-style": [
+        2,
+        "as-needed"
+      ],
+      "comma-dangle": [
+        2,
+        "always-multiline"
+      ]
     }
   },
   "babel": {
@@ -83,7 +97,9 @@
     ],
     "env": {
       "test": {
-        "plugins": ["dynamic-import-node"]
+        "plugins": [
+          "dynamic-import-node"
+        ]
       }
     }
   },
@@ -104,7 +120,10 @@
         "lines": 75
       }
     },
-    "moduleDirectories": ["node_modules", "src"],
+    "moduleDirectories": [
+      "node_modules",
+      "src"
+    ],
     "testRegex": "src/.*\\.test\\.js$",
     "testEnvironment": "node",
     "mapCoverage": true
@@ -115,7 +134,10 @@
     }
   },
   "pkg": {
-    "targets": ["node6-linux-x64", "node6-windows-x64"]
+    "targets": [
+      "node6-linux-x64",
+      "node6-windows-x64"
+    ]
   },
   "dependencies": {
     "axios": "^0.16.2",
