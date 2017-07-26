@@ -21,11 +21,6 @@
     "contributor:add": "all-contributors add",
     "contributor:generate": "all-contributors generate",
     "debug": "cross-env NODE_ENV=local babel-node src/index --inspect=5858 | bunyan",
-    "docker:bash": "docker exec -t -i microservice-boilerplate bash",
-    "docker:build": "docker build -t microservice-boilerplate .",
-    "docker:ssh": "yarn run docker:bash",
-    "docker:start": "docker run --name microservice-boilerplate -p 10000:10000 -e cross-env NODE_ENV=production -d microservice-boilerplate",
-    "docker:stop": "docker stop microservice-boilerplate && docker rm microservice-boilerplate",
     "info": "npm-scripts-info",
     "lint": "yarn run lint:es",
     "lint:es": "yarn run lint:eslint -- . ",
@@ -56,10 +51,7 @@
   },
   "eslintConfig": {
     "parser": "babel-eslint",
-    "extends": [
-      "plugin:jest/recommended",
-      "airbnb-base"
-    ],
+    "extends": ["plugin:jest/recommended", "airbnb-base"],
     "env": {
       "node": true,
       "es6": true,
@@ -70,22 +62,11 @@
       "ecmaVersion": 7,
       "sourceType": "module"
     },
-    "plugins": [
-      "jest"
-    ],
+    "plugins": ["jest"],
     "rules": {
-      "arrow-parens": [
-        "error",
-        "always"
-      ],
-      "arrow-body-style": [
-        2,
-        "as-needed"
-      ],
-      "comma-dangle": [
-        2,
-        "always-multiline"
-      ]
+      "arrow-parens": ["error", "always"],
+      "arrow-body-style": [2, "as-needed"],
+      "comma-dangle": [2, "always-multiline"]
     }
   },
   "babel": {
@@ -102,9 +83,7 @@
     ],
     "env": {
       "test": {
-        "plugins": [
-          "dynamic-import-node"
-        ]
+        "plugins": ["dynamic-import-node"]
       }
     }
   },
@@ -125,12 +104,10 @@
         "lines": 75
       }
     },
-    "moduleDirectories": [
-      "node_modules",
-      "src"
-    ],
+    "moduleDirectories": ["node_modules", "src"],
     "testRegex": "src/.*\\.test\\.js$",
-    "testEnvironment": "node"
+    "testEnvironment": "node",
+    "mapCoverage": true
   },
   "config": {
     "commitizen": {
@@ -138,10 +115,7 @@
     }
   },
   "pkg": {
-    "targets": [
-      "node6-linux-x64",
-      "node6-windows-x64"
-    ]
+    "targets": ["node6-linux-x64", "node6-windows-x64"]
   },
   "dependencies": {
     "axios": "^0.16.2",
