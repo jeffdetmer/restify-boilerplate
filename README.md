@@ -4,6 +4,7 @@
 [![Code Coverage][coverage-badge]][coverage]
 [![Dependencies][dependencyci-badge]][dependencyci]
 [![Greenkeeper badge][greenkeeper-badge]][greenkeeper]
+[![Sync Vulnerabilities][synk-badge]][synk-project]
 [![version][version-badge]][package]
 [![MIT License][license-badge]][LICENSE]
 
@@ -128,3 +129,5 @@ MIT &copy; Jeff Detmer
 [emojis]: https://github.com/kentcdodds/all-contributors#emoji-key
 [all-contributors]: https://github.com/kentcdodds/all-contributors
 [contributors]: https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square
+[synk-badge]: https://snyk.io/test/github/shellthor/microservice-boilerplate/badge.svg
+[synk-project]: https://snyk.io/test/github/shellthor/microservice-boilerplate
