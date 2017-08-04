@@ -51,10 +51,7 @@
   },
   "eslintConfig": {
     "parser": "babel-eslint",
-    "extends": [
-      "plugin:jest/recommended",
-      "airbnb-base"
-    ],
+    "extends": ["plugin:jest/recommended", "airbnb-base"],
     "env": {
       "node": true,
       "es6": true,
@@ -65,22 +62,11 @@
       "ecmaVersion": 7,
       "sourceType": "module"
     },
-    "plugins": [
-      "jest"
-    ],
+    "plugins": ["jest"],
     "rules": {
-      "arrow-parens": [
-        "error",
-        "always"
-      ],
-      "arrow-body-style": [
-        2,
-        "as-needed"
-      ],
-      "comma-dangle": [
-        2,
-        "always-multiline"
-      ]
+      "arrow-parens": ["error", "always"],
+      "arrow-body-style": [2, "as-needed"],
+      "comma-dangle": [2, "always-multiline"]
     }
   },
   "babel": {
@@ -97,9 +83,7 @@
     ],
     "env": {
       "test": {
-        "plugins": [
-          "dynamic-import-node"
-        ]
+        "plugins": ["dynamic-import-node"]
       }
     }
   },
@@ -120,10 +104,7 @@
         "lines": 75
       }
     },
-    "moduleDirectories": [
-      "node_modules",
-      "src"
-    ],
+    "moduleDirectories": ["node_modules", "src"],
     "testRegex": "src/.*\\.test\\.js$",
     "testEnvironment": "node",
     "mapCoverage": true
@@ -134,59 +115,56 @@
     }
   },
   "pkg": {
-    "targets": [
-      "node6-linux-x64",
-      "node6-windows-x64"
-    ]
+    "targets": ["node6-linux-x64", "node6-windows-x64"]
   },
   "dependencies": {
-    "axios": "^0.16.2",
-    "bluebird": "^3.5.0",
-    "bunyan": "^1.8.12",
-    "cross-env": "^5.0.2",
-    "dotenv": "^4.0.0",
-    "dotenv-safe": "^4.0.4",
-    "joi": "^10.6.0",
-    "jsonwebtoken": "^7.4.1",
-    "lodash": "^4.17.4",
-    "mongoose": "^4.11.5",
-    "mysql": "^2.14.1",
-    "restify": "^5.0.1",
-    "restify-cors-middleware": "^1.0.1",
-    "restify-errors": "^4.3.0",
-    "sworm": "^3.7.1"
+    "axios": "0.16.2",
+    "bluebird": "3.5.0",
+    "bunyan": "1.8.12",
+    "cross-env": "5.0.2",
+    "dotenv": "4.0.0",
+    "dotenv-safe": "4.0.4",
+    "joi": "10.6.0",
+    "jsonwebtoken": "7.4.1",
+    "lodash": "4.17.4",
+    "mongoose": "4.11.5",
+    "mysql": "2.14.1",
+    "restify": "5.0.1",
+    "restify-cors-middleware": "1.0.1",
+    "restify-errors": "4.3.0",
+    "sworm": "3.7.1"
   },
   "devDependencies": {
-    "all-contributors-cli": "^4.3.0",
-    "axios-mock-adapter": "^1.9.0",
-    "babel-cli": "^6.24.0",
-    "babel-core": "^6.25.0",
-    "babel-eslint": "^7.2.3",
-    "babel-jest": "^20.0.3",
-    "babel-plugin-dynamic-import-node": "^1.0.2",
-    "babel-preset-env": "^1.6.0",
-    "babel-preset-stage-0": "^6.24.1",
-    "babel-register": "^6.24.0",
-    "chalk": "^2.0.1",
-    "codecov": "^2.2.0",
-    "commitizen": "^2.9.6",
-    "cz-conventional-changelog": "^2.0.0",
-    "eslint": "^4.3.0",
-    "eslint-config-airbnb-base": "^11.3.1",
-    "eslint-formatter-pretty": "^1.1.0",
-    "eslint-plugin-import": "^2.7.0",
-    "eslint-plugin-jest": "^20.0.3",
-    "husky": "^0.14.3",
-    "jest-cli": "^20.0.4",
-    "lint-staged": "^4.0.2",
-    "nodemon": "^1.11.0",
-    "nsp": "^2.7.0",
-    "pkg": "^4.1.4",
-    "pre-commit": "^1.2.2",
-    "prettier": "^1.5.3",
-    "rimraf": "^2.6.1",
-    "shelljs": "^0.7.8",
-    "standard-version": "^4.2.0",
-    "workshop-setup": "^1.1.0"
+    "all-contributors-cli": "4.3.0",
+    "axios-mock-adapter": "1.9.0",
+    "babel-cli": "6.24.0",
+    "babel-core": "6.25.0",
+    "babel-eslint": "7.2.3",
+    "babel-jest": "20.0.3",
+    "babel-plugin-dynamic-import-node": "1.0.2",
+    "babel-preset-env": "1.6.0",
+    "babel-preset-stage-0": "6.24.1",
+    "babel-register": "6.24.0",
+    "chalk": "2.0.1",
+    "codecov": "2.2.0",
+    "commitizen": "2.9.6",
+    "cz-conventional-changelog": "2.0.0",
+    "eslint": "4.3.0",
+    "eslint-config-airbnb-base": "11.3.1",
+    "eslint-formatter-pretty": "1.1.0",
+    "eslint-plugin-import": "2.7.0",
+    "eslint-plugin-jest": "20.0.3",
+    "husky": "0.14.3",
+    "jest-cli": "20.0.4",
+    "lint-staged": "4.0.2",
+    "nodemon": "1.11.0",
+    "nsp": "2.7.0",
+    "pkg": "4.1.4",
+    "pre-commit": "1.2.2",
+    "prettier": "1.5.3",
+    "rimraf": "2.6.1",
+    "shelljs": "0.7.8",
+    "standard-version": "4.2.0",
+    "workshop-setup": "1.1.0"
   }
 }
