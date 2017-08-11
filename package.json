@@ -131,7 +131,7 @@
     "mysql": "2.14.1",
     "restify": "5.0.1",
     "restify-cors-middleware": "1.0.1",
-    "restify-errors": "4.3.0",
+    "restify-errors": "5.0.0",
     "sworm": "3.7.1"
   },
   "devDependencies": {
