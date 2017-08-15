@@ -121,7 +121,7 @@
     "axios": "0.16.2",
     "bluebird": "3.5.0",
     "bunyan": "1.8.12",
-    "cross-env": "5.0.2",
+    "cross-env": "5.0.4",
     "dotenv": "4.0.0",
     "dotenv-safe": "4.0.4",
     "joi": "10.6.0",
