@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.5.1"></a>
+## [0.5.1](https://github.com/shellthor/microservice-boilerplate/compare/v0.5.0...v0.5.1) (2017-08-15)
+
+
+### Bug Fixes
+
+* **package:** update cross-env to version 5.0.5 ([#15](https://github.com/shellthor/microservice-boilerplate/issues/15)) ([bf043c0](https://github.com/shellthor/microservice-boilerplate/commit/bf043c0)), closes [#6](https://github.com/shellthor/microservice-boilerplate/issues/6)
+* **package:** update mongoose to version 4.11.7 ([#13](https://github.com/shellthor/microservice-boilerplate/issues/13)) ([178a6a5](https://github.com/shellthor/microservice-boilerplate/commit/178a6a5)), closes [#9](https://github.com/shellthor/microservice-boilerplate/issues/9)
+
+
+
 <a name="0.5.0"></a>
 # [0.5.0](https://github.com/shellthor/microservice-boilerplate/compare/v0.4.1...v0.5.0) (2017-08-03)
 
