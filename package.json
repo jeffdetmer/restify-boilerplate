@@ -159,7 +159,7 @@
     "lint-staged": "4.0.2",
     "nodemon": "1.11.0",
     "nsp": "2.7.0",
-    "pkg": "4.1.4",
+    "pkg": "4.2.2",
     "pre-commit": "1.2.2",
     "prettier": "1.5.3",
     "rimraf": "2.6.1",
