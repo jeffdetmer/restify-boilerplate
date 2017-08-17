@@ -147,7 +147,7 @@
     "dotenv": "4.0.0",
     "dotenv-safe": "4.0.4",
     "joi": "10.6.0",
-    "jsonwebtoken": "7.4.2",
+    "jsonwebtoken": "7.4.3",
     "lodash": "4.17.4",
     "mongoose": "4.11.7",
     "mysql": "2.14.1",
