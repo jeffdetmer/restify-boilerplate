@@ -13,7 +13,7 @@
   },
   "scripts": {
     "prebuild": "yarn run build:clean",
-    "build": "babel src -d dist --source-maps",
+    "build": "babel src -d dist --source-maps --ignore 'src/**/__mocks__/*.js'",
     "build:clean": "rimraf ./dist",
     "clean": "yarn cache clean && rimraf node_modules doc coverage dist",
     "precommit": "yarn run lint:staged",
