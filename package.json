@@ -149,7 +149,7 @@
     "joi": "10.6.0",
     "jsonwebtoken": "7.4.3",
     "lodash": "4.17.4",
-    "mongoose": "4.11.7",
+    "mongoose": "4.11.8",
     "mysql": "2.14.1",
     "restify": "5.2.0",
     "restify-cors-middleware": "1.0.1",
