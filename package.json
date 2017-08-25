@@ -20,7 +20,7 @@
     "commit": "git-cz",
     "contributor:add": "all-contributors add",
     "contributor:generate": "all-contributors generate",
-    "debug": "cross-env NODE_ENV=local babel-node src/index --inspect=5858 | bunyan",
+    "debug": "nodemon bin/serve --exec \"node --inspect --require dotenv-safe/config --require babel-register\" | bunyan",
     "info": "npm-scripts-info",
     "lint": "yarn run lint:es",
     "lint:es": "yarn run lint:eslint -- . ",
@@ -36,7 +36,7 @@
     "reportcoverage": "codecov",
     "setup": "npm i shelljs workshop-setup babel-preset-env babel-cli && babel-node ./internals/scripts/setup.js",
     "start": "yarn run start:dev",
-    "start:dev": "nodemon src/index --exec \"node --require dotenv-safe/config --require babel-register\" | bunyan",
+    "start:dev": "nodemon bin/serve --exec \"node --require dotenv-safe/config --require babel-register\" | bunyan",
     "pretest": "yarn run test:clean && yarn run lint",
     "test": "cross-env NODE_ENV=test cross-env LOG_LEVEL=fatal jest --coverage",
     "test:clean": "rimraf ./coverage",
@@ -110,7 +110,7 @@
       "!src/index.{ts,js,jsx}",
       "!src/server.{ts,js,jsx}",
       "!src/lib/database.{ts,js,jsx}",
-      "!src/lib/sworm.{ts,js,jsx}"
+      "!src/lib/sequelize.{ts,js,jsx}"
     ],
     "coverageThreshold": {
       "global": {
@@ -143,18 +143,20 @@
     "axios": "0.16.2",
     "bluebird": "3.5.0",
     "bunyan": "1.8.12",
+    "bunyan-sentry-stream": "1.1.0",
     "cross-env": "5.0.5",
     "dotenv": "4.0.0",
     "dotenv-safe": "4.0.4",
     "joi": "10.6.0",
     "jsonwebtoken": "7.4.3",
     "lodash": "4.17.4",
-    "mongoose": "4.11.7",
-    "mysql": "2.14.1",
+    "pg": "7.2.0",
+    "pg-hstore": "2.3.2",
+    "raven": "2.1.2",
     "restify": "5.2.0",
     "restify-cors-middleware": "1.0.1",
     "restify-errors": "5.0.0",
-    "sworm": "3.7.1"
+    "sequelize": "4.7.5"
   },
   "devDependencies": {
     "all-contributors-cli": "4.4.0",
@@ -178,7 +180,7 @@
     "eslint-plugin-jest": "20.0.3",
     "husky": "0.14.3",
     "jest-cli": "20.0.4",
-    "lint-staged": "4.0.3",
+    "lint-staged": "4.0.4",
     "nodemon": "1.11.0",
     "nsp": "2.7.0",
     "pkg": "4.2.4",

@@ -1,3 +1,4 @@
+import errors from 'restify-errors';
 import api from '../api';
 import person from '../../services/person';
 
@@ -9,7 +10,7 @@ let next;
 
 describe('api', () => {
   beforeEach(() => {
-    req.params = {};
+    req.query = {};
     next = jest.fn();
     res.send = jest.fn();
   });
@@ -18,12 +19,12 @@ describe('api', () => {
     it('executes successfully', async () => {
       expect.assertions(4);
 
-      req.params.name = 'Jeff';
+      req.query.name = 'Jeff';
       await api.get(req, res, next);
       expect(person.get.mock.calls.length).toBe(1);
       expect(res.send.mock.calls.length).toBe(1);
       expect(res.send).toBeCalledWith({
-        data: req.params.name,
+        data: req.query.name,
         message: '',
         status: 200,
       });
@@ -39,7 +40,7 @@ describe('api', () => {
       expect(res.send.mock.calls.length).toBe(1);
       expect(res.send).toBeCalledWith(500, {
         data: {},
-        message: 'Internal Server Error',
+        error: new errors.InternalServerError(),
         status: 500,
       });
       expect(next.mock.calls.length).toBe(1);
@@ -86,7 +87,7 @@ describe('api', () => {
       expect(res.setHeader).toBeCalledWith('Content-Type', 'application/json');
       expect(res.send).toBeCalledWith(400, {
         data: {},
-        message: 'Invalid Person',
+        error: new errors.InvalidArgumentError('Invalid Person'),
         status: 400,
       });
       expect(next.mock.calls.length).toBe(1);

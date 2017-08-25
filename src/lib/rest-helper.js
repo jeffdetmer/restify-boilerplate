@@ -31,6 +31,15 @@ function prepareResponse(status, data, message = '') {
 
   return response;
 }
+function prepareErrorResponse(status, data, error) {
+  const response = {
+    status,
+    error,
+    data: handleData(data),
+  };
+
+  return response;
+}
 
 function send200(res, next, data = {}) {
   res.send(prepareResponse(200, data));
@@ -48,21 +57,18 @@ function send204(res, next) {
 }
 
 function send400(res, next, err = new errors.BadRequestError()) {
-  res.send(400, prepareResponse(400, {}, err.message || 'Invalid Request'));
-  return next(err);
+  res.send(400, prepareErrorResponse(400, {}, err || 'Invalid Request'));
+  return next();
 }
 
 function send404(res, next) {
-  res.send(404);
-  return next(new errors.NotFoundError());
+  res.send(404, prepareErrorResponse(404, {}, new errors.NotFoundError()));
+  return next();
 }
 
 function send500(res, next, err = new errors.InternalServerError()) {
-  res.send(
-    500,
-    prepareResponse(500, {}, err.message || 'Internal Server Error')
-  );
-  return next(new errors.InternalServerError(err.message));
+  res.send(500, prepareErrorResponse(500, {}, err || 'Internal Server Error'));
+  return next();
 }
 
 export { send200, send201, send204, send400, send404, send500 };

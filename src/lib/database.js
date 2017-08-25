@@ -1,3 +1,3 @@
-import sworm from './sworm';
+import sequelize from './sequelize';
 
-export default sworm;
+export default sequelize;

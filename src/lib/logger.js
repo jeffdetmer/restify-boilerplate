@@ -1,12 +1,24 @@
 import bunyan from 'bunyan';
+import raven from 'raven';
+import sentryStream from 'bunyan-sentry-stream';
 import Config from './config';
 import pkg from '../../package.json';
 
 const streams = [];
-streams.push({
-  level: Config.logLevel,
-  stream: process.stdout,
-});
+if (!Config.iapiId) {
+  streams.push({
+    level: Config.logLevel,
+    stream: process.stdout,
+  });
+}
+
+if (Config.sentryDSN) {
+  const client = new raven.Client(Config.sentryDSN, {
+    release: pkg.version,
+    environment: Config.env,
+  });
+  streams.push(sentryStream(client));
+}
 
 const logger = bunyan.createLogger({
   name: pkg.name,

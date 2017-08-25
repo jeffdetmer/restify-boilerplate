@@ -262,7 +262,7 @@ describe('rest-helper', () => {
 
       const expected = {
         status: 400,
-        message: 'Hello',
+        error: { message: 'Hello' },
         data: {},
       };
 
@@ -277,7 +277,7 @@ describe('rest-helper', () => {
       expect.assertions(3);
       const expected = {
         status: 400,
-        message: 'Invalid Request',
+        error: new errors.BadRequestError(),
         data: {},
       };
 
@@ -293,10 +293,16 @@ describe('rest-helper', () => {
     it('should call res.send with a 404 status', () => {
       expect.assertions(3);
 
+      const expected = {
+        status: 404,
+        error: new errors.NotFoundError(),
+        data: {},
+      };
+
       send404(res, next);
 
       expect(res.send.mock.calls.length).toBe(1);
-      expect(res.send).toBeCalledWith(404);
+      expect(res.send).toBeCalledWith(404, expected);
       expect(next.mock.calls.length).toBe(1);
     });
   });
@@ -308,7 +314,7 @@ describe('rest-helper', () => {
       const err = new errors.InternalServerError('This is an error');
       const expected = {
         status: 500,
-        message: 'This is an error',
+        error: err,
         data: {},
       };
 
@@ -317,16 +323,14 @@ describe('rest-helper', () => {
       expect(res.send.mock.calls.length).toBe(1);
       expect(res.send).toBeCalledWith(500, expected);
       expect(next.mock.calls.length).toBe(1);
-      expect(next).toBeCalledWith(
-        new errors.InternalServerError('This is an error')
-      );
+      expect(next).toBeCalledWith();
     });
 
     it('should call res.send with a 500 status and valid body when not passed an error', () => {
       expect.assertions(4);
       const expected = {
         status: 500,
-        message: 'Internal Server Error',
+        error: new errors.InternalServerError(),
         data: {},
       };
 
@@ -335,7 +339,7 @@ describe('rest-helper', () => {
       expect(res.send.mock.calls.length).toBe(1);
       expect(res.send).toBeCalledWith(500, expected);
       expect(next.mock.calls.length).toBe(1);
-      expect(next).toBeCalledWith(new errors.InternalServerError());
+      expect(next).toBeCalledWith();
     });
   });
 });

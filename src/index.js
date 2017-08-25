@@ -2,9 +2,12 @@ import logger from './lib/logger';
 import Config from './lib/config';
 import server from './server';
 
+const app = server;
+
 process.on('uncaughtException', async (err) => {
   logger.error(`Caught exception: \n${err.stack}` || JSON.stringify(err));
   logger.error('Exiting...');
+  app.close();
   process.exit(1);
 });
 
@@ -12,18 +15,20 @@ process.on('uncaughtException', async (err) => {
   process.on(sig, async () => {
     logger.info(`${sig} received`);
     logger.info('Exiting...');
+    app.close();
     process.exit(1);
   });
 });
 
 process.on('exit', async () => {
   logger.info('Shutting down');
+  app.close();
   process.exit(1);
 });
 
 const startServer = async () => {
   try {
-    await server.listen(Config.port);
+    await app.listen(Config.port);
     logger.info(`Server is listening on port ${Config.port}`);
   } catch (err) {
     logger.error(err);
@@ -32,6 +37,4 @@ const startServer = async () => {
   }
 };
 
-startServer();
-
-export default server;
+export { app, logger, startServer };
