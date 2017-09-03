@@ -30,7 +30,7 @@ describe('rest-helper', () => {
           firstName: 'John',
         },
       };
-      send200(res, next, { first_name: 'John' });
+      send200(res, next, { firstName: 'John' });
 
       expect(res.send.mock.calls.length).toBe(1);
       expect(res.send).toBeCalledWith(expected);
@@ -49,7 +49,7 @@ describe('rest-helper', () => {
           },
         ],
       };
-      send200(res, next, [{ first_name: 'John' }]);
+      send200(res, next, [{ firstName: 'John' }]);
 
       expect(res.send.mock.calls.length).toBe(1);
       expect(res.send).toBeCalledWith(expected);
@@ -150,7 +150,7 @@ describe('rest-helper', () => {
           firstName: 'Jeff',
         },
       };
-      send201(res, next, { first_name: 'Jeff' });
+      send201(res, next, { firstName: 'Jeff' });
 
       expect(res.send.mock.calls.length).toBe(1);
       expect(res.send).toBeCalledWith(201, expected);
@@ -169,7 +169,7 @@ describe('rest-helper', () => {
           },
         ],
       };
-      send201(res, next, [{ first_name: 'John' }]);
+      send201(res, next, [{ firstName: 'John' }]);
 
       expect(res.send.mock.calls.length).toBe(1);
       expect(res.send).toBeCalledWith(201, expected);

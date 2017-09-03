@@ -6,7 +6,7 @@ function objectToCamelCase(data) {
 }
 
 function handleDataIfArray(data) {
-  return data.map((obj) => objectToCamelCase(obj));
+  return data.map(obj => objectToCamelCase(obj));
 }
 
 function handleDataIfString(data) {

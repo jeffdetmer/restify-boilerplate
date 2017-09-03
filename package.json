@@ -20,23 +20,29 @@
     "commit": "git-cz",
     "contributor:add": "all-contributors add",
     "contributor:generate": "all-contributors generate",
-    "debug": "nodemon bin/serve --exec \"node --inspect --require dotenv-safe/config --require babel-register\" | bunyan",
+    "debug":
+      "nodemon bin/serve --exec \"node --inspect --require dotenv-safe/config --require babel-register\" | bunyan",
     "info": "npm-scripts-info",
     "lint": "yarn run lint:es",
     "lint:es": "yarn run lint:eslint -- . ",
-    "lint:eslint": "eslint --ignore-path .gitignore --format=node_modules/eslint-formatter-pretty",
+    "lint:eslint":
+      "eslint --ignore-path .gitignore --format=node_modules/eslint-formatter-pretty",
     "lint:fix": "yarn run lint:eslint -- --fix .",
     "lint:staged": "lint-staged",
     "pm2:start": "yarn run build && pm2 startOrReload ecosystem.config.js",
     "pm2:status": "pm2 status",
-    "pm2:stop": "pm2 stop ecosystem.config.js && pm2 delete ecosystem.config.js",
-    "prettier": "prettier --trailing-comma es5 --single-quote --write 'src/**/*.js'",
+    "pm2:stop":
+      "pm2 stop ecosystem.config.js && pm2 delete ecosystem.config.js",
+    "prettier":
+      "prettier --trailing-comma es5 --single-quote --write 'src/**/*.js'",
     "postprettier": "yarn run lint:fix",
     "release": "standard-version",
     "reportcoverage": "codecov",
-    "setup": "npm i shelljs workshop-setup babel-preset-env babel-cli && babel-node ./internals/scripts/setup.js",
+    "setup":
+      "npm i shelljs workshop-setup babel-preset-env babel-cli && babel-node ./internals/scripts/setup.js",
     "start": "yarn run start:dev",
-    "start:dev": "nodemon bin/serve --exec \"node --require dotenv-safe/config --require babel-register\" | bunyan",
+    "start:dev":
+      "nodemon bin/serve --exec \"node --require dotenv-safe/config --require babel-register\" | bunyan",
     "pretest": "yarn run test:clean && yarn run lint",
     "test": "cross-env NODE_ENV=test cross-env LOG_LEVEL=fatal jest --coverage",
     "test:clean": "rimraf ./coverage",
@@ -50,38 +56,7 @@
     ]
   },
   "eslintConfig": {
-    "parser": "babel-eslint",
-    "extends": [
-      "plugin:jest/recommended",
-      "airbnb-base"
-    ],
-    "env": {
-      "node": true,
-      "es6": true,
-      "jest": true,
-      "jest/globals": true
-    },
-    "parserOptions": {
-      "ecmaVersion": 7,
-      "sourceType": "module"
-    },
-    "plugins": [
-      "jest"
-    ],
-    "rules": {
-      "arrow-parens": [
-        "error",
-        "always"
-      ],
-      "arrow-body-style": [
-        2,
-        "as-needed"
-      ],
-      "comma-dangle": [
-        2,
-        "always-multiline"
-      ]
-    }
+    "extends": ["shellthor", "shellthor/jest"]
   },
   "babel": {
     "presets": [
@@ -97,9 +72,7 @@
     ],
     "env": {
       "test": {
-        "plugins": [
-          "dynamic-import-node"
-        ]
+        "plugins": ["dynamic-import-node"]
       }
     }
   },
@@ -120,10 +93,7 @@
         "lines": 75
       }
     },
-    "moduleDirectories": [
-      "node_modules",
-      "src"
-    ],
+    "moduleDirectories": ["node_modules", "src"],
     "testRegex": "src/.*\\.test\\.js$",
     "testEnvironment": "node",
     "mapCoverage": true
@@ -134,10 +104,7 @@
     }
   },
   "pkg": {
-    "targets": [
-      "node6-linux-x64",
-      "node6-windows-x64"
-    ]
+    "targets": ["node6-linux-x64", "node6-windows-x64"]
   },
   "dependencies": {
     "axios": "0.16.2",
@@ -150,13 +117,13 @@
     "joi": "10.6.0",
     "jsonwebtoken": "7.4.3",
     "lodash": "4.17.4",
-    "pg": "7.2.0",
+    "pg": "7.3.0",
     "pg-hstore": "2.3.2",
     "raven": "2.1.2",
     "restify": "5.2.0",
     "restify-cors-middleware": "1.0.1",
     "restify-errors": "5.0.0",
-    "sequelize": "4.7.5"
+    "sequelize": "4.8.0"
   },
   "devDependencies": {
     "all-contributors-cli": "4.4.0",
@@ -173,11 +140,9 @@
     "codecov": "2.3.0",
     "commitizen": "2.9.6",
     "cz-conventional-changelog": "2.0.0",
-    "eslint": "4.5.0",
-    "eslint-config-airbnb-base": "11.3.2",
+    "eslint": "4.6.1",
+    "eslint-config-shellthor": "1.0.1",
     "eslint-formatter-pretty": "1.1.0",
-    "eslint-plugin-import": "2.7.0",
-    "eslint-plugin-jest": "20.0.3",
     "husky": "0.14.3",
     "jest-cli": "20.0.4",
     "lint-staged": "4.0.4",
@@ -185,7 +150,7 @@
     "nsp": "2.7.0",
     "pkg": "4.2.4",
     "pre-commit": "1.2.2",
-    "prettier": "1.5.3",
+    "prettier": "1.6.1",
     "rimraf": "2.6.1",
     "shelljs": "0.7.8",
     "standard-version": "4.2.0",

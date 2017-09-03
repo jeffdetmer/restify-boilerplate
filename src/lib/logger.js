@@ -1,8 +1,8 @@
 import bunyan from 'bunyan';
 import raven from 'raven';
 import sentryStream from 'bunyan-sentry-stream';
-import Config from './config';
 import pkg from '../../package.json';
+import Config from './config';
 
 const streams = [];
 if (!Config.iapiId) {

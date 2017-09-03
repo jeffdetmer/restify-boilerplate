@@ -35,7 +35,7 @@ async function post(req, res, next) {
   }
 }
 
-async function error(req, res, next) {
+function error(req, res, next) {
   try {
     throw new errors.RestError('This is expected');
   } catch (err) {

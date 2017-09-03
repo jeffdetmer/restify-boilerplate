@@ -1,9 +1,9 @@
 import restify from 'restify';
 import corsMiddleware from 'restify-cors-middleware';
+import pkg from '../package.json';
 import logger from './lib/logger';
 import Config from './lib/config';
 import { version, ping, echo, api } from './controllers';
-import pkg from '../package.json';
 
 /**
  * Returns a server with all routes defined on it
@@ -37,13 +37,11 @@ server.use(restify.plugins.requestLogger());
 
 if (Config.throttle) {
   // Allow 10 requests/second by IP, and burst to 25
-  server.use(
-    restify.throttle({
-      burst: 25,
-      rate: 10,
-      ip: true,
-    })
-  );
+  server.use(restify.throttle({
+    burst: 25,
+    rate: 10,
+    ip: true,
+  }));
 }
 
 // Use the common stuff you probably want
@@ -74,7 +72,7 @@ server.on(
     }),
     server,
     printLog: true,
-  })
+  }),
 );
 
 server.on('uncaughtException', (req, res, route, err) => {

@@ -7,23 +7,23 @@ const app = server;
 process.on('uncaughtException', async (err) => {
   logger.error(`Caught exception: \n${err.stack}` || JSON.stringify(err));
   logger.error('Exiting...');
-  app.close();
-  process.exit(1);
+  await app.close();
+  process.exit(1); // eslint-disable-line no-process-exit
 });
 
-['SIGTERM', 'SIGINT'].forEach((sig) => {
+['SIGTERM', 'SIGINT', 'SIGKILL'].forEach((sig) => {
   process.on(sig, async () => {
     logger.info(`${sig} received`);
     logger.info('Exiting...');
-    app.close();
-    process.exit(1);
+    await app.close();
+    process.exit(1); // eslint-disable-line no-process-exit
   });
 });
 
 process.on('exit', async () => {
   logger.info('Shutting down');
-  app.close();
-  process.exit(1);
+  await app.close();
+  process.exit(1); // eslint-disable-line no-process-exit
 });
 
 const startServer = async () => {
@@ -33,7 +33,7 @@ const startServer = async () => {
   } catch (err) {
     logger.error(err);
     logger.info('Shutting down');
-    process.exit(1);
+    process.exit(1); // eslint-disable-line no-process-exit
   }
 };
 

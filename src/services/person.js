@@ -1,9 +1,11 @@
 async function get(data) {
-  return data;
+  const result = await data;
+  return result;
 }
 
 async function save(data) {
-  return data;
+  const result = await data;
+  return result;
 }
 
 export default { get, save };

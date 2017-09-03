@@ -1,6 +1,6 @@
 import Pkg from './package.json';
 
-module.exports = (wallaby) => ({
+module.exports = wallaby => ({
   files: ['src/**/*.js', '!src/**/*.test.js'],
   tests: ['src/**/*.test.js'],
   env: {
