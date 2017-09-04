@@ -108,28 +108,28 @@ This project follows the [all-contributors][all-contributors] specification. Con
 
 MIT &copy; Jeff Detmer
 
-[build-badge]: https://img.shields.io/travis/shellthor/microservice-boilerplate.svg?style=flat-square
-[build]: https://travis-ci.org/shellthor/microservice-boilerplate
-[coverage-badge]: https://img.shields.io/codecov/c/github/shellthor/microservice-boilerplate.svg?style=flat-square
-[coverage]: https://codecov.io/github/shellthor/microservice-boilerplate
-[dependencyci-badge]: https://dependencyci.com/github/shellthor/microservice-boilerplate/badge
-[dependencyci]: https://dependencyci.com/github/shellthor/microservice-boilerplate
-[greenkeeper-badge]: https://badges.greenkeeper.io/shellthor/microservice-boilerplate.svg?style=flat-square
+[build-badge]: https://img.shields.io/travis/shellthor/restify-boilerplate.svg?style=flat-square
+[build]: https://travis-ci.org/shellthor/restify-boilerplate
+[coverage-badge]: https://img.shields.io/codecov/c/github/shellthor/restify-boilerplate.svg?style=flat-square
+[coverage]: https://codecov.io/github/shellthor/restify-boilerplate
+[dependencyci-badge]: https://dependencyci.com/github/shellthor/restify-boilerplate/badge
+[dependencyci]: https://dependencyci.com/github/shellthor/restify-boilerplate
+[greenkeeper-badge]: https://badges.greenkeeper.io/shellthor/restify-boilerplate.svg?style=flat-square
 [greenkeeper]: https://greenkeeper.io/
-[version-badge]: https://img.shields.io/github/tag/shellthor/microservice-boilerplate.svg?style=flat-square
-[package]: https://github.com/shellthor/microservice-boilerplate
+[version-badge]: https://img.shields.io/github/tag/shellthor/restify-boilerplate.svg?style=flat-square
+[package]: https://github.com/shellthor/restify-boilerplate
 [license-badge]: https://img.shields.io/github/license/mashape/apistatus.svg?style=flat-square
-[license]: https://github.com/shellthor/microservice-boilerplate/blob/master/LICENSE.md
+[license]: https://github.com/shellthor/restify-boilerplate/blob/master/LICENSE.md
 [prs-badge]: https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square
 [prs]: http://makeapullrequest.com
 [coc-badge]: https://img.shields.io/badge/code%20of-conduct-ff69b4.svg?style=flat-square
-[coc]: https://github.com/shellthor/microservice-boileplate/blob/master/CODE_OF_CONDUCT.md
-[github-watch-badge]: https://img.shields.io/github/watchers/shellthor/microservice-boilerplate.svg?style=flat-square
-[github-watch]: https://github.com/shellthor/microservice-boilerplate/watchers
-[github-star-badge]: https://img.shields.io/github/stars/shellthor/microservice-boilerplate.svg?style=flat-square
-[github-star]: https://github.com/shellthor/microservice-boilerplate/stargazers
+[coc]: https://github.com/shellthor/restify-boileplate/blob/master/CODE_OF_CONDUCT.md
+[github-watch-badge]: https://img.shields.io/github/watchers/shellthor/restify-boilerplate.svg?style=flat-square
+[github-watch]: https://github.com/shellthor/restify-boilerplate/watchers
+[github-star-badge]: https://img.shields.io/github/stars/shellthor/restify-boilerplate.svg?style=flat-square
+[github-star]: https://github.com/shellthor/restify-boilerplate/stargazers
 [emojis]: https://github.com/kentcdodds/all-contributors#emoji-key
 [all-contributors]: https://github.com/kentcdodds/all-contributors
 [contributors]: https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square
-[synk-badge]: https://snyk.io/test/github/shellthor/microservice-boilerplate/badge.svg?style=flat-square
-[synk-project]: https://snyk.io/test/github/shellthor/microservice-boilerplate
+[synk-badge]: https://snyk.io/test/github/shellthor/restify-boilerplate/badge.svg?style=flat-square
+[synk-project]: https://snyk.io/test/github/shellthor/restify-boilerplate
