@@ -38,8 +38,6 @@
     "postprettier": "yarn run lint:fix",
     "release": "standard-version",
     "reportcoverage": "codecov",
-    "setup":
-      "npm i shelljs workshop-setup babel-preset-env babel-cli && babel-node ./internals/scripts/setup.js",
     "start": "yarn run start:dev",
     "start:dev":
       "nodemon bin/serve --exec \"node --require dotenv-safe/config --require babel-register\" | bunyan",
@@ -136,12 +134,11 @@
     "babel-preset-env": "1.6.0",
     "babel-preset-stage-0": "6.24.1",
     "babel-register": "6.26.0",
-    "chalk": "2.1.0",
     "codecov": "2.3.0",
     "commitizen": "2.9.6",
     "cz-conventional-changelog": "2.0.0",
     "eslint": "4.6.1",
-    "eslint-config-shellthor": "1.0.1",
+    "eslint-config-shellthor": "2.0.0",
     "eslint-formatter-pretty": "1.1.0",
     "husky": "0.14.3",
     "jest-cli": "20.0.4",
@@ -152,8 +149,6 @@
     "pre-commit": "1.2.2",
     "prettier": "1.6.1",
     "rimraf": "2.6.1",
-    "shelljs": "0.7.8",
-    "standard-version": "4.2.0",
-    "workshop-setup": "1.1.0"
+    "standard-version": "4.2.0"
   }
 }

@@ -57,7 +57,7 @@ function send204(res, next) {
 }
 
 function send400(res, next, err = new errors.BadRequestError()) {
-  res.send(400, prepareErrorResponse(400, {}, err || 'Invalid Request'));
+  res.send(400, prepareErrorResponse(400, {}, err));
   return next();
 }
 
@@ -67,7 +67,7 @@ function send404(res, next) {
 }
 
 function send500(res, next, err = new errors.InternalServerError()) {
-  res.send(500, prepareErrorResponse(500, {}, err || 'Internal Server Error'));
+  res.send(500, prepareErrorResponse(500, {}, err));
   return next();
 }
 
