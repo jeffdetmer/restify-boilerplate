@@ -93,4 +93,18 @@ describe('api', () => {
       expect(next.mock.calls.length).toBe(1);
     });
   });
+  describe('api::error', () => {
+    it('throws an error', () => {
+      expect.assertions(2);
+
+      api.error(req, res, next);
+
+      expect(res.send.mock.calls.length).toBe(1);
+      expect(res.send).toBeCalledWith(400, {
+        data: {},
+        error: new errors.RestError('This is expected'),
+        status: 400,
+      });
+    });
+  });
 });
