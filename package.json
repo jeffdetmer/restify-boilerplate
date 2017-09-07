@@ -108,7 +108,7 @@
     "axios": "0.16.2",
     "bluebird": "3.5.0",
     "bunyan": "1.8.12",
-    "bunyan-sentry-stream": "1.1.0",
+    "bunyan-sentry-stream": "1.2.0",
     "cross-env": "5.0.5",
     "dotenv": "4.0.0",
     "dotenv-safe": "4.0.4",
