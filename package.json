@@ -1,5 +1,5 @@
 {
-  "name": "@shellthor/microservice-boilerplate",
+  "name": "restify-boilerplate",
   "version": "0.5.1",
   "description": "restify microservice boilerplate",
   "main": "src/index.js",
@@ -8,8 +8,9 @@
   "license": "MIT",
   "private": false,
   "engines": {
-    "node": "^6.11.1",
-    "npm": "^3.10.10"
+    "node": "^8.4.0",
+    "npm": "^5.4.1",
+    "yarn": "^1.0.0"
   },
   "scripts": {
     "prebuild": "yarn run build:clean",
@@ -22,17 +23,12 @@
     "contributor:generate": "all-contributors generate",
     "debug":
       "nodemon bin/serve --exec \"node --inspect --require dotenv-safe/config --require babel-register\" | bunyan",
-    "info": "npm-scripts-info",
     "lint": "yarn run lint:es",
     "lint:es": "yarn run lint:eslint -- . ",
     "lint:eslint":
       "eslint --ignore-path .gitignore --format=node_modules/eslint-formatter-pretty",
     "lint:fix": "yarn run lint:eslint -- --fix .",
     "lint:staged": "lint-staged",
-    "pm2:start": "yarn run build && pm2 startOrReload ecosystem.config.js",
-    "pm2:status": "pm2 status",
-    "pm2:stop":
-      "pm2 stop ecosystem.config.js && pm2 delete ecosystem.config.js",
     "prettier":
       "prettier --trailing-comma es5 --single-quote --write 'src/**/*.js'",
     "postprettier": "yarn run lint:fix",

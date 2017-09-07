@@ -177,5 +177,3 @@ $RECYCLE.BIN/
 *.lnk
 
 # End of https://www.gitignore.io/api/osx,git,node,grunt,sonar,linux,windows,typings,archives,visualstudiocode
-
-yarn.lock

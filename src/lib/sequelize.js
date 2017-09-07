@@ -13,7 +13,7 @@ const config = {
   username: Config.database.postgres.username,
   password: Config.database.postgres.password,
   database: Config.database.postgres.database,
-  logging: logger.debug(),
+  logging: logger.debug.bind(logger),
 };
 
 const sequelize = new Sequelize(config);
