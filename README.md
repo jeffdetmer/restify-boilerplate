@@ -15,8 +15,6 @@
 [![Watch on GitHub][github-watch-badge]][github-watch]
 [![Star on GitHub][github-star-badge]][github-star]
 
-<a href="https://app.codesponsor.io/link/YwpXR8o4sTRwPPnBH7sSn88F/shellthor/restify-boilerplate" rel="nofollow"><img src="https://app.codesponsor.io/embed/YwpXR8o4sTRwPPnBH7sSn88F/shellthor/restify-boilerplate.svg" style="width: 888px; height: 68px;" alt="Sponsor" /></a>
-
 > A restify boilerplate for micro-services
 
 Used as a starting point for all NodeJS micro-services.
@@ -103,6 +101,10 @@ Thanks goes to these wonderful people ([emoji key][emojis]):
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 This project follows the [all-contributors][all-contributors] specification. Contributions of any kind welcome!
+
+## Sponsors
+
+<a href="https://app.codesponsor.io/link/YwpXR8o4sTRwPPnBH7sSn88F/shellthor/restify-boilerplate" rel="nofollow"><img src="https://app.codesponsor.io/embed/YwpXR8o4sTRwPPnBH7sSn88F/shellthor/restify-boilerplate.svg" style="width: 888px; height: 68px;" alt="Sponsor" /></a>
 
 ## License
 
