@@ -1,4 +1,9 @@
-# MicroService Boilerplate
+<h1 align="center">
+  Restify Boilerplate
+</h1>
+<p align="center" style="font-size: 1.2rem;">A restify boilerplate for micro-services</p>
+
+<hr />
 
 [![Build Status][build-badge]][build]
 [![Code Coverage][coverage-badge]][coverage]
@@ -15,85 +20,42 @@
 [![Watch on GitHub][github-watch-badge]][github-watch]
 [![Star on GitHub][github-star-badge]][github-star]
 
-> A restify boilerplate for micro-services
+## The problem
 
-Used as a starting point for all NodeJS micro-services.
+You need a starting point to build a production ready, restify based micro-service that connects to a relational database.
+## This solution
+
+This project contains a starting point for a micro-service and implements logging, audit logs, a relational ORM, configuration, 
+sample services, controllers, and models, integration with [Sentry](https://sentry.io/), Jest unit tests, and more.
 
 ## Table of Contents
 
-- [Install](#install)
+- [Installation](#installation)
 - [Usage](#usage)
-- [Contribute](#contribute)
-- [License](#license)
+- [Inspiration](#inspiration)
+- [Other Solutions](#other-solutions)
+- [Contributors](#contributors)
+- [LICENSE](#license)
 
-## Install
+## Installation
 
-Install all of the pre-requisites and then install the dependencies.
-
-### Install NVM or Nodist
-
-`for OSX or Linux`
-> Follow the installation instructions for [nvm](https://github.com/creationix/nvm)
-
-`for Windows`
-> Follow the installation instructions for [nodist](https://github.com/marcelklehr/nodist)
-
-Install the latest LTS version of node using the installed version manager.
-
-### Install Yarn
-
-```
-npm install -g yarn
-```
-
-### Replace package name
-
-1. Replace `service-boilerplate` in the `package.json` file with your package name
-2. Ensure the git repository is correct in `package.json`
-
-### Install dependencies
-
-```
-yarn install
-```
+`TODO`
 
 ## Usage
 
-### List all scripts
+`TODO`
 
-```
-yarn run info
-```
+## Inspiration
 
-### Run a development server
+`TODO`
 
-```
-yarn run start
-```
+## Other Solutions
 
-### Execute all tests
-
-```
-yarn run test
-```
-
-### Build application
-
-```
-yarn run build
-```
-
-### Configure the server
-
-This project uses [Confidence](https://www.npmjs.com/package/confidence) for environment configuration
-
-* Modify `src/config/index.js` to add any additional configurations or environments
-* If adding a new environment, create a new `start:<env>` script in `package.json`
-
+`TODO`
 
 ## Contributors
 
-Thanks goes to these wonderful people ([emoji key][emojis]):
+Thank you for everyone's help! ([emoji key][emojis]):
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 | [<img src="https://avatars2.githubusercontent.com/u/649578?v=3" width="100px;"/><br /><sub>Jeff Detmer</sub>](http://www.jeffdetmer.com)<br />[💻](https://github.com/shellthor/microservice-boilerplate/commits?author=shellthor "Code") [📖](https://github.com/shellthor/microservice-boilerplate/commits?author=shellthor "Documentation") [⚠️](https://github.com/shellthor/microservice-boilerplate/commits?author=shellthor "Tests") [📢](#talk-shellthor "Talks") |
@@ -102,13 +64,11 @@ Thanks goes to these wonderful people ([emoji key][emojis]):
 
 This project follows the [all-contributors][all-contributors] specification. Contributions of any kind welcome!
 
-## Sponsors
-
-<a href="https://app.codesponsor.io/link/YwpXR8o4sTRwPPnBH7sSn88F/shellthor/restify-boilerplate" rel="nofollow"><img src="https://app.codesponsor.io/embed/YwpXR8o4sTRwPPnBH7sSn88F/shellthor/restify-boilerplate.svg" style="width: 888px; height: 68px;" alt="Sponsor" /></a>
-
 ## License
 
 MIT &copy; Jeff Detmer
+
+<a href="https://app.codesponsor.io/link/YwpXR8o4sTRwPPnBH7sSn88F/shellthor/restify-boilerplate" rel="nofollow"><img src="https://app.codesponsor.io/embed/YwpXR8o4sTRwPPnBH7sSn88F/shellthor/restify-boilerplate.svg" style="width: 888px; height: 68px;" alt="Sponsor" /></a>
 
 [build-badge]: https://img.shields.io/travis/shellthor/restify-boilerplate.svg?style=flat-square
 [build]: https://travis-ci.org/shellthor/restify-boilerplate
