@@ -7,10 +7,8 @@ node_js:
   - 8
   - 6
 
-env:
-  global:
-  # oracle info
-    # - NODE_ORACLEDB_HOST: localhost
+before_install:
+  - yarn config set ignore-engines true
 
 script:
   - yarn run test
@@ -20,23 +18,7 @@ notifications:
   email:
     on_failure: change
 
-# before_install:
-#   - |
-#     mkdir -p /opt/oracle &&
-#     cd /opt/oracle &&
-#     wget https://s3.amazonaws.com/sequelize/instantclient-basic-linux.x64-12.1.0.2.0.zip &&
-#     wget https://s3.amazonaws.com/sequelize/instantclient-sdk-linux.x64-12.1.0.2.0.zip &&
-#     unzip instantclient-basic-linux.x64-12.1.0.2.0.zip &&
-#     unzip instantclient-sdk-linux.x64-12.1.0.2.0.zip &&
-#     mv instantclient_12_1 instantclient &&
-#     cd instantclient &&
-#     ln -s libclntsh.so.12.1 libclntsh.so &&
-#     export LD_LIBRARY_PATH=/opt/oracle/instantclient:$LD_LIBRARY_PATH &&
-#     cd $TRAVIS_BUILD_DIR;
-
 after_success: 'yarn run reportcoverage'
 
 cache:
   yarn: true
-  directories:
-    - node_modules
