@@ -2,7 +2,7 @@
   "name": "restify-boilerplate",
   "version": "0.5.1",
   "description": "restify microservice boilerplate",
-  "main": "src/index.js",
+  "main": "src/serve.js",
   "repository": "git@github.com:shellthor/microservice-boilerplate.git",
   "author": "Jeff Detmer <jeff.detmer@gmail.com>",
   "license": "MIT",
@@ -36,7 +36,7 @@
     "reportcoverage": "codecov",
     "start": "yarn run start:dev",
     "start:dev":
-      "nodemon bin/serve --exec \"node --require dotenv-safe/config --require babel-register\" | bunyan",
+      "nodemon src/serve --exec \"node --require dotenv-safe/config --require babel-register\" | bunyan",
     "pretest": "yarn run test:clean && yarn run lint",
     "test": "cross-env NODE_ENV=test cross-env LOG_LEVEL=fatal jest --coverage",
     "test:clean": "rimraf ./coverage",
