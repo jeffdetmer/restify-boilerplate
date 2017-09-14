@@ -143,7 +143,7 @@
     "nsp": "2.8.0",
     "pkg": "4.2.4",
     "pre-commit": "1.2.2",
-    "prettier": "1.6.1",
+    "prettier": "1.7.0",
     "rimraf": "2.6.2",
     "standard-version": "4.2.0"
   }
