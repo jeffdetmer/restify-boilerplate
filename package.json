@@ -108,7 +108,7 @@
     "cross-env": "5.0.5",
     "dotenv": "4.0.0",
     "dotenv-safe": "4.0.4",
-    "joi": "10.6.0",
+    "joi": "11.0.0",
     "jsonwebtoken": "8.0.1",
     "lodash": "4.17.4",
     "pg": "7.3.0",
@@ -117,7 +117,7 @@
     "restify": "5.2.0",
     "restify-cors-middleware": "1.0.1",
     "restify-errors": "5.0.0",
-    "sequelize": "4.8.3"
+    "sequelize": "4.8.4"
   },
   "devDependencies": {
     "all-contributors-cli": "4.4.0",
@@ -139,7 +139,7 @@
     "husky": "0.14.3",
     "jest-cli": "21.1.0",
     "lint-staged": "4.2.1",
-    "nodemon": "1.12.0",
+    "nodemon": "1.12.1",
     "nsp": "2.8.0",
     "pkg": "4.2.4",
     "pre-commit": "1.2.2",
