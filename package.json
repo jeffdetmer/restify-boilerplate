@@ -107,11 +107,12 @@
     "dotenv-safe": "4.0.4",
     "lodash": "4.17.4",
     "pg": "7.3.0",
-    "raven": "2.2.0",
+    "pg-hstore": "2.3.2",
+    "raven": "2.2.1",
     "restify": "6.0.1",
     "restify-cors-middleware": "1.0.1",
     "restify-errors": "5.0.0",
-    "sequelize": "4.13.2"
+    "sequelize": "4.13.5"
   },
   "devDependencies": {
     "all-contributors-cli": "4.5.0",
@@ -134,7 +135,7 @@
     "nodemon": "1.12.1",
     "pkg": "4.2.4",
     "pre-commit": "1.2.2",
-    "prettier": "1.7.3",
+    "prettier": "1.7.4",
     "rimraf": "2.6.2",
     "standard-version": "4.2.0"
   }
