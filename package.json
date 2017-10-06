@@ -19,18 +19,25 @@
     "debug": "node --inspect --require babel-register src/serve | bunyan",
     "format": "jmd-scripts format",
     "lint": "jmd-scripts lint",
-    "start":
-      "nodemon src/serve --exec \"node --require babel-register\" | bunyan",
+    "start": "nodemon src/serve --exec \"node --require babel-register\" | bunyan",
     "test": "jmd-scripts test",
     "test:update": "npm test -- --updateSnapshot --coverage",
     "validate": "jmd-scripts validate"
   },
   "eslintConfig": {
-    "extends": ["./node_modules/jmd-scripts/eslint.js"]
+    "extends": [
+      "./node_modules/jmd-scripts/eslint.js"
+    ]
   },
-  "eslintIgnore": ["node_modules", "coverage", "dist"],
+  "eslintIgnore": [
+    "node_modules",
+    "coverage",
+    "dist"
+  ],
   "babel": {
-    "presets": ["jmd-scripts/babel"]
+    "presets": [
+      "jmd-scripts/babel"
+    ]
   },
   "config": {
     "commitizen": {
@@ -42,7 +49,6 @@
     "bunyan-sentry-stream": "1.2.1",
     "cross-env": "5.0.5",
     "dotenv": "4.0.0",
-    "dotenv-safe": "4.0.4",
     "joi": "11.1.1",
     "jsonwebtoken": "8.0.1",
     "lodash": "4.17.4",

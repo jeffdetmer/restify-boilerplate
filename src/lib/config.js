@@ -1,4 +1,4 @@
-import dotenv from 'dotenv-safe/config' // eslint-disable-line no-unused-vars
+import dotenv from 'dotenv/config' // eslint-disable-line no-unused-vars
 
 const config = {
   env: process.env.NODE_ENV,
