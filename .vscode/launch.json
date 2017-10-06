@@ -12,11 +12,7 @@
       "windows": {
         "runtimeExecutable": "npm.cmd"
       },
-      "runtimeArgs": [
-        "run-script",
-        "debug",
-        "--scripts-prepend-node-path"
-      ],
+      "runtimeArgs": ["run-script", "debug", "--scripts-prepend-node-path"],
       "port": 5858,
       "protocol": "inspector"
     }
