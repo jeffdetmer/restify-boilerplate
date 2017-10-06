@@ -1,6 +1,6 @@
 {
   "name": "restify-boilerplate",
-  "version": "0.5.1",
+  "version": "0.0.0-semantically-released",
   "description": "restify microservice boilerplate",
   "main": "src/serve.js",
   "repository": "git@github.com:shellthor/microservice-boilerplate.git",
@@ -8,103 +8,49 @@
   "license": "MIT",
   "private": false,
   "engines": {
-    "node": "^8.4.0",
-    "npm": "^5.4.1",
-    "yarn": "^1.0.0"
+    "node": "^8.6.0",
+    "npm": "^5.4.2",
+    "yarn": "^1.1.0"
   },
   "scripts": {
-    "prebuild": "yarn run build:clean",
-    "build": "babel src -d dist --source-maps --ignore 'src/**/__mocks__/*.js'",
-    "build:clean": "rimraf ./dist",
-    "clean": "yarn cache clean && rimraf node_modules doc coverage dist",
-    "precommit": "yarn run lint:staged",
+    "add-contributor": "jmd-scripts contributors add",
+    "build": "jmd-scripts build",
     "commit": "git-cz",
-    "contributor:add": "all-contributors add",
-    "contributor:generate": "all-contributors generate",
-    "debug":
-      "nodemon bin/serve --exec \"node --inspect --require dotenv-safe/config --require babel-register\" | bunyan",
-    "lint": "yarn run lint:es",
-    "lint:es": "yarn run lint:eslint -- . ",
-    "lint:eslint":
-      "eslint --ignore-path .gitignore --format=node_modules/eslint-formatter-pretty",
-    "lint:fix": "yarn run lint:eslint -- --fix .",
-    "lint:staged": "lint-staged",
-    "prettier":
-      "prettier --trailing-comma es5 --single-quote --write 'src/**/*.js'",
-    "postprettier": "yarn run lint:fix",
-    "release": "standard-version",
-    "reportcoverage": "codecov",
-    "start": "yarn run start:dev",
-    "start:dev":
-      "nodemon src/serve --exec \"node --require dotenv-safe/config --require babel-register\" | bunyan",
-    "pretest": "yarn run test:clean && yarn run lint",
-    "test": "cross-env NODE_ENV=test cross-env LOG_LEVEL=fatal jest --coverage",
-    "test:clean": "rimraf ./coverage",
-    "test:watch": "cross-env NODE_ENV=test jest --watchAll"
-  },
-  "lint-staged": {
-    "*.@(js)": [
-      "prettier --trailing-comma es5 --single-quote --write",
-      "eslint --ignore-pattern internals/scripts --fix",
-      "git add"
-    ]
+    "debug": "node --inspect --require babel-register src/serve | bunyan",
+    "format": "jmd-scripts format",
+    "lint": "jmd-scripts lint",
+    "start": "nodemon src/serve --exec \"node --require babel-register\" | bunyan",
+    "test": "jmd-scripts test",
+    "test:update": "npm test -- --updateSnapshot --coverage",
+    "validate": "jmd-scripts validate"
   },
   "eslintConfig": {
-    "extends": ["shellthor", "shellthor/jest"]
+    "extends": [
+      "./node_modules/jmd-scripts/eslint.js"
+    ]
   },
+  "eslintIgnore": [
+    "node_modules",
+    "coverage",
+    "dist"
+  ],
   "babel": {
     "presets": [
-      [
-        "env",
-        {
-          "targets": {
-            "node": "current"
-          }
-        }
-      ],
-      "stage-0"
-    ],
-    "env": {
-      "test": {
-        "plugins": ["dynamic-import-node"]
-      }
-    }
-  },
-  "jest": {
-    "collectCoverageFrom": [
-      "src/**/*.{ts,js,jsx}",
-      "!src/**/*.test.{ts,js,jsx}",
-      "!src/index.{ts,js,jsx}",
-      "!src/server.{ts,js,jsx}",
-      "!src/lib/database.{ts,js,jsx}",
-      "!src/lib/sequelize.{ts,js,jsx}"
-    ],
-    "coverageThreshold": {
-      "global": {
-        "statements": 75,
-        "branches": 75,
-        "functions": 75,
-        "lines": 75
-      }
-    },
-    "moduleDirectories": ["node_modules", "src"],
-    "testRegex": "src/.*\\.test\\.js$",
-    "testEnvironment": "node",
-    "mapCoverage": true
+      "jmd-scripts/babel"
+    ]
   },
   "config": {
     "commitizen": {
       "path": "cz-conventional-changelog"
     }
   },
-  "pkg": {
-    "targets": ["node6-linux-x64", "node6-windows-x64"]
-  },
   "dependencies": {
     "bunyan": "1.8.12",
     "bunyan-sentry-stream": "1.2.1",
     "cross-env": "5.0.5",
-    "dotenv-safe": "4.0.4",
+    "dotenv": "4.0.0",
+    "joi": "11.1.1",
+    "jsonwebtoken": "8.0.1",
     "lodash": "4.17.4",
     "pg": "7.3.0",
     "pg-hstore": "2.3.2",
@@ -115,28 +61,8 @@
     "sequelize": "4.13.5"
   },
   "devDependencies": {
-    "all-contributors-cli": "4.5.0",
-    "babel-cli": "6.26.0",
-    "babel-core": "6.26.0",
-    "babel-eslint": "8.0.1",
-    "babel-jest": "21.2.0",
-    "babel-plugin-dynamic-import-node": "1.1.0",
-    "babel-preset-env": "1.6.0",
-    "babel-preset-stage-0": "6.24.1",
-    "babel-register": "6.26.0",
-    "codecov": "2.3.0",
     "commitizen": "2.9.6",
     "cz-conventional-changelog": "2.0.0",
-    "eslint": "4.8.0",
-    "eslint-config-shellthor": "2.0.6",
-    "eslint-formatter-pretty": "1.3.0",
-    "jest-cli": "21.2.1",
-    "lint-staged": "4.2.3",
-    "nodemon": "1.12.1",
-    "pkg": "4.2.4",
-    "pre-commit": "1.2.2",
-    "prettier": "1.7.4",
-    "rimraf": "2.6.2",
-    "standard-version": "4.2.0"
+    "jmd-scripts": "1.1.1"
   }
 }

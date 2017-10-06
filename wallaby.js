@@ -1,4 +1,4 @@
-import Pkg from './package.json';
+import Pkg from './package'
 
 module.exports = wallaby => ({
   files: ['src/**/*.js', '!src/**/*.test.js'],
@@ -9,11 +9,11 @@ module.exports = wallaby => ({
   },
   testFramework: 'jest',
   bootstrap: () => {
-    wallaby.testFramework.configure(Pkg.jest);
+    wallaby.testFramework.configure(Pkg.jest)
   },
   compilers: {
     '**/*.js': wallaby.compilers.babel({
       presets: ['latest', 'stage-0'],
     }),
   },
-});
+})

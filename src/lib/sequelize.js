@@ -1,6 +1,6 @@
-import Sequelize from 'sequelize';
-import Config from './config';
-import logger from './logger';
+import Sequelize from 'sequelize'
+import Config from './config'
+import logger from './logger'
 
 const config = {
   host: Config.database.postgres.connectionString,
@@ -14,8 +14,8 @@ const config = {
   password: Config.database.postgres.password,
   database: Config.database.postgres.database,
   logging: logger.debug.bind(logger),
-};
+}
 
-const sequelize = new Sequelize(config);
+const sequelize = new Sequelize(config)
 
-export default sequelize;
+export default sequelize

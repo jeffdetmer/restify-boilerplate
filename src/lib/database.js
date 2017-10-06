@@ -1,3 +1,3 @@
-import sequelize from './sequelize';
+import sequelize from './sequelize'
 
-export default sequelize;
+export default sequelize

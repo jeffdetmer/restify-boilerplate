@@ -1,21 +1,13 @@
-sudo: required
-dist: trusty
-
+sudo: false
 language: node_js
-
-node_js:
-  - 8
-  - 6
-
-script:
-  - yarn run test
-  - yarn run build
-
+cache:
+  directories:
+    - node_modules
 notifications:
   email:
     on_failure: change
-
-after_success: 'yarn run reportcoverage'
-
-cache:
-  yarn: true
+node_js:
+  - 8
+script:
+  - npm run validate
+after_success: jmd-scripts travis-after-success
