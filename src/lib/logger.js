@@ -5,20 +5,16 @@ import pkg from '../../package'
 import Config from './config'
 
 const streams = []
-if (!Config.iapiId) {
-  streams.push({
-    level: Config.logLevel,
-    stream: process.stdout,
-  })
-}
+streams.push({
+  level: Config.logLevel,
+  stream: process.stdout,
+})
 
-if (Config.sentryDSN) {
-  const client = new raven.Client(Config.sentryDSN, {
-    release: pkg.version,
-    environment: Config.env,
-  })
-  streams.push(sentryStream(client))
-}
+const client = new raven.Client(Config.sentryDSN, {
+  release: pkg.version,
+  environment: Config.env,
+})
+streams.push(sentryStream(client))
 
 const logger = bunyan.createLogger({
   name: pkg.name,
