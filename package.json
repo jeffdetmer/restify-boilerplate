@@ -47,7 +47,7 @@
   "dependencies": {
     "bunyan": "1.8.12",
     "bunyan-sentry-stream": "1.2.1",
-    "cross-env": "5.0.5",
+    "cross-env": "5.1.0",
     "dotenv": "4.0.0",
     "joi": "11.3.4",
     "jsonwebtoken": "8.1.0",
