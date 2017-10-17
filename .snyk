@@ -1,0 +1,20 @@
+# Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
+version: v1.7.1
+ignore: {}
+# patches apply the minimum changes required to fix a vulnerability
+patch:
+  'npm:minimatch:20160620':
+    - restify > unleash > npm > minimatch:
+        patched: '2017-10-17T19:22:46.839Z'
+    - restify > unleash > gulp-babel > babel-core > minimatch:
+        patched: '2017-10-17T19:22:46.839Z'
+    - restify > unleash > npm > node-gyp > minimatch:
+        patched: '2017-10-17T19:22:46.839Z'
+    - restify > unleash > npm > node-gyp > glob > minimatch:
+        patched: '2017-10-17T19:22:46.839Z'
+  'npm:request:20160119':
+    - restify > unleash > npm > request:
+        patched: '2017-10-17T19:22:46.839Z'
+  'npm:tar:20151103':
+    - restify > unleash > npm > node-gyp > tar:
+        patched: '2017-10-17T19:22:46.839Z'
