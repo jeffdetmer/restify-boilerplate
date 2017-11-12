@@ -63,6 +63,6 @@
   "devDependencies": {
     "commitizen": "2.9.6",
     "cz-conventional-changelog": "2.1.0",
-    "jmd-scripts": "1.2.8"
+    "jmd-scripts": "1.2.9"
   }
 }
