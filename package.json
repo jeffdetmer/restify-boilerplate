@@ -58,7 +58,7 @@
     "restify": "6.3.2",
     "restify-cors-middleware": "1.0.1",
     "restify-errors": "5.0.0",
-    "sequelize": "4.22.5"
+    "sequelize": "4.22.6"
   },
   "devDependencies": {
     "commitizen": "2.9.6",
