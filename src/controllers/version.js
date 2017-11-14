@@ -1,7 +1,5 @@
-import appPkg from '../../package'
-
 function get(req, res, next) {
-  res.send({appVersion: appPkg.version})
+  res.send({appVersion: '1.0.0'})
   next()
 }
 
