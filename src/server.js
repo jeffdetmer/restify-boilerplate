@@ -1,5 +1,6 @@
 import restify from 'restify'
 import corsMiddleware from 'restify-cors-middleware'
+import helmet from 'helmet'
 import pkg from '../package'
 import logger from './lib/logger'
 import Config from './lib/config'
@@ -11,7 +12,7 @@ import {version, ping, echo, api} from './controllers'
 
 const server = restify.createServer({
   name: pkg.name,
-  version: pkg.version,
+  version: '1.0.0',
   log: logger.child({
     component: 'server',
   }),
@@ -50,6 +51,7 @@ if (Config.throttle) {
 server.use(restify.plugins.acceptParser(server.acceptable))
 server.use(restify.plugins.authorizationParser())
 server.use(cors.actual)
+server.use(helmet())
 server.use(restify.plugins.dateParser())
 server.use(restify.plugins.queryParser())
 server.use(restify.plugins.gzipResponse())
