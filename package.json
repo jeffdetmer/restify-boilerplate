@@ -16,28 +16,20 @@
     "add-contributor": "jmd-scripts contributors add",
     "build": "jmd-scripts build",
     "commit": "git-cz",
-    "debug": "node --inspect --require babel-register src/serve | bunyan",
     "format": "jmd-scripts format",
     "lint": "jmd-scripts lint",
-    "start": "nodemon src/serve --exec \"node --require babel-register\" | bunyan",
+    "start":
+      "nodemon src/serve --exec \"node --require babel-register --require babel-polyfill\" | bunyan",
     "test": "jmd-scripts test",
     "test:update": "npm test -- --updateSnapshot --coverage",
     "validate": "jmd-scripts validate"
   },
   "eslintConfig": {
-    "extends": [
-      "./node_modules/jmd-scripts/eslint.js"
-    ]
+    "extends": ["./node_modules/jmd-scripts/eslint.js"]
   },
-  "eslintIgnore": [
-    "node_modules",
-    "coverage",
-    "dist"
-  ],
+  "eslintIgnore": ["node_modules", "coverage", "dist"],
   "babel": {
-    "presets": [
-      "jmd-scripts/babel"
-    ]
+    "presets": ["jmd-scripts/babel"]
   },
   "config": {
     "commitizen": {
@@ -49,9 +41,15 @@
     "bunyan-sentry-stream": "1.2.1",
     "cross-env": "5.1.1",
     "dotenv": "4.0.0",
-    "joi": "13.0.1",
+    "helmet": "3.9.0",
+    "joi": "13.0.2",
     "jsonwebtoken": "8.1.0",
     "lodash": "4.17.4",
+    "mongoose": "4.13.2",
+    "nodemon": "1.12.1",
+    "passport": "0.4.0",
+    "passport-jwt": "3.0.1",
+    "passport-local": "1.0.0",
     "pg": "7.4.0",
     "pg-hstore": "2.3.2",
     "raven": "2.2.1",
@@ -63,6 +61,6 @@
   "devDependencies": {
     "commitizen": "2.9.6",
     "cz-conventional-changelog": "2.1.0",
-    "jmd-scripts": "1.2.9"
+    "jmd-scripts": "1.2.10"
   }
 }

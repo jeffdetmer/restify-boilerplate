@@ -10,7 +10,7 @@ process.on('uncaughtException', async err => {
   await app.close()
   process.exit(1) // eslint-disable-line no-process-exit
 })
-;['SIGTERM', 'SIGINT', 'SIGKILL'].forEach(sig => {
+;['SIGTERM', 'SIGINT'].forEach(sig => {
   process.on(sig, async () => {
     logger.info(`${sig} received`)
     logger.info('Exiting...')
