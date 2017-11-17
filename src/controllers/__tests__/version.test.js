@@ -1,5 +1,4 @@
 import version from '../version'
-import appPkg from '../../../package'
 
 describe('VERSION route', () => {
   describe('GET', () => {
