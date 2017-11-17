@@ -11,7 +11,7 @@ describe('VERSION route', () => {
 
       version.get(req, res, next)
       expect(res.send.mock.calls.length).toBe(1)
-      expect(res.send).toBeCalledWith({appVersion: appPkg.version})
+      expect(res.send).toBeCalledWith({appVersion: '1.0.0'})
       expect(next.mock.calls.length).toBe(1)
     })
   })
