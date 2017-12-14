@@ -54,7 +54,7 @@
     "pg-hstore": "2.3.2",
     "raven": "2.3.0",
     "restify": "6.3.4",
-    "restify-cors-middleware": "1.0.1",
+    "restify-cors-middleware": "1.1.0",
     "restify-errors": "5.0.0",
     "sequelize": "4.28.1"
   },
