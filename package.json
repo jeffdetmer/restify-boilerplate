@@ -50,7 +50,7 @@
     "lodash": "4.17.4",
     "mongoose": "4.13.7",
     "mock-knex": "0.4.0",
-    "nodemon": "1.12.7",
+    "nodemon": "1.13.0",
     "oracledb": "2.0.15",
     "passport": "0.4.0",
     "passport-jwt": "3.0.1",
