@@ -10,8 +10,9 @@
 [![Dependencies][dependencyci-badge]][dependencyci]
 [![Greenkeeper badge][greenkeeper-badge]][greenkeeper]
 [![Sync Vulnerabilities][synk-badge]][synk-project]
+[![DeepScan Grade][deepscan-badge]][deepscan]
 [![version][version-badge]][package]
-[![MIT License][license-badge]][LICENSE]
+[![MIT License][license-badge]][license]
 
 [![All Contributors][contributors]](#contributors)
 [![PRs Welcome][prs-badge]][prs]
@@ -23,19 +24,20 @@
 ## The problem
 
 You need a starting point to build a production ready, restify based micro-service that connects to a relational database.
+
 ## This solution
 
-This project contains a starting point for a micro-service and implements logging, audit logs, a relational ORM, configuration, 
+This project contains a starting point for a micro-service and implements logging, audit logs, a relational ORM, configuration,
 sample services, controllers, and models, integration with [Sentry](https://sentry.io/), Jest unit tests, and more.
 
 ## Table of Contents
 
-- [Installation](#installation)
-- [Usage](#usage)
-- [Inspiration](#inspiration)
-- [Other Solutions](#other-solutions)
-- [Contributors](#contributors)
-- [LICENSE](#license)
+* [Installation](#installation)
+* [Usage](#usage)
+* [Inspiration](#inspiration)
+* [Other Solutions](#other-solutions)
+* [Contributors](#contributors)
+* [LICENSE](#license)
 
 ## Installation
 
@@ -58,8 +60,11 @@ sample services, controllers, and models, integration with [Sentry](https://sent
 Thank you for everyone's help! ([emoji key][emojis]):
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+
 | [<img src="https://avatars2.githubusercontent.com/u/649578?v=3" width="100px;"/><br /><sub>Jeff Detmer</sub>](http://www.jeffdetmer.com)<br />[💻](https://github.com/shellthor/microservice-boilerplate/commits?author=shellthor "Code") [📖](https://github.com/shellthor/microservice-boilerplate/commits?author=shellthor "Documentation") [⚠️](https://github.com/shellthor/microservice-boilerplate/commits?author=shellthor "Tests") [📢](#talk-shellthor "Talks") |
-| :---: |
+| :-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
+
+
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 This project follows the [all-contributors][all-contributors] specification. Contributions of any kind welcome!
@@ -67,8 +72,6 @@ This project follows the [all-contributors][all-contributors] specification. Con
 ## License
 
 MIT &copy; Jeff Detmer
-
-<a href="https://app.codesponsor.io/link/YwpXR8o4sTRwPPnBH7sSn88F/shellthor/restify-boilerplate" rel="nofollow"><img src="https://app.codesponsor.io/embed/YwpXR8o4sTRwPPnBH7sSn88F/shellthor/restify-boilerplate.svg" style="width: 888px; height: 68px;" alt="Sponsor" /></a>
 
 [build-badge]: https://img.shields.io/travis/shellthor/restify-boilerplate.svg?style=flat-square
 [build]: https://travis-ci.org/shellthor/restify-boilerplate
@@ -95,3 +98,5 @@ MIT &copy; Jeff Detmer
 [contributors]: https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square
 [synk-badge]: https://snyk.io/test/github/shellthor/restify-boilerplate/badge.svg?style=flat-square
 [synk-project]: https://snyk.io/test/github/shellthor/restify-boilerplate
+[deepscan-badge]: https://deepscan.io/api/projects/591/branches/950/badge/grade.svg
+[deepscan]: https://deepscan.io/dashboard/#view=project&pid=591&bid=950

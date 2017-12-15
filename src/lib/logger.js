@@ -2,17 +2,17 @@ import bunyan from 'bunyan'
 import raven from 'raven'
 import sentryStream from 'bunyan-sentry-stream'
 import pkg from '../../package'
-import Config from './config'
+import config from './config'
 
 const streams = []
 streams.push({
-  level: Config.logLevel,
+  level: config.LOGGER_LEVEL,
   stream: process.stdout,
 })
 
-const client = new raven.Client(Config.sentryDSN, {
+const client = new raven.Client(config.SENTRY_DSN, {
   release: pkg.version,
-  environment: Config.env,
+  environment: config.NODE_ENV,
 })
 streams.push(sentryStream(client))
 
@@ -24,7 +24,7 @@ const logger = bunyan.createLogger({
     res: bunyan.stdSerializers.res,
     err: bunyan.stdSerializers.err,
   },
-  env: Config.env,
+  env: config.NODE_ENV,
   streams,
 })
 

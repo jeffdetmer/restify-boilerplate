@@ -64,7 +64,7 @@ server.get('/ping', ping.get)
 server.get('/echo/:name', echo.get)
 server.post('/echo', echo.post)
 server.get('/api', api.get)
-server.post('/api/:batch', api.post)
+server.post('/api/new', api.post)
 server.get('/throw', api.error)
 
 server.on(

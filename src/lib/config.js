@@ -1,25 +1,36 @@
 import dotenv from 'dotenv/config' // eslint-disable-line no-unused-vars
+import joi from 'joi'
 
-const config = {
-  env: process.env.NODE_ENV,
-  port: Number(process.env.PORT),
-  baseUrl: process.env.BASE_URL,
-  logLevel: process.env.LOG_LEVEL,
-  throttle: process.env.THROTTLE === 'true',
-  database: {
-    postgres: {
-      username: process.env.POSTGRES_USER,
-      password: process.env.POSTGRES_PASSWORD,
-      connectionString: process.env.POSTGRES_CONNECTION,
-      database: process.env.POSTGRES_DATABASE,
-      pool: {
-        max: Number(process.env.POSTGRES_POOL_MAX),
-        min: Number(process.env.POSTGRES_POOL_MIN),
-        idle: Number(process.env.POSTGRES_POOL_IDLE),
-      },
-    },
-  },
-  sentryDSN: process.env.SENTRY_DSN,
-}
+const envVarsSchema = joi
+  .object({
+    NODE_ENV: joi
+      .string()
+      .allow(['development', 'production', 'test'])
+      .default('production'),
+    LOGGER_LEVEL: joi
+      .string()
+      .allow(['test', 'error', 'warn', 'info', 'verbose', 'debug', 'silly'])
+      .when('NODE_ENV', {
+        is: 'development',
+        then: joi.default('silly'),
+      })
+      .when('NODE_ENV', {
+        is: 'production',
+        then: joi.default('info'),
+      })
+      .when('NODE_ENV', {
+        is: 'test',
+        then: joi.default('warn'),
+      }),
+    PORT: joi
+      .number()
+      .integer()
+      .default(80),
+    SENTRY_DSN: joi.string(),
+  })
+  .unknown()
+  .required()
 
-export default config
+const envVars = joi.attempt(process.env, envVarsSchema)
+
+export default envVars

@@ -8,9 +8,9 @@
   "license": "MIT",
   "private": false,
   "engines": {
-    "node": "^8.6.0",
-    "npm": "^5.4.2",
-    "yarn": "^1.1.0"
+    "node": ">=8.6.0",
+    "npm": ">=5.4.2",
+    "yarn": ">=1.1.0"
   },
   "scripts": {
     "add-contributor": "jmd-scripts contributors add",
@@ -37,6 +37,8 @@
     }
   },
   "dependencies": {
+    "axios": "0.17.1",
+    "bluebird": "3.5.1",
     "bunyan": "1.8.12",
     "bunyan-sentry-stream": "1.2.1",
     "cross-env": "5.1.1",
@@ -44,19 +46,23 @@
     "helmet": "3.9.0",
     "joi": "13.0.2",
     "jsonwebtoken": "8.1.0",
+    "knex": "0.14.2",
     "lodash": "4.17.4",
     "mongoose": "4.13.7",
+    "mock-knex": "0.4.0",
     "nodemon": "1.12.7",
+    "oracledb": "1.13.1",
     "passport": "0.4.0",
     "passport-jwt": "3.0.1",
     "passport-local": "1.0.0",
     "pg": "7.4.0",
+    "pg-connection-string": "2.0.0",
     "pg-hstore": "2.3.2",
     "raven": "2.3.0",
     "restify": "6.3.4",
     "restify-cors-middleware": "1.1.0",
     "restify-errors": "5.0.0",
-    "sequelize": "4.28.1"
+    "semver": "5.4.1"
   },
   "devDependencies": {
     "commitizen": "2.9.6",

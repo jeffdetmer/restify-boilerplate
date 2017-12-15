@@ -1,11 +1,11 @@
-import Config from '../config'
+import config from '../config'
 
 describe('Config', () => {
   it('gets config data', () => {
-    expect(typeof Config).toBe('object')
+    expect(typeof config).toBe('object')
   })
 
   it('gets config property', () => {
-    expect(Config.env).toMatch(/test/i)
+    expect(config.NODE_ENV).toMatch(/test/i)
   })
 })

@@ -1,8 +1,8 @@
 import errors from 'restify-errors'
 import api from '../api'
-import person from '../../services/person'
+import SpaceReservation from '../../models/spaceReservation'
 
-jest.mock('../../services/person')
+jest.mock('../../models/spaceReservation')
 
 const req = {}
 const res = {}
@@ -13,30 +13,34 @@ describe('api', () => {
     req.query = {}
     next = jest.fn()
     res.send = jest.fn()
+    SpaceReservation.read = jest.fn()
+    SpaceReservation.insert = jest.fn()
   })
 
   describe('api::get', () => {
     it('executes successfully', async () => {
       expect.assertions(4)
 
-      req.query.name = 'Jeff'
+      req.query.locnNbr = 9
+      req.query.itemBrcd = '1234'
+      SpaceReservation.read.mockReturnValue({})
       await api.get(req, res, next)
-      expect(person.get.mock.calls.length).toBe(1)
+      expect(SpaceReservation.read.mock.calls.length).toBe(1)
       expect(res.send.mock.calls.length).toBe(1)
       expect(res.send).toBeCalledWith({
-        data: req.query.name,
+        data: {},
         message: '',
         status: 200,
       })
       expect(next.mock.calls.length).toBe(1)
     })
 
-    it('returns an error', async () => {
+    it('returns an error without the correct input', async () => {
       expect.assertions(4)
 
       await api.get(req, res, next)
 
-      expect(person.get.mock.calls.length).toBe(1)
+      expect(SpaceReservation.read.mock.calls.length).toBe(0)
       expect(res.send.mock.calls.length).toBe(1)
       expect(res.send).toBeCalledWith(500, {
         data: {},
@@ -48,31 +52,38 @@ describe('api', () => {
   })
 
   describe('api::post', () => {
-    it('accepts a valid person', async () => {
+    it('accepts a valid space restervation', async () => {
       expect.assertions(5)
       req.body = {
-        name: 'Jeff Detmer',
-        age: 29,
+        locnNbr: 9,
+        itemBrcd: '29',
       }
 
       res.setHeader = jest.fn()
       req.contentType = jest.fn().mockReturnValue('application/json')
+      SpaceReservation.insert.mockReturnValue({
+        locnNbr: 9,
+        itemBrcd: '29',
+      })
 
       await api.post(req, res, next)
 
-      expect(person.save.mock.calls.length).toBe(1)
+      expect(SpaceReservation.insert.mock.calls.length).toBe(1)
       expect(res.send.mock.calls.length).toBe(1)
       expect(res.setHeader).toBeCalledWith('Content-Type', 'application/json')
       expect(res.send).toBeCalledWith(201, {
-        data: {age: 29, name: 'Jeff Detmer'},
+        data: {
+          locnNbr: 9,
+          itemBrcd: '29',
+        },
         message: '',
         status: 201,
       })
       expect(next.mock.calls.length).toBe(1)
     })
 
-    it('errors on an invalid person', () => {
-      expect.assertions(4)
+    it('errors on an invalid input', () => {
+      expect.assertions(5)
       req.body = {
         fullName: 'Jeff Detmer',
         age: 29,
@@ -82,12 +93,12 @@ describe('api', () => {
       req.contentType = jest.fn().mockReturnValue('application/json')
 
       api.post(req, res, next)
-
+      expect(SpaceReservation.insert.mock.calls.length).toBe(0)
       expect(res.send.mock.calls.length).toBe(1)
       expect(res.setHeader).toBeCalledWith('Content-Type', 'application/json')
       expect(res.send).toBeCalledWith(400, {
         data: {},
-        error: new errors.InvalidArgumentError('Invalid Person'),
+        error: new errors.InvalidContentError(),
         status: 400,
       })
       expect(next.mock.calls.length).toBe(1)
