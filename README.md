@@ -98,5 +98,5 @@ MIT &copy; Jeff Detmer
 [contributors]: https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square
 [synk-badge]: https://snyk.io/test/github/shellthor/restify-boilerplate/badge.svg?style=flat-square
 [synk-project]: https://snyk.io/test/github/shellthor/restify-boilerplate
-[deepscan-badge]: https://deepscan.io/api/projects/591/branches/950/badge/grade.svg
+[deepscan-badge]: https://deepscan.io/api/projects/591/branches/950/badge/grade.svg?style=flat-square
 [deepscan]: https://deepscan.io/dashboard/#view=project&pid=591&bid=950
