@@ -5,4 +5,7 @@ jestConfig.collectCoverageFrom = jestConfig.collectCoverageFrom.concat([
   '!src/server.js',
   '!src/index.js',
 ])
+
+jestConfig.setupFiles = ['<rootDir>/setupTests.js']
+
 module.exports = jestConfig
