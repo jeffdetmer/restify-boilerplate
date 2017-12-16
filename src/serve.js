@@ -1,3 +1,3 @@
-import {startServer} from '../src/index'
+import {startServer} from './index'
 
 startServer()

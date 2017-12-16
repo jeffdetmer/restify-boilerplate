@@ -20,7 +20,8 @@
     "lint": "jmd-scripts lint",
     "start":
       "nodemon src/serve --exec \"node --require babel-register --require babel-polyfill\" | bunyan",
-    "test": "jmd-scripts test",
+    "test": "jmd-scripts test --no-watch",
+    "test:watch": "jmd-scripts test",
     "test:update": "npm test -- --updateSnapshot --coverage",
     "validate": "jmd-scripts validate"
   },
@@ -48,9 +49,8 @@
     "jsonwebtoken": "8.1.0",
     "knex": "0.14.2",
     "lodash": "4.17.4",
-    "mongoose": "4.13.7",
     "mock-knex": "0.4.0",
-    "nodemon": "1.12.7",
+    "mongoose": "4.13.7",
     "oracledb": "2.0.15",
     "passport": "0.4.0",
     "passport-jwt": "3.0.1",
@@ -62,11 +62,13 @@
     "restify": "6.3.4",
     "restify-cors-middleware": "1.1.0",
     "restify-errors": "5.0.0",
+    "restify-pino-logger": "2.0.0",
     "semver": "5.4.1"
   },
   "devDependencies": {
     "commitizen": "2.9.6",
     "cz-conventional-changelog": "2.1.0",
-    "jmd-scripts": "1.4.3"
+    "jmd-scripts": "1.4.5",
+    "nodemon": "1.13.2"
   }
 }

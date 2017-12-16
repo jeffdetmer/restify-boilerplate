@@ -1,8 +1,8 @@
 import errors from 'restify-errors'
 import api from '../api'
-import SpaceReservation from '../../models/spaceReservation'
+import User from '../../models/user'
 
-jest.mock('../../models/spaceReservation')
+jest.mock('../../models/user')
 
 const req = {}
 const res = {}
@@ -13,8 +13,8 @@ describe('api', () => {
     req.query = {}
     next = jest.fn()
     res.send = jest.fn()
-    SpaceReservation.read = jest.fn()
-    SpaceReservation.insert = jest.fn()
+    User.read = jest.fn()
+    User.insert = jest.fn()
   })
 
   describe('api::get', () => {
@@ -23,9 +23,9 @@ describe('api', () => {
 
       req.query.locnNbr = 9
       req.query.itemBrcd = '1234'
-      SpaceReservation.read.mockReturnValue({})
+      User.read.mockReturnValue({})
       await api.get(req, res, next)
-      expect(SpaceReservation.read.mock.calls.length).toBe(1)
+      expect(User.read.mock.calls.length).toBe(1)
       expect(res.send.mock.calls.length).toBe(1)
       expect(res.send).toBeCalledWith({
         data: {},
@@ -40,7 +40,7 @@ describe('api', () => {
 
       await api.get(req, res, next)
 
-      expect(SpaceReservation.read.mock.calls.length).toBe(0)
+      expect(User.read.mock.calls.length).toBe(0)
       expect(res.send.mock.calls.length).toBe(1)
       expect(res.send).toBeCalledWith(500, {
         data: {},
@@ -61,14 +61,14 @@ describe('api', () => {
 
       res.setHeader = jest.fn()
       req.contentType = jest.fn().mockReturnValue('application/json')
-      SpaceReservation.insert.mockReturnValue({
+      User.insert.mockReturnValue({
         locnNbr: 9,
         itemBrcd: '29',
       })
 
       await api.post(req, res, next)
 
-      expect(SpaceReservation.insert.mock.calls.length).toBe(1)
+      expect(User.insert.mock.calls.length).toBe(1)
       expect(res.send.mock.calls.length).toBe(1)
       expect(res.setHeader).toBeCalledWith('Content-Type', 'application/json')
       expect(res.send).toBeCalledWith(201, {
@@ -93,7 +93,7 @@ describe('api', () => {
       req.contentType = jest.fn().mockReturnValue('application/json')
 
       api.post(req, res, next)
-      expect(SpaceReservation.insert.mock.calls.length).toBe(0)
+      expect(User.insert.mock.calls.length).toBe(0)
       expect(res.send.mock.calls.length).toBe(1)
       expect(res.setHeader).toBeCalledWith('Content-Type', 'application/json')
       expect(res.send).toBeCalledWith(400, {

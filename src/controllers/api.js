@@ -1,6 +1,6 @@
 import errors from 'restify-errors'
 import joi from 'joi'
-import SpaceReservation from '../models/spaceReservation'
+import User from '../models/user'
 import logger from '../lib/logger'
 import {send200, send201, send400, send500} from '../lib/rest-helper'
 
@@ -23,7 +23,7 @@ async function get(req, res, next) {
       itemBrcd: req.query.itemBrcd,
     }
     joi.attempt(input, inputSchema)
-    data = await SpaceReservation.read(input)
+    data = await User.read(input)
     send200(res, next, data)
   } catch (err) {
     logger.error(err)
@@ -48,7 +48,7 @@ async function post(req, res, next) {
     res.setHeader('Content-Type', req.contentType())
     const data = req.body
     joi.attempt(data, inputSchema)
-    result = await SpaceReservation.insert(data)
+    result = await User.insert(data)
     send201(res, next, result)
   } catch (err) {
     logger.error(err)
