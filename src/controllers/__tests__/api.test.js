@@ -8,7 +8,7 @@ const req = {}
 const res = {}
 let next
 
-describe('api', () => {
+describe.skip('api', () => {
   beforeEach(() => {
     req.query = {}
     next = jest.fn()
