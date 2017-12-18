@@ -8,4 +8,13 @@ jestConfig.collectCoverageFrom = jestConfig.collectCoverageFrom.concat([
 
 jestConfig.setupFiles = ['<rootDir>/setupTests.js']
 
+jestConfig.coverageThreshold = {
+  global: {
+    branches: 10,
+    functions: 10,
+    lines: 10,
+    statements: 10,
+  },
+}
+
 module.exports = jestConfig
