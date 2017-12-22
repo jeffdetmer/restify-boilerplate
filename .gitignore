@@ -180,3 +180,7 @@ $RECYCLE.BIN/
 
 .opt-in
 .opt-out
+
+## Vagrant ##
+.Vagrant
+*.box
