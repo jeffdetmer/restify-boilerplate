@@ -69,6 +69,6 @@
     "commitizen": "2.9.6",
     "cz-conventional-changelog": "2.1.0",
     "jmd-scripts": "1.4.21",
-    "nodemon": "1.14.3"
+    "nodemon": "1.14.6"
   }
 }
