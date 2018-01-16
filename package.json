@@ -63,7 +63,7 @@
     "restify-cors-middleware": "1.1.0",
     "restify-errors": "5.0.0",
     "restify-pino-logger": "2.0.0",
-    "semver": "5.4.1"
+    "semver": "5.5.0"
   },
   "devDependencies": {
     "commitizen": "2.9.6",
