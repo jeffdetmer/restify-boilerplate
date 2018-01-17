@@ -18,17 +18,20 @@
     "commit": "git-cz",
     "format": "jmd-scripts format",
     "lint": "jmd-scripts lint",
+    "precommit": "jmd-scripts precommit",
+    "setup": "npm install && npm run validate",
     "start":
       "nodemon src/serve --exec \"node --require babel-register --require babel-polyfill\" | bunyan",
     "test": "jmd-scripts test --no-watch",
+    "test:cover": "jmd-scripts test --coverage",
     "test:watch": "jmd-scripts test",
-    "test:update": "npm test -- --updateSnapshot --coverage",
-    "validate": "jmd-scripts validate"
+    "test:update": "npm test:cover -s -- --updateSnapshot",
+    "validate": "jmd-scripts validate lint,test"
   },
   "eslintConfig": {
     "extends": ["./node_modules/jmd-scripts/eslint.js"]
   },
-  "eslintIgnore": ["node_modules", "coverage", "dist"],
+  "eslintIgnore": ["node_modules", "coverage", "dist", "typings"],
   "babel": {
     "presets": ["jmd-scripts/babel"]
   },
