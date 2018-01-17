@@ -18,19 +18,26 @@
     "commit": "git-cz",
     "format": "jmd-scripts format",
     "lint": "jmd-scripts lint",
-    "start":
-      "nodemon src/serve --exec \"node --require babel-register --require babel-polyfill\" | bunyan",
+    "start": "nodemon src/serve --exec \"node --require babel-register --require babel-polyfill\" | bunyan",
     "test": "jmd-scripts test --no-watch",
     "test:watch": "jmd-scripts test",
     "test:update": "npm test -- --updateSnapshot --coverage",
     "validate": "jmd-scripts validate"
   },
   "eslintConfig": {
-    "extends": ["./node_modules/jmd-scripts/eslint.js"]
+    "extends": [
+      "./node_modules/jmd-scripts/eslint.js"
+    ]
   },
-  "eslintIgnore": ["node_modules", "coverage", "dist"],
+  "eslintIgnore": [
+    "node_modules",
+    "coverage",
+    "dist"
+  ],
   "babel": {
-    "presets": ["jmd-scripts/babel"]
+    "presets": [
+      "jmd-scripts/babel"
+    ]
   },
   "config": {
     "commitizen": {
@@ -68,7 +75,7 @@
   "devDependencies": {
     "commitizen": "2.9.6",
     "cz-conventional-changelog": "2.1.0",
-    "jmd-scripts": "1.4.21",
+    "jmd-scripts": "1.4.27",
     "nodemon": "1.14.11"
   }
 }
