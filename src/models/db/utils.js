@@ -34,8 +34,16 @@ function getColumnsByTableNamePrefix(tableName, columns) {
   return fn
 }
 
+function convertToSnakeCase(value) {
+  return fp
+    .snakeCase(value)
+    .toUpperCase()
+    .trim()
+}
+
 export default {
   getColumns,
   addPrefixAliasToColumns,
   getColumnsByTableNamePrefix,
+  convertToSnakeCase,
 }
