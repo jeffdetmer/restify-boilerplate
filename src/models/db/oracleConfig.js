@@ -1,6 +1,7 @@
 import path from 'path'
 import joi from 'joi'
 import appConfig from '../../lib/config'
+import utils from './utils'
 
 if (appConfig.NODE_ENV === 'test') {
   import('dotenv/config') // eslint-disable-line no-unused-vars
@@ -62,6 +63,7 @@ const config = {
   healthCheck: {
     timeout: envVars.ORACLE_HEALTH_CHECK_TIMEOUT,
   },
+  wrapIdentifier: value => utils.convertToSnakeCase(value),
 }
 
 export default config
