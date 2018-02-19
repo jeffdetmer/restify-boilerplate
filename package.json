@@ -50,7 +50,7 @@
     "helmet": "3.11.0",
     "joi": "13.1.2",
     "jsonwebtoken": "8.1.1",
-    "knex": "0.14.3",
+    "knex": "0.14.4",
     "lodash": "4.17.5",
     "mock-knex": "0.4.0",
     "mongoose": "5.0.6",
@@ -72,6 +72,6 @@
     "commitizen": "2.9.6",
     "cz-conventional-changelog": "2.1.0",
     "jmd-scripts": "1.5.22",
-    "nodemon": "1.15.0"
+    "nodemon": "1.15.1"
   }
 }
