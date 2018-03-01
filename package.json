@@ -71,7 +71,7 @@
   "devDependencies": {
     "commitizen": "2.9.6",
     "cz-conventional-changelog": "2.1.0",
-    "jmd-scripts": "1.5.25",
+    "jmd-scripts": "1.5.30",
     "nodemon": "1.15.1"
   }
 }
