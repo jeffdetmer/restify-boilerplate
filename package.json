@@ -62,7 +62,7 @@
     "pg-connection-string": "2.0.0",
     "pg-hstore": "2.3.2",
     "raven": "2.4.2",
-    "restify": "6.3.4",
+    "restify": "6.4.0",
     "restify-cors-middleware": "1.1.0",
     "restify-errors": "6.0.0",
     "restify-pino-logger": "2.0.0",
