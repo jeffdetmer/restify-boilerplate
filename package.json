@@ -48,7 +48,7 @@
     "cross-env": "5.1.6",
     "dotenv": "5.0.1",
     "helmet": "3.12.1",
-    "joi": "13.3.0",
+    "joi": "13.4.0",
     "jsonwebtoken": "8.2.1",
     "knex": "0.14.6",
     "lodash": "4.17.9",
