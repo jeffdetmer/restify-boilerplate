@@ -64,7 +64,7 @@
     "raven": "2.6.2",
     "restify": "7.2.0",
     "restify-cors-middleware": "1.1.1",
-    "restify-errors": "6.1.0",
+    "restify-errors": "6.1.1",
     "restify-pino-logger": "2.0.0",
     "semver": "5.5.0"
   },
