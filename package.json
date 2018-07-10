@@ -72,6 +72,6 @@
     "commitizen": "2.10.1",
     "cz-conventional-changelog": "2.1.0",
     "jmd-scripts": "1.5.77",
-    "nodemon": "1.17.5"
+    "nodemon": "1.18.0"
   }
 }
