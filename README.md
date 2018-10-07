@@ -33,12 +33,12 @@ sample services, controllers, and models, integration with [Sentry](https://sent
 
 ## Table of Contents
 
-* [Installation](#installation)
-* [Usage](#usage)
-* [Inspiration](#inspiration)
-* [Other Solutions](#other-solutions)
-* [Contributors](#contributors)
-* [LICENSE](#license)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Inspiration](#inspiration)
+- [Other Solutions](#other-solutions)
+- [Contributors](#contributors)
+- [LICENSE](#license)
 
 ## Installation
 
@@ -101,6 +101,5 @@ MIT &copy; Jeff Detmer
 [synk-project]: https://snyk.io/test/github/shellthor/restify-boilerplate
 [deepscan-badge]: https://deepscan.io/api/projects/591/branches/950/badge/grade.svg?style=flat-square
 [deepscan]: https://deepscan.io/dashboard/#view=project&pid=591&bid=950
-
 
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fshellthor%2Frestify-boilerplate.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fshellthor%2Frestify-boilerplate?ref=badge_large)
