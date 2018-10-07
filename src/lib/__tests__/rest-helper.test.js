@@ -11,7 +11,7 @@ import {
 const req = {}
 const res = {}
 let next
-
+// eslint-disable-next-line max-lines-per-function
 describe('rest-helper', () => {
   beforeEach(() => {
     req.params = {}
@@ -32,9 +32,9 @@ describe('rest-helper', () => {
       }
       send200(res, next, {firstName: 'John'})
 
-      expect(res.send.mock.calls.length).toBe(1)
+      expect(res.send.mock.calls).toHaveLength(1)
       expect(res.send).toBeCalledWith(expected)
-      expect(next.mock.calls.length).toBe(1)
+      expect(next.mock.calls).toHaveLength(1)
     })
 
     it('should call res.send with a valid body when called with an array of length 1', () => {
@@ -51,9 +51,9 @@ describe('rest-helper', () => {
       }
       send200(res, next, [{firstName: 'John'}])
 
-      expect(res.send.mock.calls.length).toBe(1)
+      expect(res.send.mock.calls).toHaveLength(1)
       expect(res.send).toBeCalledWith(expected)
-      expect(next.mock.calls.length).toBe(1)
+      expect(next.mock.calls).toHaveLength(1)
     })
 
     it('should call res.send with a valid body when called with an array of length greater than 1', () => {
@@ -73,9 +73,9 @@ describe('rest-helper', () => {
       }
       send200(res, next, [{firstName: 'John'}, {firstName: 'Jane'}])
 
-      expect(res.send.mock.calls.length).toBe(1)
+      expect(res.send.mock.calls).toHaveLength(1)
       expect(res.send).toBeCalledWith(expected)
-      expect(next.mock.calls.length).toBe(1)
+      expect(next.mock.calls).toHaveLength(1)
     })
 
     it('should call res.send with a valid body when called with an empty array', () => {
@@ -88,9 +88,9 @@ describe('rest-helper', () => {
       }
       send200(res, next, [])
 
-      expect(res.send.mock.calls.length).toBe(1)
+      expect(res.send.mock.calls).toHaveLength(1)
       expect(res.send).toBeCalledWith(expected)
-      expect(next.mock.calls.length).toBe(1)
+      expect(next.mock.calls).toHaveLength(1)
     })
 
     it('should call res.send with a valid body when called with an empty object', () => {
@@ -103,9 +103,9 @@ describe('rest-helper', () => {
       }
       send200(res, next, {})
 
-      expect(res.send.mock.calls.length).toBe(1)
+      expect(res.send.mock.calls).toHaveLength(1)
       expect(res.send).toBeCalledWith(expected)
-      expect(next.mock.calls.length).toBe(1)
+      expect(next.mock.calls).toHaveLength(1)
     })
 
     it('should call res.send with a valid body when called with a string', () => {
@@ -118,9 +118,9 @@ describe('rest-helper', () => {
       }
       send200(res, next, 'John')
 
-      expect(res.send.mock.calls.length).toBe(1)
+      expect(res.send.mock.calls).toHaveLength(1)
       expect(res.send).toBeCalledWith(expected)
-      expect(next.mock.calls.length).toBe(1)
+      expect(next.mock.calls).toHaveLength(1)
     })
 
     it('should call res.send with a valid body when called with no data', () => {
@@ -133,9 +133,9 @@ describe('rest-helper', () => {
       }
       send200(res, next)
 
-      expect(res.send.mock.calls.length).toBe(1)
+      expect(res.send.mock.calls).toHaveLength(1)
       expect(res.send).toBeCalledWith(expected)
-      expect(next.mock.calls.length).toBe(1)
+      expect(next.mock.calls).toHaveLength(1)
     })
   })
 
@@ -152,9 +152,9 @@ describe('rest-helper', () => {
       }
       send201(res, next, {firstName: 'Jeff'})
 
-      expect(res.send.mock.calls.length).toBe(1)
+      expect(res.send.mock.calls).toHaveLength(1)
       expect(res.send).toBeCalledWith(201, expected)
-      expect(next.mock.calls.length).toBe(1)
+      expect(next.mock.calls).toHaveLength(1)
     })
 
     it('should call res.send with a valid body when called with an array of length 1', () => {
@@ -171,9 +171,9 @@ describe('rest-helper', () => {
       }
       send201(res, next, [{firstName: 'John'}])
 
-      expect(res.send.mock.calls.length).toBe(1)
+      expect(res.send.mock.calls).toHaveLength(1)
       expect(res.send).toBeCalledWith(201, expected)
-      expect(next.mock.calls.length).toBe(1)
+      expect(next.mock.calls).toHaveLength(1)
     })
 
     it('should call res.send with a valid body when called with an array of length greater than 1', () => {
@@ -193,9 +193,9 @@ describe('rest-helper', () => {
       }
       send201(res, next, [{firstName: 'John'}, {firstName: 'Jane'}])
 
-      expect(res.send.mock.calls.length).toBe(1)
+      expect(res.send.mock.calls).toHaveLength(1)
       expect(res.send).toBeCalledWith(201, expected)
-      expect(next.mock.calls.length).toBe(1)
+      expect(next.mock.calls).toHaveLength(1)
     })
 
     it('should call res.send with a valid body when called with an empty array', () => {
@@ -208,9 +208,9 @@ describe('rest-helper', () => {
       }
       send201(res, next, [])
 
-      expect(res.send.mock.calls.length).toBe(1)
+      expect(res.send.mock.calls).toHaveLength(1)
       expect(res.send).toBeCalledWith(201, expected)
-      expect(next.mock.calls.length).toBe(1)
+      expect(next.mock.calls).toHaveLength(1)
     })
 
     it('should call res.send with a valid body when called with an empty object', () => {
@@ -223,9 +223,9 @@ describe('rest-helper', () => {
       }
       send201(res, next, {})
 
-      expect(res.send.mock.calls.length).toBe(1)
+      expect(res.send.mock.calls).toHaveLength(1)
       expect(res.send).toBeCalledWith(201, expected)
-      expect(next.mock.calls.length).toBe(1)
+      expect(next.mock.calls).toHaveLength(1)
     })
 
     it('should call res.send with a valid body when called with no data', () => {
@@ -238,9 +238,9 @@ describe('rest-helper', () => {
       }
       send201(res, next)
 
-      expect(res.send.mock.calls.length).toBe(1)
+      expect(res.send.mock.calls).toHaveLength(1)
       expect(res.send).toBeCalledWith(201, expected)
-      expect(next.mock.calls.length).toBe(1)
+      expect(next.mock.calls).toHaveLength(1)
     })
   })
 
@@ -250,9 +250,9 @@ describe('rest-helper', () => {
 
       send204(res, next)
 
-      expect(res.send.mock.calls.length).toBe(1)
+      expect(res.send.mock.calls).toHaveLength(1)
       expect(res.send).toBeCalledWith(204)
-      expect(next.mock.calls.length).toBe(1)
+      expect(next.mock.calls).toHaveLength(1)
     })
   })
 
@@ -268,9 +268,9 @@ describe('rest-helper', () => {
 
       send400(res, next, {message: 'Hello'})
 
-      expect(res.send.mock.calls.length).toBe(1)
+      expect(res.send.mock.calls).toHaveLength(1)
       expect(res.send).toBeCalledWith(400, expected)
-      expect(next.mock.calls.length).toBe(1)
+      expect(next.mock.calls).toHaveLength(1)
     })
 
     it('should call res.send with a 400 status with default error', () => {
@@ -283,9 +283,9 @@ describe('rest-helper', () => {
 
       send400(res, next)
 
-      expect(res.send.mock.calls.length).toBe(1)
+      expect(res.send.mock.calls).toHaveLength(1)
       expect(res.send).toBeCalledWith(400, expected)
-      expect(next.mock.calls.length).toBe(1)
+      expect(next.mock.calls).toHaveLength(1)
     })
   })
 
@@ -301,9 +301,9 @@ describe('rest-helper', () => {
 
       send404(res, next)
 
-      expect(res.send.mock.calls.length).toBe(1)
+      expect(res.send.mock.calls).toHaveLength(1)
       expect(res.send).toBeCalledWith(404, expected)
-      expect(next.mock.calls.length).toBe(1)
+      expect(next.mock.calls).toHaveLength(1)
     })
   })
 
@@ -320,9 +320,9 @@ describe('rest-helper', () => {
 
       send500(res, next, err)
 
-      expect(res.send.mock.calls.length).toBe(1)
+      expect(res.send.mock.calls).toHaveLength(1)
       expect(res.send).toBeCalledWith(500, expected)
-      expect(next.mock.calls.length).toBe(1)
+      expect(next.mock.calls).toHaveLength(1)
       expect(next).toBeCalledWith()
     })
 
@@ -336,9 +336,9 @@ describe('rest-helper', () => {
 
       send500(res, next)
 
-      expect(res.send.mock.calls.length).toBe(1)
+      expect(res.send.mock.calls).toHaveLength(1)
       expect(res.send).toBeCalledWith(500, expected)
-      expect(next.mock.calls.length).toBe(1)
+      expect(next.mock.calls).toHaveLength(1)
       expect(next).toBeCalledWith()
     })
   })

@@ -17,9 +17,9 @@ describe('ECHO route', () => {
 
       echo.get(req, res, next)
 
-      expect(res.send.mock.calls.length).toBe(1)
+      expect(res.send.mock.calls).toHaveLength(1)
       expect(res.send).toBeCalledWith('this is a test')
-      expect(next.mock.calls.length).toBe(1)
+      expect(next.mock.calls).toHaveLength(1)
     })
   })
 
@@ -31,10 +31,10 @@ describe('ECHO route', () => {
 
       echo.post(req, res, next)
 
-      expect(res.send.mock.calls.length).toBe(1)
+      expect(res.send.mock.calls).toHaveLength(1)
       expect(res.setHeader).toBeCalledWith('Content-Type', 'this is a test')
       expect(res.send).toBeCalledWith(req.body)
-      expect(next.mock.calls.length).toBe(1)
+      expect(next.mock.calls).toHaveLength(1)
     })
   })
 })
