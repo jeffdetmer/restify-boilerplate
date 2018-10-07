@@ -9,9 +9,9 @@ describe('VERSION route', () => {
       res.send = jest.fn()
 
       version.get(req, res, next)
-      expect(res.send.mock.calls.length).toBe(1)
+      expect(res.send.mock.calls).toHaveLength(1)
       expect(res.send).toBeCalledWith({appVersion: '1.0.0'})
-      expect(next.mock.calls.length).toBe(1)
+      expect(next.mock.calls).toHaveLength(1)
     })
   })
 })

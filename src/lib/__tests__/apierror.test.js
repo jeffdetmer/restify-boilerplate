@@ -3,7 +3,7 @@ import apierror from '../apierror'
 describe('ApiError', () => {
   it('should get all api endpoints', () => {
     expect(typeof apierror).toBe('object')
-    expect(Object.keys(apierror).length).toBe(3)
+    expect(Object.keys(apierror)).toHaveLength(3)
   })
 
   it('should return a generic error response', () => {
