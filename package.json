@@ -63,7 +63,7 @@
     "mock-knex": "0.4.2",
     "mongoose": "5.3.11",
     "oracledb": "3.0.0",
-    "passport": "0.4.0",
+    "passport": "0.4.1",
     "passport-jwt": "4.0.0",
     "passport-local": "1.0.0",
     "pg": "7.6.1",
