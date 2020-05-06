@@ -25,7 +25,9 @@
     "test:cover": "jmd-scripts test --coverage",
     "test:watch": "jmd-scripts test",
     "test:update": "npm test:cover -s -- --updateSnapshot",
-    "validate": "jmd-scripts validate lint,test"
+    "validate": "jmd-scripts validate lint,test",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "eslintConfig": {
     "extends": [
@@ -74,12 +76,14 @@
     "restify-cors-middleware": "1.1.1",
     "restify-errors": "6.1.1",
     "restify-pino-logger": "3.0.0",
-    "semver": "5.5.1"
+    "semver": "5.5.1",
+    "snyk": "^1.319.0"
   },
   "devDependencies": {
     "commitizen": "3.0.2",
     "cz-conventional-changelog": "2.1.0",
     "jmd-scripts": "1.12.0",
     "nodemon": "1.18.6"
-  }
+  },
+  "snyk": true
 }
