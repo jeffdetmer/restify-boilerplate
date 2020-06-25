@@ -51,7 +51,7 @@
   "dependencies": {
     "axios": "0.18.0",
     "bluebird": "3.5.3",
-    "bunyan": "1.8.12",
+    "bunyan": "1.8.13",
     "bunyan-sentry-stream": "1.2.1",
     "cross-env": "5.2.0",
     "dotenv": "6.0.0",
