@@ -13,30 +13,12 @@ const envVarsSchema = joi
     ORACLE_USERNAME: joi.string().required(),
     ORACLE_PASSWORD: joi.string().required(),
     ORACLE_CONNECTION_CLASS: joi.string().required(),
-    ORACLE_POOL_MIN: joi
-      .number()
-      .integer()
-      .default(1),
-    ORACLE_POOL_MAX: joi
-      .number()
-      .integer()
-      .default(20),
-    ORACLE_POOL_INCREMENT: joi
-      .number()
-      .integer()
-      .default(1),
-    ORACLE_POOL_TIMEOUT: joi
-      .number()
-      .integer()
-      .default(10),
-    ORACLE_MAX_ROWS: joi
-      .number()
-      .integer()
-      .default(500),
-    ORACLE_HEALTH_CHECK_TIMEOUT: joi
-      .number()
-      .integer()
-      .default(2000),
+    ORACLE_POOL_MIN: joi.number().integer().default(1),
+    ORACLE_POOL_MAX: joi.number().integer().default(20),
+    ORACLE_POOL_INCREMENT: joi.number().integer().default(1),
+    ORACLE_POOL_TIMEOUT: joi.number().integer().default(10),
+    ORACLE_MAX_ROWS: joi.number().integer().default(500),
+    ORACLE_HEALTH_CHECK_TIMEOUT: joi.number().integer().default(2000),
   })
   .unknown()
   .required()

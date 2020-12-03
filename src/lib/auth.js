@@ -9,4 +9,4 @@ const verify = async token => {
   await jwt.verify(token, config.JWT_SECRET)
 }
 
-export default {sign, verify}
+export default { sign, verify }

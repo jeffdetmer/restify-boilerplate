@@ -3,4 +3,4 @@ function get(req, res, next) {
   next()
 }
 
-export default {get}
+export default { get }

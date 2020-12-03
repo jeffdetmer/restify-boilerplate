@@ -18,7 +18,6 @@
     "commit": "git-cz",
     "format": "jmd-scripts format",
     "lint": "jmd-scripts lint",
-    "precommit": "jmd-scripts precommit",
     "setup": "npm install && npm run validate",
     "start": "nodemon src/serve --exec \"node --require babel-register --require babel-polyfill\" | bunyan",
     "test": "jmd-scripts test --no-watch",
@@ -38,48 +37,49 @@
     "dist",
     "typings"
   ],
-  "babel": {
-    "presets": [
-      "jmd-scripts/babel"
-    ]
-  },
   "config": {
     "commitizen": {
       "path": "cz-conventional-changelog"
     }
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "jmd-scripts pre-commit"
+    }
+  },
   "dependencies": {
-    "axios": "0.18.0",
-    "bluebird": "3.5.3",
-    "bunyan": "1.8.12",
+    "axios": "0.21.0",
+    "bluebird": "3.7.2",
+    "bunyan": "1.8.14",
     "bunyan-sentry-stream": "1.2.1",
-    "cross-env": "5.2.0",
-    "dotenv": "6.0.0",
-    "helmet": "3.13.0",
-    "joi": "13.7.0",
-    "jsonwebtoken": "8.3.0",
-    "knex": "0.15.2",
-    "lodash": "4.17.11",
-    "mock-knex": "0.4.2",
-    "mongoose": "5.3.11",
-    "oracledb": "3.0.0",
-    "passport": "0.4.0",
+    "cross-env": "7.0.3",
+    "dotenv": "8.2.0",
+    "helmet": "4.2.0",
+    "joi": "17.3.0",
+    "jsonwebtoken": "8.5.1",
+    "knex": "0.21.12",
+    "lodash": "4.17.20",
+    "mock-knex": "0.4.9",
+    "mongoose": "5.11.3",
+    "oracledb": "5.0.0",
+    "passport": "0.4.1",
     "passport-jwt": "4.0.0",
     "passport-local": "1.0.0",
-    "pg": "7.6.1",
-    "pg-connection-string": "2.0.0",
-    "pg-hstore": "2.3.2",
+    "pg": "8.5.1",
+    "pg-connection-string": "2.4.0",
+    "pg-hstore": "2.3.3",
     "raven": "2.6.4",
-    "restify": "7.2.2",
+    "restify": "8.5.1",
     "restify-cors-middleware": "1.1.1",
-    "restify-errors": "6.1.1",
+    "restify-errors": "8.0.2",
     "restify-pino-logger": "3.0.0",
-    "semver": "5.5.1"
+    "semver": "7.3.4"
   },
   "devDependencies": {
-    "commitizen": "3.0.2",
-    "cz-conventional-changelog": "2.1.0",
-    "jmd-scripts": "1.12.0",
-    "nodemon": "1.18.6"
+    "commitizen": "4.2.2",
+    "cz-conventional-changelog": "3.3.0",
+    "husky": "4.3.0",
+    "jmd-scripts": "1.13.0",
+    "nodemon": "2.0.6"
   }
 }

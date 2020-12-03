@@ -7,4 +7,4 @@ function healthCheck() {
   return db.select(1).timeout(config.healthCheck.timeout)
 }
 
-export default Object.assign(db, {healthCheck})
+export default Object.assign(db, { healthCheck })

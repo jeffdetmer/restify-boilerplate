@@ -4,7 +4,7 @@ import helmet from 'helmet'
 import pkg from '../package'
 import logger from './lib/logger'
 import Config from './lib/config'
-import {version, ping, echo, api} from './controllers'
+import { version, ping, echo, api } from './controllers'
 
 /**
  * Returns a server with all routes defined on it

@@ -1,3 +1,21 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
+- [
+  Restify Boilerplate
+  ](#restify-boilerplate)
+  - [The problem](#the-problem)
+  - [This solution](#this-solution)
+  - [Table of Contents](#table-of-contents)
+  - [Installation](#installation)
+  - [Usage](#usage)
+  - [Inspiration](#inspiration)
+  - [Other Solutions](#other-solutions)
+  - [Contributors](#contributors)
+  - [License](#license)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 <h1 align="center">
   Restify Boilerplate
 </h1>
@@ -11,12 +29,10 @@
 [![Greenkeeper badge][greenkeeper-badge]][greenkeeper]
 [![Sync Vulnerabilities][synk-badge]][synk-project]
 [![DeepScan Grade][deepscan-badge]][deepscan]
-[![version][version-badge]][package]
-[![MIT License][license-badge]][license]
+[![version][version-badge]][package] [![MIT License][license-badge]][license]
 
 [![All Contributors][contributors]](#contributors)
-[![PRs Welcome][prs-badge]][prs]
-[![Code of Conduct][coc-badge]][coc]
+[![PRs Welcome][prs-badge]][prs] [![Code of Conduct][coc-badge]][coc]
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fshellthor%2Frestify-boilerplate.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fshellthor%2Frestify-boilerplate?ref=badge_shield)
 
 [![Watch on GitHub][github-watch-badge]][github-watch]
@@ -24,12 +40,15 @@
 
 ## The problem
 
-You need a starting point to build a production ready, restify based micro-service that connects to a relational database.
+You need a starting point to build a production ready, restify based
+micro-service that connects to a relational database.
 
 ## This solution
 
-This project contains a starting point for a micro-service and implements logging, audit logs, a relational ORM, configuration,
-sample services, controllers, and models, integration with [Sentry](https://sentry.io/), Jest unit tests, and more.
+This project contains a starting point for a micro-service and implements
+logging, audit logs, a relational ORM, configuration, sample services,
+controllers, and models, integration with [Sentry](https://sentry.io/), Jest
+unit tests, and more.
 
 ## Table of Contents
 
@@ -65,10 +84,10 @@ Thank you for everyone's help! ([emoji key][emojis]):
 | [<img src="https://avatars2.githubusercontent.com/u/649578?v=3" width="100px;"/><br /><sub>Jeff Detmer</sub>](http://www.jeffdetmer.com)<br />[💻](https://github.com/shellthor/microservice-boilerplate/commits?author=shellthor 'Code') [📖](https://github.com/shellthor/microservice-boilerplate/commits?author=shellthor 'Documentation') [⚠️](https://github.com/shellthor/microservice-boilerplate/commits?author=shellthor 'Tests') [📢](#talk-shellthor 'Talks') |
 | :-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
 
-
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
-This project follows the [all-contributors][all-contributors] specification. Contributions of any kind welcome!
+This project follows the [all-contributors][all-contributors] specification.
+Contributions of any kind welcome!
 
 ## License
 

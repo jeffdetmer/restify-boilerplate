@@ -1,5 +1,5 @@
 import errors from 'restify-errors'
-import {camelCase, mapKeys} from 'lodash'
+import { camelCase, mapKeys } from 'lodash'
 
 function objectToCamelCase(data) {
   return mapKeys(data, (val, key) => camelCase(key))
@@ -71,4 +71,4 @@ function send500(res, next, err = new errors.InternalServerError()) {
   return next()
 }
 
-export {send200, send201, send204, send400, send404, send500}
+export { send200, send201, send204, send400, send404, send500 }

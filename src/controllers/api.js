@@ -2,16 +2,13 @@ import errors from 'restify-errors'
 import joi from 'joi'
 import User from '../models/user'
 import logger from '../lib/logger'
-import {send200, send201, send400, send500} from '../lib/rest-helper'
+import { send200, send201, send400, send500 } from '../lib/rest-helper'
 
 async function get(req, res, next) {
   let data
   const inputSchema = joi
     .object({
-      locnNbr: joi
-        .number()
-        .integer()
-        .required(),
+      locnNbr: joi.number().integer().required(),
       itemBrcd: joi.string().required(),
     })
     .unknown()
@@ -35,10 +32,7 @@ async function post(req, res, next) {
   let result
   const inputSchema = joi
     .object({
-      locnNbr: joi
-        .number()
-        .integer()
-        .required(),
+      locnNbr: joi.number().integer().required(),
       itemBrcd: joi.string().required(),
     })
     .unknown()
@@ -65,4 +59,4 @@ function error(req, res, next) {
   }
 }
 
-export default {get, post, error}
+export default { get, post, error }

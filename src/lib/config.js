@@ -5,27 +5,24 @@ const envVarsSchema = joi
   .object({
     NODE_ENV: joi
       .string()
-      .allow(['development', 'production', 'test'])
+      .allow('development', 'production', 'test')
       .default('production'),
     LOGGER_LEVEL: joi
       .string()
-      .allow(['test', 'error', 'warn', 'info', 'verbose', 'debug', 'silly'])
+      .allow('test', 'error', 'warn', 'info', 'verbose', 'debug', 'silly')
       .when('NODE_ENV', {
         is: 'development',
-        then: joi.default('silly'),
+        then: joi.string().default('silly'),
       })
       .when('NODE_ENV', {
         is: 'production',
-        then: joi.default('info'),
+        then: joi.string().default('info'),
       })
       .when('NODE_ENV', {
         is: 'test',
-        then: joi.default('warn'),
+        then: joi.string().default('warn'),
       }),
-    PORT: joi
-      .number()
-      .integer()
-      .default(80),
+    PORT: joi.number().integer().default(80),
     SENTRY_DSN: joi.string(),
   })
   .unknown()

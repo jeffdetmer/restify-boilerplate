@@ -14,6 +14,6 @@ export default {
     }
   },
   generic(code, message) {
-    return {status: 400, code: code || 'UnknownError', message}
+    return { status: 400, code: code || 'UnknownError', message }
   },
 }

@@ -30,7 +30,7 @@ describe('rest-helper', () => {
           firstName: 'John',
         },
       }
-      send200(res, next, {firstName: 'John'})
+      send200(res, next, { firstName: 'John' })
 
       expect(res.send.mock.calls).toHaveLength(1)
       expect(res.send).toBeCalledWith(expected)
@@ -49,7 +49,7 @@ describe('rest-helper', () => {
           },
         ],
       }
-      send200(res, next, [{firstName: 'John'}])
+      send200(res, next, [{ firstName: 'John' }])
 
       expect(res.send.mock.calls).toHaveLength(1)
       expect(res.send).toBeCalledWith(expected)
@@ -71,7 +71,7 @@ describe('rest-helper', () => {
           },
         ],
       }
-      send200(res, next, [{firstName: 'John'}, {firstName: 'Jane'}])
+      send200(res, next, [{ firstName: 'John' }, { firstName: 'Jane' }])
 
       expect(res.send.mock.calls).toHaveLength(1)
       expect(res.send).toBeCalledWith(expected)
@@ -150,7 +150,7 @@ describe('rest-helper', () => {
           firstName: 'Jeff',
         },
       }
-      send201(res, next, {firstName: 'Jeff'})
+      send201(res, next, { firstName: 'Jeff' })
 
       expect(res.send.mock.calls).toHaveLength(1)
       expect(res.send).toBeCalledWith(201, expected)
@@ -169,7 +169,7 @@ describe('rest-helper', () => {
           },
         ],
       }
-      send201(res, next, [{firstName: 'John'}])
+      send201(res, next, [{ firstName: 'John' }])
 
       expect(res.send.mock.calls).toHaveLength(1)
       expect(res.send).toBeCalledWith(201, expected)
@@ -191,7 +191,7 @@ describe('rest-helper', () => {
           },
         ],
       }
-      send201(res, next, [{firstName: 'John'}, {firstName: 'Jane'}])
+      send201(res, next, [{ firstName: 'John' }, { firstName: 'Jane' }])
 
       expect(res.send.mock.calls).toHaveLength(1)
       expect(res.send).toBeCalledWith(201, expected)
@@ -262,11 +262,11 @@ describe('rest-helper', () => {
 
       const expected = {
         status: 400,
-        error: {message: 'Hello'},
+        error: { message: 'Hello' },
         data: {},
       }
 
-      send400(res, next, {message: 'Hello'})
+      send400(res, next, { message: 'Hello' })
 
       expect(res.send.mock.calls).toHaveLength(1)
       expect(res.send).toBeCalledWith(400, expected)

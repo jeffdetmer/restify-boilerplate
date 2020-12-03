@@ -3,9 +3,9 @@ import db from './'
 
 function getColumns(tableName) {
   return db('ALL_TAB_COLS')
-    .where({table_name: tableName}) // eslint-disable-line camelcase
+    .where({ table_name: tableName }) // eslint-disable-line babel/camelcase
     .select('column_name')
-    .options({rowMode: 'array'})
+    .options({ rowMode: 'array' })
     .then(fp.map(fp.first))
 }
 
@@ -35,10 +35,7 @@ function getColumnsByTableNamePrefix(tableName, columns) {
 }
 
 function convertToSnakeCase(value) {
-  return fp
-    .snakeCase(value)
-    .toUpperCase()
-    .trim()
+  return fp.snakeCase(value).toUpperCase().trim()
 }
 
 export default {

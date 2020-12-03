@@ -2,8 +2,8 @@
 
 Thanks for being willing to contribute!
 
-**Working on your first Pull Request?** You can learn how from this _free_ series
-[How to Contribute to an Open Source Project on GitHub][egghead]
+**Working on your first Pull Request?** You can learn how from this _free_
+series [How to Contribute to an Open Source Project on GitHub][egghead]
 
 ## Project setup
 
@@ -21,39 +21,37 @@ Thanks for being willing to contribute!
 > git branch --set-upstream-to=upstream/master master
 > ```
 >
-> This will add the original repository as a "remote" called "upstream,"
-> Then fetch the git information from that remote, then set your local `master`
-> branch to use the upstream master branch whenever you run `git pull`.
-> Then you can make all of your pull request branches based on this `master`
-> branch. Whenever you want to update your version of `master`, do a regular
-> `git pull`.
+> This will add the original repository as a "remote" called "upstream," Then
+> fetch the git information from that remote, then set your local `master`
+> branch to use the upstream master branch whenever you run `git pull`. Then you
+> can make all of your pull request branches based on this `master` branch.
+> Whenever you want to update your version of `master`, do a regular `git pull`.
 
 ## Add yourself as a contributor
 
-This project follows the [all contributors][all-contributors] specification.
-To add yourself to the table of contributors on the `README.md`, please use the
+This project follows the [all contributors][all-contributors] specification. To
+add yourself to the table of contributors on the `README.md`, please use the
 automated script as part of your PR:
 
 ```console
 npm run add-contributor
 ```
 
-Follow the prompt and commit `.all-contributorsrc` and `README.md` in the PR.
-If you've already added yourself to the list and are making
-a new type of contribution, you can run it again and select the added
-contribution type.
+Follow the prompt and commit `.all-contributorsrc` and `README.md` in the PR. If
+you've already added yourself to the list and are making a new type of
+contribution, you can run it again and select the added contribution type.
 
 ## Committing and Pushing changes
 
 This project uses [`semantic-release`][semantic-release] to do automatic
-releases and generate a changelog based on the commit history. So we follow
-[a convention][convention] for commit messages. You don't have to follow this
+releases and generate a changelog based on the commit history. So we follow [a
+convention][convention] for commit messages. You don't have to follow this
 convention if you don't want to. Just know that when we merge your commit, we'll
 probably use "Squash and Merge" so we can change the commit message :)
 
 Please make sure to run the tests before you commit your changes. You can run
-`npm run test:update` which will update any snapshots that need updating.
-Make sure to include those changes (if they exist) in your commit.
+`npm run test:update` which will update any snapshots that need updating. Make
+sure to include those changes (if they exist) in your commit.
 
 ### opt in/out of git hooks
 
@@ -68,10 +66,10 @@ pre-commit
 ```
 
 One of the things that the git hooks does is automatically format the files you
-change. It does this by reformating the entire file and running `git add` on
-the file after. This breaks workflows where you're trying to commit portions of
-the file only. You can always run your commit with `--no-verify`, but if this
-is a bummer to your workflow, you can add an `.opt-out` file with the contents:
+change. It does this by reformating the entire file and running `git add` on the
+file after. This breaks workflows where you're trying to commit portions of the
+file only. You can always run your commit with `--no-verify`, but if this is a
+bummer to your workflow, you can add an `.opt-out` file with the contents:
 
 ```
 autoformat

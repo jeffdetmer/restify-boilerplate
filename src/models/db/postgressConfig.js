@@ -1,13 +1,10 @@
 import path from 'path'
 import joi from 'joi'
-import {parse} from 'pg-connection-string'
+import { parse } from 'pg-connection-string'
 
 const envVarsSchema = joi
   .object({
-    PG_URI: joi
-      .string()
-      .uri({scheme: 'postgres'})
-      .required(),
+    PG_URI: joi.string().uri({ scheme: 'postgres' }).required(),
     PG_SSL_CA: joi.string(),
     PG_SSL_KEY: joi.string(),
     PG_SSL_CERT: joi.string(),
@@ -16,18 +13,9 @@ const envVarsSchema = joi
       .truthy('true')
       .falsy('false')
       .default(true),
-    PG_POOL_MIN: joi
-      .number()
-      .integer()
-      .default(1),
-    PG_POOL_MAX: joi
-      .number()
-      .integer()
-      .default(20),
-    PG_HEALTH_CHECK_TIMEOUT: joi
-      .number()
-      .integer()
-      .default(2000),
+    PG_POOL_MIN: joi.number().integer().default(1),
+    PG_POOL_MAX: joi.number().integer().default(20),
+    PG_HEALTH_CHECK_TIMEOUT: joi.number().integer().default(2000),
   })
   .unknown()
   .required()

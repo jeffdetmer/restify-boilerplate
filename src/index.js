@@ -14,9 +14,7 @@ const runtime = {
 const valid = semver.satisfies(runtime.actual, runtime.expected)
 if (!valid) {
   throw new Error(
-    `Expected Node.js version ${runtime.expected}, but found v${
-      runtime.actual
-    }. Please update or change your runtime!`,
+    `Expected Node.js version ${runtime.expected}, but found v${runtime.actual}. Please update or change your runtime!`,
   )
 }
 
@@ -63,8 +61,8 @@ process.on('exit', gracefulShutdown)
 const startServer = async () => {
   try {
     await app.listen(config.PORT)
-    logger.info(`Starting process`, {pid: process.pid})
-    logger.info(`Listening on port`, {port: config.PORT})
+    logger.info(`Starting process`, { pid: process.pid })
+    logger.info(`Listening on port`, { port: config.PORT })
   } catch (err) {
     logger.error(err)
     logger.info('Shutting down')
@@ -72,4 +70,4 @@ const startServer = async () => {
   }
 }
 
-export {app, logger, startServer}
+export { app, logger, startServer }
