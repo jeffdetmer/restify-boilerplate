@@ -1,4 +1,4 @@
-FROM node:8-alpine as base
+FROM node:15-alpine as base
 
 RUN apk update -y --no-cache && apk upgrade -y --no-cache
 
@@ -15,7 +15,7 @@ ADD node_modules /usr/app/node_modules
 ADD dist /usr/app/dist
 ADD src /usr/app/src
 
-FROM node:7-alpine as app
+FROM node:15-alpine as app
 
 RUN apk --no-cache add ca-certificates
 
