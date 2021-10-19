@@ -4,7 +4,7 @@ import helmet from 'helmet'
 import pkg from '../package'
 import logger from './lib/logger'
 import Config from './lib/config'
-import { version, ping, echo, api } from './controllers'
+import { version, ping, api } from './controllers'
 
 /**
  * Returns a server with all routes defined on it
@@ -61,8 +61,6 @@ server.use(restify.plugins.fullResponse())
 // Some standard handlers
 server.get('/version', version.get)
 server.get('/ping', ping.get)
-server.get('/echo/:name', echo.get)
-server.post('/echo', echo.post)
 server.get('/api', api.get)
 server.post('/api/new', api.post)
 server.get('/throw', api.error)
