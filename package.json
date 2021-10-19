@@ -7,11 +7,6 @@
   "author": "Jeff Detmer <jeff.detmer@gmail.com>",
   "license": "MIT",
   "private": false,
-  "engines": {
-    "node": ">=8.6.0",
-    "npm": ">=5.4.2",
-    "yarn": ">=1.1.0"
-  },
   "scripts": {
     "add-contributor": "jmd-scripts contributors add",
     "build": "jmd-scripts build",
@@ -24,7 +19,8 @@
     "test:cover": "jmd-scripts test --coverage",
     "test:watch": "jmd-scripts test",
     "test:update": "npm test:cover -s -- --updateSnapshot",
-    "validate": "jmd-scripts validate lint,test"
+    "validate": "jmd-scripts validate lint,test",
+    "prepare": "husky install"
   },
   "eslintConfig": {
     "extends": [
@@ -42,44 +38,39 @@
       "path": "cz-conventional-changelog"
     }
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "jmd-scripts pre-commit"
-    }
-  },
   "dependencies": {
-    "axios": "0.21.0",
+    "axios": "0.23.0",
     "bluebird": "3.7.2",
-    "bunyan": "1.8.14",
+    "bunyan": "1.8.15",
     "bunyan-sentry-stream": "1.2.1",
     "cross-env": "7.0.3",
-    "dotenv": "8.2.0",
-    "helmet": "4.2.0",
-    "joi": "17.3.0",
+    "dotenv": "10.0.0",
+    "helmet": "4.6.0",
+    "joi": "17.4.2",
     "jsonwebtoken": "8.5.1",
-    "knex": "0.21.12",
-    "lodash": "4.17.20",
-    "mock-knex": "0.4.9",
-    "mongoose": "5.11.3",
-    "oracledb": "5.0.0",
-    "passport": "0.4.1",
+    "knex": "0.95.11",
+    "lodash": "4.17.21",
+    "mock-knex": "0.4.10",
+    "mongoose": "6.0.11",
+    "oracledb": "5.2.0",
+    "passport": "0.5.0",
     "passport-jwt": "4.0.0",
     "passport-local": "1.0.0",
-    "pg": "8.5.1",
-    "pg-connection-string": "2.4.0",
-    "pg-hstore": "2.3.3",
+    "pg": "8.7.1",
+    "pg-connection-string": "2.5.0",
+    "pg-hstore": "2.3.4",
     "raven": "2.6.4",
-    "restify": "8.5.1",
+    "restify": "8.6.0",
     "restify-cors-middleware": "1.1.1",
     "restify-errors": "8.0.2",
     "restify-pino-logger": "3.0.0",
-    "semver": "7.3.4"
+    "semver": "7.3.5"
   },
   "devDependencies": {
-    "commitizen": "4.2.2",
+    "commitizen": "4.2.4",
     "cz-conventional-changelog": "3.3.0",
-    "husky": "4.3.0",
+    "husky": "7.0.2",
     "jmd-scripts": "1.13.0",
-    "nodemon": "2.0.6"
+    "nodemon": "2.0.14"
   }
 }
