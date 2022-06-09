@@ -52,7 +52,7 @@
     "lodash": "4.17.21",
     "mock-knex": "0.4.10",
     "mongoose": "6.0.11",
-    "oracledb": "5.2.0",
+    "oracledb": "5.4.0",
     "passport": "0.5.0",
     "passport-jwt": "4.0.0",
     "passport-local": "1.0.0",
