@@ -7769,10 +7769,10 @@ optionator@^0.9.1:
     type-check "^0.4.0"
     word-wrap "^1.2.3"
 
-oracledb@5.2.0:
-  version "5.2.0"
-  resolved "https://registry.npmjs.org/oracledb/-/oracledb-5.2.0.tgz#c5774a38508e2ebd4f899500dfc35daa03b00481"
-  integrity sha512-gHOWTM6ILKOGVH3Z+11Cnpls8XWW7sZUoBrbQWvspYOGpkvJ+TKRr1OdVS21EyeAtfMzXePDrSvG/Mlp/fxOVA==
+oracledb@5.5.0:
+  version "5.5.0"
+  resolved "https://registry.yarnpkg.com/oracledb/-/oracledb-5.5.0.tgz#0cf9af5d0c0815f74849ae9ed56aee823514d71b"
+  integrity sha512-i5cPvMENpZP8nnqptB6l0pjiOyySj1IISkbM4Hr3yZEDdANo2eezarwZb9NQ8fTh5pRjmgpZdSyIbnn9N3AENw==
 
 os-browserify@^0.3.0:
   version "0.3.0"
