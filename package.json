@@ -39,7 +39,7 @@
     }
   },
   "dependencies": {
-    "axios": "0.23.0",
+    "axios": "1.2.4",
     "bluebird": "3.7.2",
     "bunyan": "1.8.15",
     "bunyan-sentry-stream": "1.2.1",
